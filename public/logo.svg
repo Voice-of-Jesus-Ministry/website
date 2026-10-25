@@ -1,0 +1,92 @@
+<svg
+  viewBox="0 0 600 220"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-label="Voice of Jesus Ministry"
+>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#F8D76B" />
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(40,30)">
+
+    <line
+      x1="80"
+      y1="20"
+      x2="80"
+      y2="120"
+      stroke="#0B3D91"
+      stroke-width="14"
+      stroke-linecap="round"
+    />
+
+    <line
+      x1="40"
+      y1="55"
+      x2="120"
+      y2="55"
+      stroke="#0B3D91"
+      stroke-width="14"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M130 25 Q175 70 130 115"
+      fill="none"
+      stroke="url(#gold)"
+      stroke-width="5"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M145 5 Q215 70 145 135"
+      fill="none"
+      stroke="url(#gold)"
+      stroke-width="5"
+      stroke-linecap="round"
+    />
+
+    <path
+      d="M165 -15 Q255 70 165 155"
+      fill="none"
+      stroke="url(#gold)"
+      stroke-width="5"
+      stroke-linecap="round"
+    />
+  </g>
+
+  <text
+    x="280"
+    y="85"
+    fill="#0B3D91"
+    font-family="Inter, Arial, sans-serif"
+    font-size="34"
+    font-weight="700"
+  >
+    Voice of Jesus
+  </text>
+
+  <text
+    x="280"
+    y="125"
+    fill="#374151"
+    font-family="Inter, Arial, sans-serif"
+    font-size="24"
+  >
+    Ministry
+  </text>
+
+  <text
+    x="280"
+    y="160"
+    fill="#D4AF37"
+    font-family="Inter, Arial, sans-serif"
+    font-size="15"
+  >
+    Hear His Voice • Follow His Word
+  </text>
+
+</svg>
