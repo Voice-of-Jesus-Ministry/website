@@ -12,7 +12,7 @@ A free ministry and learning hub: Scripture practice, small games, and a local s
 | `/arcade/quick-click` | Twenty-second star-catching challenge with pointer and keyboard modes |
 | `/tools` | Browser-saved study notes and text download |
 | `/account` | Guest progress summary and reset |
-| `/connections` | Clearly labeled future integration plan; no credential collection |
+| Blog navigation | Links directly to https://voiceofjesusnet.blogspot.com/ |
 | `/privacy` | Storage, privacy, and external-link disclosure |
 
 The best result in each game contributes up to 100 practice XP (200 total). These are browser-local practice benchmarks, not verified competitive scores, spendable points, purchased credits, or paid-service entitlements. Guest results are not synchronized across devices. Keyboard Quick Click offers a longer target lifetime.
