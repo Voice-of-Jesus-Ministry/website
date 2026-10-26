@@ -31,9 +31,8 @@ export default function Arcade() {
         </Link>
       </div>
       <p className="notice">
-        These are personal practice results, saved on this browser. They do not
-        grant tournament entry, paid AI usage, or storage. Shared accounts and
-        verified rewards will come in a later release.
+        These are personal practice results, saved on this browser. Practice XP
+        tracks your best scores and has no cash value.
       </p>
     </div>
   );

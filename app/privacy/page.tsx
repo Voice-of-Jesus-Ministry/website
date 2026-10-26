@@ -10,14 +10,14 @@ export default function Privacy() {
         service. Clearing browser data removes them. Workspace notes can be
         downloaded as text.
       </p>
-      <h2>Accounts and connections</h2>
+      <h2>Data collected</h2>
       <p>
         This release does not collect passwords, AI API keys, payment details,
-        or cloud-storage credentials. Connections are planned and unavailable.
+        or cloud-storage credentials.
       </p>
       <h2>External services</h2>
       <p>
-        Following a link to YouTube, Messenger, or GitHub opens that service,
+        Following a link to Blogger, YouTube, Messenger, or GitHub opens that service,
         which has its own privacy practices. This app does not embed their
         players or add advertising or analytics scripts. The hosting service may
         process ordinary request information, such as IP addresses and access

@@ -9,8 +9,8 @@ export function GuestAccount() {
       <section className="game-panel">
         <h2>You’re exploring as a guest.</h2>
         <p>
-          Practice results stay in this browser. There is no cross-device
-          account, leaderboard, store, or paid credit balance in this release.
+          Practice results stay in this browser. You can play and save notes
+          without creating an account.
         </p>
         <p>
           Resetting removes only your game progress. Your workspace notes are

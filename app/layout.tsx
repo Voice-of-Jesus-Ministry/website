@@ -40,7 +40,7 @@ export default function RootLayout({
               <nav aria-label="Main navigation">
                 <Link href="/arcade">Play & learn</Link>
                 <Link href="/tools">Workspace</Link>
-                <Link href="/connections">Connections</Link>
+                <a href="https://voiceofjesusnet.blogspot.com/">Blog</a>
               </nav>
               <Link href="/account" className="guest-badge">
                 Guest · this device

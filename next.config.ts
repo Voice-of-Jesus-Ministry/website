@@ -2,6 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  async redirects() {
+    return [{
+      source: "/connections",
+      destination: "https://voiceofjesusnet.blogspot.com/",
+      permanent: false,
+    }];
+  },
   async headers() {
     return [
       {
