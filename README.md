@@ -1,291 +1,59 @@
-# Voice of Jesus Ministry Website
+# Voice of Jesus Ministry
 
-Official website for **Voice of Jesus Ministry**, a Christ-centered online ministry focused on biblical teaching, discipleship, prayer, and Christian fellowship.
+A free ministry and learning hub: Scripture practice, small games, and a local study workspace. Selected features are adapted from [AmazingGrace](https://github.com/NicholaiMadias/AmazingGrace); housing listings and the original deployment remain in that repository.
 
-**Website:** https://voiceofjesusministry.net
+## Available in this branch
 
-**YouTube:** https://youtube.com/@voiceofjesusnetwork
+| Route | Function |
+| --- | --- |
+| `/` | Ministry introduction, games, and Bible study/recording links |
+| `/arcade` | Shared guest practice dashboard |
+| `/arcade/bible-quiz` | Ten questions with answer explanations and Scripture references |
+| `/arcade/quick-click` | Twenty-second star-catching challenge with pointer and keyboard modes |
+| `/tools` | Browser-saved study notes and text download |
+| `/account` | Guest progress summary and reset |
+| `/connections` | Clearly labeled future integration plan; no credential collection |
+| `/privacy` | Storage, privacy, and external-link disclosure |
 
-**Bible Study:** Thursdays at 8:00 PM EST
+The best result in each game contributes up to 100 practice XP (200 total). These are browser-local practice benchmarks, not verified competitive scores, spendable points, purchased credits, or paid-service entitlements. Guest results are not synchronized across devices. Keyboard Quick Click offers a longer target lifetime.
 
----
+## Run and verify
 
-## Mission
+Requires Node 22.18 or newer. CI uses Node 22.
 
-Voice of Jesus Ministry exists to help people hear, understand, and follow the teachings of Jesus Christ through biblical teaching, prayer, fellowship, and discipleship.
-
-Our goal is to provide faith-based resources that encourage spiritual growth and help believers build a deeper relationship with Jesus Christ.
-
----
-
-## Features
-
-- Responsive Next.js website
-- SEO-optimized pages
-- Weekly Bible study information
-- Ministry teachings and articles
-- Scripture highlights
-- YouTube integration
-- Prayer request section
-- Donation-ready architecture
-- Mobile-friendly design
-
----
-
-## Technology Stack
-
-- Next.js 15+
-- React
-- TypeScript
-- Tailwind CSS
-- Vercel Hosting
-- GitHub Actions (future)
-
----
-
-## Getting Started
-
-### Install Dependencies
-
-```bash
-npm install
-```
-
-### Start Development Server
-
-```bash
+```sh
+npm ci
 npm run dev
 ```
 
-Open:
+Open http://localhost:3000. For production verification:
 
-```text
-http://localhost:3000
-```
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-### Start Production Server
-
-```bash
+```sh
+npm run check
 npm start
 ```
 
----
+`check` runs TypeScript, gameplay/progress regression tests, and the production build. The GitHub quality workflow also runs `npm audit --omit=dev --audit-level=high`. Dependabot proposes weekly package and GitHub Actions updates.
 
-# Project Structure
+## Deployment
 
-```text
-website/
-│
-├── app/
-│   │
-│   ├── layout.tsx
-│   ├── page.tsx
-│   ├── globals.css
-│   │
-│   ├── about/
-│   │   └── page.tsx
-│   │
-│   ├── bible-study/
-│   │   └── page.tsx
-│   │
-│   ├── teachings/
-│   │   │
-│   │   ├── page.tsx
-│   │   │
-│   │   └── sermon-on-the-mount/
-│   │       └── page.tsx
-│   │
-│   ├── prayer/
-│   │   └── page.tsx
-│   │
-│   ├── donate/
-│   │   └── page.tsx
-│   │
-│   └── contact/
-│       └── page.tsx
-│
-├── components/
-│   │
-│   ├── Header.tsx
-│   ├── Footer.tsx
-│   ├── Logo.tsx
-│   ├── Hero.tsx
-│   ├── ScriptureCard.tsx
-│   ├── YoutubeSection.tsx
-│   └── BibleStudySection.tsx
-│
-├── content/
-│   │
-│   ├── blog/
-│   │   └── sermon-on-the-mount.md
-│   │
-│   └── scripture/
-│       └── verses.ts
-│
-├── public/
-│   │
-│   ├── logo.svg
-│   ├── favicon.ico
-│   ├── hero.gif
-│   │
-│   └── images/
-│       ├── bible-study.jpg
-│       ├── ministry-hero.jpg
-│       └── youtube-banner.jpg
-│
-├── lib/
-│   │
-│   ├── seo.ts
-│   ├── metadata.ts
-│   └── constants.ts
-│
-├── styles/
-│   └── animations.css
-│
-├── .env.local
-├── next.config.ts
-├── postcss.config.js
-├── tailwind.config.ts
-├── tsconfig.json
-├── package.json
-└── README.md
-```
+See [deployment instructions](docs/deployment.md). This branch is ready for a Next.js hosting preview after the hosting account/project is connected. This README does not assert that the branch has been deployed or that a domain is configured.
 
----
+No environment variables, paid API services, auth backend, or payment provider are needed for this guest release. Before enabling real integrations, add authenticated server endpoints, encrypted token storage, revocable authorization, provider allowlists, usage controls, and server-owned scores/rewards. Never collect provider keys in browser storage.
 
-## Homepage Sections
+## Audit and next steps
 
-### Hero
+- [Migration decision and source findings](docs/migration-audit.md)
+- [Source file and exact-duplicate inventory](docs/source-inventory.json)
+- [License and source attribution](THIRD_PARTY_NOTICES.md)
 
-- Ministry introduction
-- Join Bible Study button
-- Watch Recordings button
+Next: a canonical, corrected Star Match engine; real accounts and verified rewards; one secure cloud-storage connection; one server-backed AI provider. Payments remain deferred.
 
-### Welcome
+## Ministry links
 
-Overview of Voice of Jesus Ministry and mission.
+- Intended ministry domain: https://voiceofjesusministry.net
+- Recordings: https://youtube.com/@voiceofjesusnetwork
+- Bible study: Thursdays at 8 pm Eastern
+- Community: https://m.me/j/AbbK3MZd144YgdvI/
 
-### Bible Study
-
-Weekly gathering details with Facebook Messenger invite link.
-
-### Featured Teaching
-
-Highlighted ministry article:
-
-- The Sermon on the Mount: Jesus' Blueprint for Kingdom Living
-
-### YouTube
-
-Links visitors to:
-
-```text
-https://youtube.com/@voiceofjesusnetwork
-```
-
-### Scripture of the Week
-
-Featured Bible verse for encouragement and reflection.
-
-### Mission
-
-Highlights the ministry's core focus:
-
-- Biblical Teaching
-- Prayer
-- Discipleship
-- Community
-
-### Call to Action
-
-Encourages visitors to join the Bible study community.
-
----
-
-## SEO
-
-### Homepage Title
-
-```text
-Voice of Jesus Ministry | Bible Study, Christian Teaching & Faith Resources
-```
-
-### Meta Description
-
-```text
-Join Voice of Jesus Ministry for weekly online Bible studies, biblical teaching, prayer, discipleship, and Christian resources designed to help you grow in faith and follow Jesus Christ.
-```
-
-### Keywords
-
-```text
-Voice of Jesus Ministry
-Online Bible Study
-Christian Ministry
-Bible Teaching
-Discipleship
-Prayer Ministry
-Christian Fellowship
-Faith Resources
-Jesus Christ
-Kingdom Living
-```
-
----
-
-## Future Enhancements
-
-### Phase 2
-
-- Prayer request form
-- Newsletter subscriptions
-- Embedded YouTube videos
-- Event calendar
-- Donation system
-
-### Phase 3
-
-- User accounts
-- Bible study archive
-- Discipleship courses
-- Progress tracking
-- Community discussion groups
-
----
-
-## Brand Identity
-
-### Ministry Name
-
-```text
-Voice of Jesus Ministry
-```
-
-### Tagline
-
-```text
-Hear His Voice. Follow His Word.
-```
-
-### Primary Colors
-
-```text
-Navy Blue   #0B3D91
-Gold        #D4AF37
-White       #FFFFFF
-Dark Slate  #111827
-```
-
----
-
-## License
-
-All ministry content, teachings, logos, graphics, and media are property of Voice of Jesus Ministry unless otherwise noted.
-
-Copyright © Voice of Jesus Ministry. All Rights Reserved.
+Application source is GPL-3.0; see `LICENSE` and `THIRD_PARTY_NOTICES.md`. Ministry branding and separately authored content retain their existing ownership.

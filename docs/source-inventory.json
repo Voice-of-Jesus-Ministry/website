@@ -1,0 +1,3289 @@
+{
+  "source": "NicholaiMadias/AmazingGrace",
+  "commit": "c39e707f940225b1b76c555741abee217326a3c7",
+  "fileCount": 612,
+  "totalBytes": 148508424,
+  "duplicateGroups": [
+    {
+      "sha": "c6ad8359573e5a278c49c62f3b13bc1844a87df6",
+      "size": 4223,
+      "paths": [
+        "RepositoryIndexer.ps1",
+        "scripts/RepositoryIndexer.ps1"
+      ]
+    },
+    {
+      "sha": "95ef51c3401b2534b73d4d7427ecd61f44071f87",
+      "size": 5786,
+      "paths": [
+        "SystemHealthAudit.ps1",
+        "scripts/ella-health-audit.ps1"
+      ]
+    },
+    {
+      "sha": "613a4ab59bb548c60602c856e4712f37824e9263",
+      "size": 413,
+      "paths": [
+        "assets/icon-192.png",
+        "public/assets/icon-192.png"
+      ]
+    },
+    {
+      "sha": "0ba712b3065b27fc228c28535c58f6be7635ad72",
+      "size": 1495,
+      "paths": [
+        "assets/icon-512-maskable.png",
+        "public/assets/icon-512-maskable.png"
+      ]
+    },
+    {
+      "sha": "3268ab6d8d0b4bcf9355d2274f0da475f9b47937",
+      "size": 1496,
+      "paths": [
+        "assets/icon-512.png",
+        "public/assets/icon-512.png"
+      ]
+    },
+    {
+      "sha": "44285857fa5a43368f7b50090e2fd78fa7901ef1",
+      "size": 2050202,
+      "paths": [
+        "assets/images/1142-7th-street/01b83773-5e20-4b83-8da4-13719a8e1a5a.jpg",
+        "assets/images/1142-7th-street/image_67217665.JPG",
+        "assets/images/1144-7th-street/image_67217665.JPG"
+      ]
+    },
+    {
+      "sha": "c3c0052577a1584f55d4c6c403acf09ad0c5ed05",
+      "size": 1928267,
+      "paths": [
+        "assets/images/1142-7th-street/1940a088-9629-4609-b018-523611119aa0.jpg",
+        "assets/images/1142-7th-street/image_67145217.JPG",
+        "assets/images/1144-7th-street/image_67145217.JPG"
+      ]
+    },
+    {
+      "sha": "b08af576d419c6614ce5d974bf0a316f953491af",
+      "size": 1859279,
+      "paths": [
+        "assets/images/1142-7th-street/1d5c47cd-7d54-446f-82eb-ea1d7a089b30.jpg",
+        "assets/images/1142-7th-street/image_67172609.JPG",
+        "assets/images/1144-7th-street/image_67172609.JPG"
+      ]
+    },
+    {
+      "sha": "3d5625cffc4ef994d84f7084a42fe78d6139f55e",
+      "size": 1782006,
+      "paths": [
+        "assets/images/1142-7th-street/3c2f9c29-7787-42df-a5ef-57727fd00951.jpg",
+        "assets/images/1142-7th-street/image_67178497.JPG",
+        "assets/images/1144-7th-street/image_67178497.JPG"
+      ]
+    },
+    {
+      "sha": "59dc5534edb4553dc98f0957c1c53ac1122a12ad",
+      "size": 2325998,
+      "paths": [
+        "assets/images/1142-7th-street/57d23a1f-270e-4583-b04b-753286f8dd80.jpg",
+        "assets/images/1144-7th-street/image_67169793.JPG"
+      ]
+    },
+    {
+      "sha": "31924bf29805d42f9fde1c33761c301ccb13c552",
+      "size": 45618,
+      "paths": [
+        "assets/images/1142-7th-street/7a984ab5-2ec7-4211-bc99-ad8eadec9936.jpg",
+        "assets/images/1144-7th-street/IMG_2474.jpg"
+      ]
+    },
+    {
+      "sha": "0ccccc99461d9761fe9b1fedbe5ad61beaa3b2d6",
+      "size": 245747,
+      "paths": [
+        "assets/images/1142-7th-street/889bbd8f-3c61-431a-9da7-d21e0738ec8c.jpg",
+        "assets/images/1142-7th-street/image.jpg",
+        "assets/images/1144-7th-street/image.jpg"
+      ]
+    },
+    {
+      "sha": "98631883308085adc157c563af1be2009b8d2cbf",
+      "size": 2401699,
+      "paths": [
+        "assets/images/1142-7th-street/8dce806b-e552-47b7-bd41-07017c8792ca.jpg",
+        "assets/images/1142-7th-street/image_67125505.JPG",
+        "assets/images/1144-7th-street/image_67125505.JPG"
+      ]
+    },
+    {
+      "sha": "ee8c1cc8ca28165f4e949e1ab72cdffc0132cc62",
+      "size": 42354,
+      "paths": [
+        "assets/images/1142-7th-street/9b5c9a4e-78cf-4b3d-bc58-2e63de8971a7.jpg",
+        "assets/images/1142-7th-street/IMG_2467.jpg",
+        "assets/images/1144-7th-street/IMG_2467.jpg"
+      ]
+    },
+    {
+      "sha": "45b3e1de6371f89fd57d2cffeea594bda8148282",
+      "size": 2098848,
+      "paths": [
+        "assets/images/1142-7th-street/b4ad39de-6b72-45c7-adf3-862acac5e5b5.jpg",
+        "assets/images/1142-7th-street/image_67166209.JPG",
+        "assets/images/1144-7th-street/image_67166209.JPG"
+      ]
+    },
+    {
+      "sha": "2abb7dfe3fc4f493580a8a94d0e74982bf980111",
+      "size": 2187064,
+      "paths": [
+        "assets/images/1142-7th-street/db43caca-6cf5-44db-9977-ea590b416bca.jpg",
+        "assets/images/1142-7th-street/image_67161089.JPG"
+      ]
+    },
+    {
+      "sha": "5580bda04aea169c67519fa49f4196dde55cc0bd",
+      "size": 25769,
+      "paths": [
+        "assets/images/1142-7th-street/eb85c854-4d64-4e6f-a981-632d7af77ca1.jpg",
+        "assets/images/1144-7th-street/IMG_2469.jpg"
+      ]
+    },
+    {
+      "sha": "a99ef523bb9d94ce7c3d3b49c234a5ef5460798a",
+      "size": 1799950,
+      "paths": [
+        "assets/images/1142-7th-street/ff665772-3e1e-45e2-9937-2ba09c754d7b.jpg",
+        "assets/images/1144-7th-street/image_67164161.JPG"
+      ]
+    },
+    {
+      "sha": "4b3b543eba99733bf6d977844a0d67bf1bb52265",
+      "size": 2224821,
+      "paths": [
+        "assets/images/logo.png",
+        "assets/logo.png",
+        "assets/star-match",
+        "logo.png"
+      ]
+    },
+    {
+      "sha": "00298fc7ae100792fcfbbf4f58767e50e8874c41",
+      "size": 273105,
+      "paths": [
+        "assets/vendor/tailwindcss.js",
+        "public/assets/vendor/tailwindcss.js"
+      ]
+    },
+    {
+      "sha": "891f8351cf7e9e3dd03ab9cd48fa42c13326de6c",
+      "size": 1658,
+      "paths": [
+        "daily.js",
+        "public/daily.js"
+      ]
+    },
+    {
+      "sha": "97ed149704f0f8ca38e91e0f59880028d588f4c3",
+      "size": 1035,
+      "paths": [
+        "levelSystem.js",
+        "public/levelSystem.js"
+      ]
+    },
+    {
+      "sha": "46d732b65976f075d2798e7dee3ebdee114c5ba0",
+      "size": 22826,
+      "paths": [
+        "matrix/StoryEngineSynthesis.jsx",
+        "public/assets/StoryEngineSynthesis.jsx"
+      ]
+    },
+    {
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "paths": [
+        "public/assets/audio/.gitkeep",
+        "public/assets/icons/.gitkeep",
+        "public/icons/.gitkeep"
+      ]
+    },
+    {
+      "sha": "db7283b6e656d3024a8641b47355b991f920e5a3",
+      "size": 370,
+      "paths": [
+        "public/assets/svg/stars/star-merope.svg",
+        "public/assets/svg/stars/star-sterope.svg"
+      ]
+    },
+    {
+      "sha": "980231dbd04fdf45b7a27a5bce43f45e2b321df8",
+      "size": 2791,
+      "paths": [
+        "src/arcade/authors-mandate/authors-mandate.css",
+        "src/authors-mandate.css"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": ".dockerignore",
+      "sha": "3dbbcf3e707bbeadeca29139f67694b695a211ab",
+      "size": 316
+    },
+    {
+      "path": ".env.example",
+      "sha": "42a4306010595107e25379c6004ac52fa76c4d72",
+      "size": 193
+    },
+    {
+      "path": ".firebase/hosting.ZGlzdA.cache",
+      "sha": "e5b0b388ccf40eeecadc891c3cf602ad7c53f068",
+      "size": 19490
+    },
+    {
+      "path": ".firebaserc",
+      "sha": "bbc69070b8fcfe16ce8131a7b972218141164586",
+      "size": 58
+    },
+    {
+      "path": ".gemini/config.yaml",
+      "sha": "0253df16181a0a38d557eb6884e560703abe6472",
+      "size": 379
+    },
+    {
+      "path": ".gemini/settings.json",
+      "sha": "80c4d696c7806ef2984de1c36be12580a77d2231",
+      "size": 338
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "sha": "cd53b3da1d439a785ac4e8d3fd621df7bc9bf608",
+      "size": 151
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "sha": "ca4c2bd8a15f49f5f8fb6d0e4ea5cbafe64561ab",
+      "size": 624
+    },
+    {
+      "path": ".github/workflows/system-validation.yml",
+      "sha": "f28c9f64fb2efe3e72747aa318c0246f45c4294c",
+      "size": 3232
+    },
+    {
+      "path": ".gitignore",
+      "sha": "1dba8e124a54e1529bbc738f54e78e78268a3488",
+      "size": 1092
+    },
+    {
+      "path": ".idea/caches/deviceStreaming.xml",
+      "sha": "d469d46ce44158de2439de06139aa2d610b15e87",
+      "size": 88463
+    },
+    {
+      "path": ".idea/libraries/nexus_match_maker.xml",
+      "sha": "5a1f0abc2a06598cd53192afa03e9116d11be6db",
+      "size": 244
+    },
+    {
+      "path": ".idea/libraries/nexus_match_maker2.xml",
+      "sha": "62bea41152d822abc9c28d2140b75ad81e5cb011",
+      "size": 243
+    },
+    {
+      "path": ".idea/misc.xml",
+      "sha": "4b151abfdc54db014d2d998e59cc37fa9cff89c5",
+      "size": 184
+    },
+    {
+      "path": ".idea/workspace.xml",
+      "sha": "4b47f588458622ff03307e014f561909e610bc1b",
+      "size": 2249
+    },
+    {
+      "path": ".nvmrc",
+      "sha": "209e3ef4b6247ce746048d5711befda46206d235",
+      "size": 3
+    },
+    {
+      "path": ".vscode/extensions.json",
+      "sha": "a178127c2711914a284f70dcc93bebb23c5f4a01",
+      "size": 466
+    },
+    {
+      "path": ".vscode/launch.json",
+      "sha": "696894f531def93f815f56fdc364f1bbf0d6103b",
+      "size": 491
+    },
+    {
+      "path": ".vscode/mcp.json",
+      "sha": "e6ad19d39e9d74dc0269590742da74de53f34ac6",
+      "size": 446
+    },
+    {
+      "path": ".vscode/settings.json",
+      "sha": "3e4f43d522fc713cc6c83f01878f70fd24bc13bd",
+      "size": 1488
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha": "72ad4af7d6d01859bce6c759b25199e0344c21f7",
+      "size": 3321
+    },
+    {
+      "path": "CNAME",
+      "sha": "341611f045d3eb43f5cd98862907c80fe5573cf8",
+      "size": 18
+    },
+    {
+      "path": "Dockerfile",
+      "sha": "086f9686506209d98addbc09151961acc99e108d",
+      "size": 132
+    },
+    {
+      "path": "GEMINI.md",
+      "sha": "c2ef923b55f1697ec5f0123a7a990134d9699451",
+      "size": 2220
+    },
+    {
+      "path": "LICENSE",
+      "sha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "size": 35149
+    },
+    {
+      "path": "OST/01_DualToneDawn/01_DualToneDawn_metadata.json",
+      "sha": "615aad9a5f3eedfde8e6b84a71439e46f4239684",
+      "size": 367
+    },
+    {
+      "path": "OST/02_FractalSanctuary/02_FractalSanctuary_metadata.json",
+      "sha": "e7d96d4cf68b61d5d4c0f6b3bfd65f76f852994c",
+      "size": 343
+    },
+    {
+      "path": "OST/03_MirrorPath/03_MirrorPath_metadata.json",
+      "sha": "bc696d621fa4df6d3157fc02a66e39c65d6e74ae",
+      "size": 366
+    },
+    {
+      "path": "OST/04_CollapseEngine/04_CollapseEngine_metadata.json",
+      "sha": "16d71add4c371073f6b4fd7517f9d5b929aa3204",
+      "size": 325
+    },
+    {
+      "path": "OST/05_DualResonance/05_DualResonance_metadata.json",
+      "sha": "dafe558038ac4bb8e8d2261327ac0195bb02b18d",
+      "size": 318
+    },
+    {
+      "path": "OST/06_TwoWorldsOnePeace/06_TwoWorldsOnePeace_metadata.json",
+      "sha": "ceedf5f37c8dc09bc6ff77fe4c093cd50bffbe1f",
+      "size": 334
+    },
+    {
+      "path": "OST/MainTheme_TwoPathsOneLight/MainTheme_TwoPathsOneLight_metadata.json",
+      "sha": "a8c392aa9458d0833b92c7c30feaf68243791e90",
+      "size": 322
+    },
+    {
+      "path": "OST/index.html",
+      "sha": "076785a321fe54b50bb365cffdfae3dcf9396a27",
+      "size": 1712
+    },
+    {
+      "path": "OST/index.json",
+      "sha": "fa1985a433d169fb87c689010009f8108afb31fc",
+      "size": 474
+    },
+    {
+      "path": "PATCH.md",
+      "sha": "88ceae989f25ac7157a4b3113fb51829515a29c5",
+      "size": 3840
+    },
+    {
+      "path": "README.md",
+      "sha": "27d020f18d351192b9a94fed79a88fed5546c15d",
+      "size": 5839
+    },
+    {
+      "path": "RepositoryIndexer.ps1",
+      "sha": "c6ad8359573e5a278c49c62f3b13bc1844a87df6",
+      "size": 4223
+    },
+    {
+      "path": "SECURITY.md",
+      "sha": "67f7441fbacb5b1ed521cc19d64afcfb372dabfb",
+      "size": 444
+    },
+    {
+      "path": "SystemHealthAudit.ps1",
+      "sha": "95ef51c3401b2534b73d4d7427ecd61f44071f87",
+      "size": 5786
+    },
+    {
+      "path": "api/contact.js",
+      "sha": "5c67b216adbd996b1a0d84cd41165e6955b09ed3",
+      "size": 3754
+    },
+    {
+      "path": "api/test-email.js",
+      "sha": "7d2c8412c525646e1f28fbe64edaa46c9234376e",
+      "size": 3136
+    },
+    {
+      "path": "apphosting.yaml",
+      "sha": "7118253a036e7be7cd7c24add3911b17a3d3e002",
+      "size": 50
+    },
+    {
+      "path": "arcade.html",
+      "sha": "2d475271518af713cc9fc93f14589d3dc62c8999",
+      "size": 2246
+    },
+    {
+      "path": "arcade/README.md",
+      "sha": "527522bc6ddc70526997b4bb47a494d5038a528e",
+      "size": 34
+    },
+    {
+      "path": "arcade/bible-study/index.html",
+      "sha": "812c6b2eafb2cc921996347d2eba29c747c29800",
+      "size": 32113
+    },
+    {
+      "path": "arcade/certificates/index.html",
+      "sha": "0692c1931d6bcd2ccc6f98008e34880b52a084e2",
+      "size": 11852
+    },
+    {
+      "path": "arcade/index.html",
+      "sha": "ffc4210cf247eaeb9627136d18e2a66efc4c448b",
+      "size": 23101
+    },
+    {
+      "path": "arcade/js/audio-manager.js",
+      "sha": "add8f5165871947ae2dae906f830525dc3751bb1",
+      "size": 12358
+    },
+    {
+      "path": "arcade/js/boss-ai.js",
+      "sha": "259f045d3689ebca8913b98e53577d6c6a9247dc",
+      "size": 16433
+    },
+    {
+      "path": "arcade/js/boss-mutations.js",
+      "sha": "b30d9c546f95d265008f58af9c86481d8753bba2",
+      "size": 4213
+    },
+    {
+      "path": "arcade/js/cosmetics.js",
+      "sha": "d13dadd3e69e86c5f3b9ba900fb0d7a6b6bebcc2",
+      "size": 3664
+    },
+    {
+      "path": "arcade/js/credits.js",
+      "sha": "3cb214683615d9a116e09f0be768c596694fc57d",
+      "size": 4693
+    },
+    {
+      "path": "arcade/js/elite-animations.js",
+      "sha": "3c440c04d9fec148cc070899ebc0ff32d8800ec0",
+      "size": 3032
+    },
+    {
+      "path": "arcade/js/lore-archive.js",
+      "sha": "b46d5f44722ee33e66c2346a79f8be8950f286c3",
+      "size": 3642
+    },
+    {
+      "path": "arcade/js/lore-files.js",
+      "sha": "630d267335ad798bfadb1f9935ac472b736c7da4",
+      "size": 8350
+    },
+    {
+      "path": "arcade/js/rebellion-core.js",
+      "sha": "0a977466ccfdbd8a92737cf660bb84de72c00215",
+      "size": 4314
+    },
+    {
+      "path": "arcade/lore-archive/lore-archive.css",
+      "sha": "d87793965547e7db60729fa2912f9cc6728ba584",
+      "size": 1211
+    },
+    {
+      "path": "arcade/lore-archive/lore-archive.html",
+      "sha": "497e5be37f8291e5e9fb21fb47fb1815c12ec545",
+      "size": 708
+    },
+    {
+      "path": "arcade/lore/two-blueprints/two-blueprints.html",
+      "sha": "d8d30fd2d7dcc2cddd624d1ed784544e2df1f1f7",
+      "size": 25180
+    },
+    {
+      "path": "arcade/matrix-of-conscience-terminal/index.html",
+      "sha": "d5080bbbd0bf2cb3a32d600b05ef6b682848c526",
+      "size": 13383
+    },
+    {
+      "path": "arcade/matrix-of-conscience/InputHandler.js",
+      "sha": "09543691f4a3ef7b3754e7b4edc844556851dab7",
+      "size": 3788
+    },
+    {
+      "path": "arcade/matrix-of-conscience/LensBoard.jsx",
+      "sha": "a1a18a7a8391d59ba80721443d3999d1f031c83f",
+      "size": 7896
+    },
+    {
+      "path": "arcade/matrix-of-conscience/app.js",
+      "sha": "ddd9f3027ddf5c29a93bc386ba4f8c0c37731e47",
+      "size": 11008
+    },
+    {
+      "path": "arcade/matrix-of-conscience/index.html",
+      "sha": "9b66494c4f3847402bf6d03b72cedd77b88dbbea",
+      "size": 11744
+    },
+    {
+      "path": "arcade/scripts/matrix.js",
+      "sha": "4fc79a0d7505dcff7880ec26643786c76353575e",
+      "size": 2210
+    },
+    {
+      "path": "arcade/seven-stars/index.html",
+      "sha": "07422e70141a6e9bdbc328685c625141aaec639d",
+      "size": 9354
+    },
+    {
+      "path": "arcade/star-matrix/index.html",
+      "sha": "1dff639a15d27594545db3845f9ab81b1e6d4de6",
+      "size": 13552
+    },
+    {
+      "path": "arcade/syndicate-siege/index.html",
+      "sha": "8bfb5e68fe11b1310912d10639a767365738056b",
+      "size": 26329
+    },
+    {
+      "path": "arcade/tower-defense/css/style.css",
+      "sha": "2f7064626f5d99852c428116a0e7156bd9e215e5",
+      "size": 3966
+    },
+    {
+      "path": "arcade/tower-defense/index.html",
+      "sha": "4ccc6a01f4f8943897822f730263878680413c06",
+      "size": 7012
+    },
+    {
+      "path": "arcade/tower-defense/js/game.js",
+      "sha": "e9d922d1ccc6a7bea8f42a13c513847adb83e18f",
+      "size": 26697
+    },
+    {
+      "path": "arcade/trinity/index.html",
+      "sha": "684502e1d8ba484d11bcf3ff74f688852b94bc11",
+      "size": 27770
+    },
+    {
+      "path": "assets/Star 7.png",
+      "sha": "a797ff51046d48f98e2f80926921dbadda6d8775",
+      "size": 1528445
+    },
+    {
+      "path": "assets/audio/badge.mp3",
+      "sha": "32bea9c15453d4c2913a0e13fb7477eb4312d438",
+      "size": 170112
+    },
+    {
+      "path": "assets/audio/course-clear-fanfare.mp3",
+      "sha": "2aa5074fa75a5e392241e673c5262b3f25240515",
+      "size": 167936
+    },
+    {
+      "path": "assets/audio/ending.mp3",
+      "sha": "dd9b4f84eeff1654620c2fa730a3a1f5a8e343a7",
+      "size": 4048896
+    },
+    {
+      "path": "assets/audio/player-down.mp3",
+      "sha": "327a95d20179abdf11df6ad6fb3fd41c55f77491",
+      "size": 96256
+    },
+    {
+      "path": "assets/audio/storm.mp3",
+      "sha": "bc638c1fc4f8a0ed2fb56d5f83f71e776cd72fc5",
+      "size": 129024
+    },
+    {
+      "path": "assets/audio/victory.mp3",
+      "sha": "8c6c44c87ab72fa6b61f04fee4b463aebde5da24",
+      "size": 495616
+    },
+    {
+      "path": "assets/badges.js",
+      "sha": "fc6d23112e767f82aeb004bd84b8084f7672f8b7",
+      "size": 1445
+    },
+    {
+      "path": "assets/css/rebellion-skin.css",
+      "sha": "192f9099b1b5697ed2d4abd2bb6c8cfe812c6954",
+      "size": 2428
+    },
+    {
+      "path": "assets/css/unified-nav.css",
+      "sha": "365cb1d0756e924e5af2e93316d740fdbc3528d7",
+      "size": 3318
+    },
+    {
+      "path": "assets/icon-192.png",
+      "sha": "613a4ab59bb548c60602c856e4712f37824e9263",
+      "size": 413
+    },
+    {
+      "path": "assets/icon-512-maskable.png",
+      "sha": "0ba712b3065b27fc228c28535c58f6be7635ad72",
+      "size": 1495
+    },
+    {
+      "path": "assets/icon-512.png",
+      "sha": "3268ab6d8d0b4bcf9355d2274f0da475f9b47937",
+      "size": 1496
+    },
+    {
+      "path": "assets/images/1142-7th-street/01b83773-5e20-4b83-8da4-13719a8e1a5a.jpg",
+      "sha": "44285857fa5a43368f7b50090e2fd78fa7901ef1",
+      "size": 2050202
+    },
+    {
+      "path": "assets/images/1142-7th-street/1940a088-9629-4609-b018-523611119aa0.jpg",
+      "sha": "c3c0052577a1584f55d4c6c403acf09ad0c5ed05",
+      "size": 1928267
+    },
+    {
+      "path": "assets/images/1142-7th-street/1d5c47cd-7d54-446f-82eb-ea1d7a089b30.jpg",
+      "sha": "b08af576d419c6614ce5d974bf0a316f953491af",
+      "size": 1859279
+    },
+    {
+      "path": "assets/images/1142-7th-street/3c2f9c29-7787-42df-a5ef-57727fd00951.jpg",
+      "sha": "3d5625cffc4ef994d84f7084a42fe78d6139f55e",
+      "size": 1782006
+    },
+    {
+      "path": "assets/images/1142-7th-street/57d23a1f-270e-4583-b04b-753286f8dd80.jpg",
+      "sha": "59dc5534edb4553dc98f0957c1c53ac1122a12ad",
+      "size": 2325998
+    },
+    {
+      "path": "assets/images/1142-7th-street/7a984ab5-2ec7-4211-bc99-ad8eadec9936.jpg",
+      "sha": "31924bf29805d42f9fde1c33761c301ccb13c552",
+      "size": 45618
+    },
+    {
+      "path": "assets/images/1142-7th-street/889bbd8f-3c61-431a-9da7-d21e0738ec8c.jpg",
+      "sha": "0ccccc99461d9761fe9b1fedbe5ad61beaa3b2d6",
+      "size": 245747
+    },
+    {
+      "path": "assets/images/1142-7th-street/8dce806b-e552-47b7-bd41-07017c8792ca.jpg",
+      "sha": "98631883308085adc157c563af1be2009b8d2cbf",
+      "size": 2401699
+    },
+    {
+      "path": "assets/images/1142-7th-street/9b5c9a4e-78cf-4b3d-bc58-2e63de8971a7.jpg",
+      "sha": "ee8c1cc8ca28165f4e949e1ab72cdffc0132cc62",
+      "size": 42354
+    },
+    {
+      "path": "assets/images/1142-7th-street/CIOM8075.JPEG",
+      "sha": "e25789ddaa4280533bed3362a78d59d51a9e0e41",
+      "size": 174178
+    },
+    {
+      "path": "assets/images/1142-7th-street/IMG_2467.jpg",
+      "sha": "ee8c1cc8ca28165f4e949e1ab72cdffc0132cc62",
+      "size": 42354
+    },
+    {
+      "path": "assets/images/1142-7th-street/b4ad39de-6b72-45c7-adf3-862acac5e5b5.jpg",
+      "sha": "45b3e1de6371f89fd57d2cffeea594bda8148282",
+      "size": 2098848
+    },
+    {
+      "path": "assets/images/1142-7th-street/db43caca-6cf5-44db-9977-ea590b416bca.jpg",
+      "sha": "2abb7dfe3fc4f493580a8a94d0e74982bf980111",
+      "size": 2187064
+    },
+    {
+      "path": "assets/images/1142-7th-street/eb85c854-4d64-4e6f-a981-632d7af77ca1.jpg",
+      "sha": "5580bda04aea169c67519fa49f4196dde55cc0bd",
+      "size": 25769
+    },
+    {
+      "path": "assets/images/1142-7th-street/efe304d5-379c-4246-8be6-10aca107e537-VIDEO_HIGHLIGHT.mp4",
+      "sha": "8fff86307883765ddab05c8a7d002735445a9fc5",
+      "size": 21621603
+    },
+    {
+      "path": "assets/images/1142-7th-street/ff665772-3e1e-45e2-9937-2ba09c754d7b.jpg",
+      "sha": "a99ef523bb9d94ce7c3d3b49c234a5ef5460798a",
+      "size": 1799950
+    },
+    {
+      "path": "assets/images/1142-7th-street/image.jpg",
+      "sha": "0ccccc99461d9761fe9b1fedbe5ad61beaa3b2d6",
+      "size": 245747
+    },
+    {
+      "path": "assets/images/1142-7th-street/image_67125505.JPG",
+      "sha": "98631883308085adc157c563af1be2009b8d2cbf",
+      "size": 2401699
+    },
+    {
+      "path": "assets/images/1142-7th-street/image_67145217.JPG",
+      "sha": "c3c0052577a1584f55d4c6c403acf09ad0c5ed05",
+      "size": 1928267
+    },
+    {
+      "path": "assets/images/1142-7th-street/image_67161089.JPG",
+      "sha": "2abb7dfe3fc4f493580a8a94d0e74982bf980111",
+      "size": 2187064
+    },
+    {
+      "path": "assets/images/1142-7th-street/image_67166209.JPG",
+      "sha": "45b3e1de6371f89fd57d2cffeea594bda8148282",
+      "size": 2098848
+    },
+    {
+      "path": "assets/images/1142-7th-street/image_67172609.JPG",
+      "sha": "b08af576d419c6614ce5d974bf0a316f953491af",
+      "size": 1859279
+    },
+    {
+      "path": "assets/images/1142-7th-street/image_67178497.JPG",
+      "sha": "3d5625cffc4ef994d84f7084a42fe78d6139f55e",
+      "size": 1782006
+    },
+    {
+      "path": "assets/images/1142-7th-street/image_67217665.JPG",
+      "sha": "44285857fa5a43368f7b50090e2fd78fa7901ef1",
+      "size": 2050202
+    },
+    {
+      "path": "assets/images/1144-7th-street/1144-7th-street-largo.jpg",
+      "sha": "9db227c837ecf1edf60fe479a662e268ca11dd86",
+      "size": 669548
+    },
+    {
+      "path": "assets/images/1144-7th-street/IMG_2467.jpg",
+      "sha": "ee8c1cc8ca28165f4e949e1ab72cdffc0132cc62",
+      "size": 42354
+    },
+    {
+      "path": "assets/images/1144-7th-street/IMG_2469.jpg",
+      "sha": "5580bda04aea169c67519fa49f4196dde55cc0bd",
+      "size": 25769
+    },
+    {
+      "path": "assets/images/1144-7th-street/IMG_2474.jpg",
+      "sha": "31924bf29805d42f9fde1c33761c301ccb13c552",
+      "size": 45618
+    },
+    {
+      "path": "assets/images/1144-7th-street/IMG_6589.HEIC",
+      "sha": "3c138889425918936f80b5e6765c398165cd3a3a",
+      "size": 1551539
+    },
+    {
+      "path": "assets/images/1144-7th-street/IMG_6590.HEIC",
+      "sha": "101701371d68884e4c7a79c6ab1d94d10a68bef1",
+      "size": 1467676
+    },
+    {
+      "path": "assets/images/1144-7th-street/IMG_6593.HEIC",
+      "sha": "17ab70d419c1e2807e325499e99cb009a85662d9",
+      "size": 1337584
+    },
+    {
+      "path": "assets/images/1144-7th-street/image.jpg",
+      "sha": "0ccccc99461d9761fe9b1fedbe5ad61beaa3b2d6",
+      "size": 245747
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67125505.JPG",
+      "sha": "98631883308085adc157c563af1be2009b8d2cbf",
+      "size": 2401699
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67145217.JPG",
+      "sha": "c3c0052577a1584f55d4c6c403acf09ad0c5ed05",
+      "size": 1928267
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67164161.JPG",
+      "sha": "a99ef523bb9d94ce7c3d3b49c234a5ef5460798a",
+      "size": 1799950
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67166209.JPG",
+      "sha": "45b3e1de6371f89fd57d2cffeea594bda8148282",
+      "size": 2098848
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67169793.JPG",
+      "sha": "59dc5534edb4553dc98f0957c1c53ac1122a12ad",
+      "size": 2325998
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67172609.JPG",
+      "sha": "b08af576d419c6614ce5d974bf0a316f953491af",
+      "size": 1859279
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67178497.JPG",
+      "sha": "3d5625cffc4ef994d84f7084a42fe78d6139f55e",
+      "size": 1782006
+    },
+    {
+      "path": "assets/images/1144-7th-street/image_67217665.JPG",
+      "sha": "44285857fa5a43368f7b50090e2fd78fa7901ef1",
+      "size": 2050202
+    },
+    {
+      "path": "assets/images/926-poinsettia/1000002510.jpg",
+      "sha": "0d046ff69c3c2183f5980efe8fd6c19bd65373cc",
+      "size": 10813
+    },
+    {
+      "path": "assets/images/Game Concept Builder-saved.html",
+      "sha": "418574dff2920707822a20b8c291cb1de366d545",
+      "size": 17393
+    },
+    {
+      "path": "assets/images/logo.png",
+      "sha": "4b3b543eba99733bf6d977844a0d67bf1bb52265",
+      "size": 2224821
+    },
+    {
+      "path": "assets/images/ministry/4e5e0fe6-d627-44b3-9e07-b54346aefe5c.MOV",
+      "sha": "28b9bd1ce08cba72a7603ecf597c5d6ff2baee75",
+      "size": 18295136
+    },
+    {
+      "path": "assets/images/ministry/57466648-ccca-4c11-ae7f-9f61cf8490ea.mp4",
+      "sha": "bbfb5a621404115d9f53f06328bc3355817c9e64",
+      "size": 2676834
+    },
+    {
+      "path": "assets/images/ministry/610a3d0c-68c5-49c7-b124-9727214036c2.mp4",
+      "sha": "19d70aea718329c93628a1ebc0072cd6a04c99d8",
+      "size": 5070650
+    },
+    {
+      "path": "assets/images/ministry/7a65ebf3-4f2b-4fbf-9fd9-174859d47a1f.mp4",
+      "sha": "a06b93a1b574332cddb7ba7998783dab68711677",
+      "size": 4960357
+    },
+    {
+      "path": "assets/images/ministry/82179453-3283-4aae-b0af-6b8caf68eb9b.mp4",
+      "sha": "03abaf53a6aaedfc4bc8753c86ebd4a0b82d16a4",
+      "size": 3242721
+    },
+    {
+      "path": "assets/images/ministry/a2715c20-d753-48bb-9ae5-110f60991b75.mp4",
+      "sha": "5c94730bc97585acd4e8843dadfebee117153ec8",
+      "size": 12643676
+    },
+    {
+      "path": "assets/images/ministry/f848d75b-7d0a-459d-9f8f-4023ac7b4f46.mp4",
+      "sha": "a1395dc80d3590032405b12ce416160780b1b48d",
+      "size": 2653357
+    },
+    {
+      "path": "assets/images/stories/rebellion-2027-hero.png",
+      "sha": "dac0e929c6e6e820fdfb5df3ddeaa6c515953615",
+      "size": 1951844
+    },
+    {
+      "path": "assets/js/nexus-icon.js",
+      "sha": "a91f84a82cd0b64e78ea579379eda0bbb7249976",
+      "size": 1449
+    },
+    {
+      "path": "assets/logo.png",
+      "sha": "4b3b543eba99733bf6d977844a0d67bf1bb52265",
+      "size": 2224821
+    },
+    {
+      "path": "assets/music/m64bomb.mid",
+      "sha": "e7816eda50b048bfaa80d7c10f811fc18b5c2f97",
+      "size": 3246
+    },
+    {
+      "path": "assets/music/m64bowsr.mid",
+      "sha": "24e76586298b811ada0e1780278c235d8360fb83",
+      "size": 22746
+    },
+    {
+      "path": "assets/music/m64crs1.mid",
+      "sha": "8cc7135915032b347a8a1fd4f28be0a750ab7881",
+      "size": 56318
+    },
+    {
+      "path": "assets/music/m64crse1.mid",
+      "sha": "2be8cba81438e6ee94730c5187b25deac5fe850b",
+      "size": 22731
+    },
+    {
+      "path": "assets/music/m64docks.mid",
+      "sha": "4fb31776028ac69cafd95c81bec60223d77d79ef",
+      "size": 31320
+    },
+    {
+      "path": "assets/music/m64endin.mid",
+      "sha": "4aae168eb94afa84df8c2d67200c16a22a78ec8b",
+      "size": 42319
+    },
+    {
+      "path": "assets/music/m64file.mid",
+      "sha": "32291faff3a9f6659270a84138c16804ed08a240",
+      "size": 3607
+    },
+    {
+      "path": "assets/music/m64metal.mid",
+      "sha": "dff0abae2835f2bb599acdca910324a9638d9252",
+      "size": 16731
+    },
+    {
+      "path": "assets/music/m64metlm.mid",
+      "sha": "c3523cb67b2a564aaa322dbaf94812966071a2c1",
+      "size": 15458
+    },
+    {
+      "path": "assets/music/m64slide.mid",
+      "sha": "138c70eb9f2c4f490f0f63f71033236f4f017758",
+      "size": 49390
+    },
+    {
+      "path": "assets/music/m64snow.mid",
+      "sha": "47ed165f0e9fac7959e28f408f7da19bd7c394bc",
+      "size": 21577
+    },
+    {
+      "path": "assets/music/m64vansh.mid",
+      "sha": "11755ae56ef8daa56198d63e2eb2c471f6c45ec0",
+      "size": 12441
+    },
+    {
+      "path": "assets/music/m64water.mid",
+      "sha": "2fb272618b34e6bb49f19101cbcc732b9294e89d",
+      "size": 21429
+    },
+    {
+      "path": "assets/music/m64wings.mid",
+      "sha": "f76afe3c7910cab2dd3971b1568f3bb2c9ea347c",
+      "size": 7896
+    },
+    {
+      "path": "assets/star-match",
+      "sha": "4b3b543eba99733bf6d977844a0d67bf1bb52265",
+      "size": 2224821
+    },
+    {
+      "path": "assets/svg/master-atlas.svg",
+      "sha": "afada56c93cc66102ab245fbae0fc904126f2cad",
+      "size": 9677
+    },
+    {
+      "path": "assets/vendor/hosted-only.js",
+      "sha": "0840c8efdf596711ec58561e08ceb8688d6eff8f",
+      "size": 1420
+    },
+    {
+      "path": "assets/vendor/tailwindcss.js",
+      "sha": "00298fc7ae100792fcfbbf4f58767e50e8874c41",
+      "size": 273105
+    },
+    {
+      "path": "audio-library/index.html",
+      "sha": "1e668135832c194faa7cba41b18381fa02515cea",
+      "size": 6478
+    },
+    {
+      "path": "constellation-nav.css",
+      "sha": "e914a1cb61e7dfda15810667b61a3f247e6987a5",
+      "size": 3882
+    },
+    {
+      "path": "constellation-nav.js",
+      "sha": "1bff8272b9ed7c94a2d20862e03be62fd13be8d2",
+      "size": 2671
+    },
+    {
+      "path": "contact.html",
+      "sha": "e60dcefb0d747e1732ade4041ea73c77f1aadb40",
+      "size": 395
+    },
+    {
+      "path": "contact/index.html",
+      "sha": "509e3d66c9dc1aa435a41712b3253a3568ceedde",
+      "size": 15158
+    },
+    {
+      "path": "credits.js",
+      "sha": "9988b961da9d39499f1b6a4f525a32b51cafa0eb",
+      "size": 2691
+    },
+    {
+      "path": "css/style.css",
+      "sha": "22c56017a770ff67d95cd838aebf080e23ab9f35",
+      "size": 581
+    },
+    {
+      "path": "daily.js",
+      "sha": "891f8351cf7e9e3dd03ab9cd48fa42c13326de6c",
+      "size": 1658
+    },
+    {
+      "path": "data/properties.yml",
+      "sha": "57b9d95cb315e1470cb5503013e39fd84daa0f21",
+      "size": 1079
+    },
+    {
+      "path": "dataconnect/dataconnect.yaml",
+      "sha": "a1c3ad301dded6dcb100ac27f94e31144ec47532",
+      "size": 465
+    },
+    {
+      "path": "dataconnect/example/connector.yaml",
+      "sha": "653822c0643f3668115c77a1c65c54dceae89f5b",
+      "size": 620
+    },
+    {
+      "path": "dataconnect/schema/schema.gql",
+      "sha": "8191b5b0f737422d27211a7f50ca68ffeb35bf28",
+      "size": 893
+    },
+    {
+      "path": "docs/Electra-Content-Engine.md",
+      "sha": "798c9caee881b89f4a9bd4f12a87e674d2a5d1a9",
+      "size": 1034
+    },
+    {
+      "path": "docs/Electra.md",
+      "sha": "efb1ef50cf6640253f34708e74f69ea80c5b375a",
+      "size": 680
+    },
+    {
+      "path": "docs/color-theme-guidelines.md",
+      "sha": "da989aa80baffc4ff99bd591d0d2e5c35de9e9f5",
+      "size": 3914
+    },
+    {
+      "path": "docs/key-master-sync.md",
+      "sha": "376d4dea0d280521508efdd90e0cab0bf9ccecac",
+      "size": 3247
+    },
+    {
+      "path": "docs/lore/appendix-ii.md",
+      "sha": "789ed5cd088e7b15f423987c11ea0f69567464d2",
+      "size": 7694
+    },
+    {
+      "path": "docs/lore/janus-continuum.md",
+      "sha": "76e2907513814c1beb97702c55ba7952db0d18a6",
+      "size": 2775
+    },
+    {
+      "path": "docs/lore/matrix",
+      "sha": "bd801b278a7049091ed29537a7422d25502d726c",
+      "size": 2938
+    },
+    {
+      "path": "docs/lore/two-blueprints",
+      "sha": "3537629d4c9b2e96c1bc15f4790c993fda5aff4d",
+      "size": 3109
+    },
+    {
+      "path": "docs/lore/two-blueprints.md",
+      "sha": "7789299158fb91296452012c348c06ec89a522aa",
+      "size": 1878
+    },
+    {
+      "path": "docs/powershell-toolkit.md",
+      "sha": "7bf0419f80195a9080f3325a17c61e0ab2571e4f",
+      "size": 1575
+    },
+    {
+      "path": "eslint.config.js",
+      "sha": "437b013e76fb595c3e640cdb275a350ef91181cb",
+      "size": 779
+    },
+    {
+      "path": "firebase.json",
+      "sha": "a04ed24efb2690bbadad975b921b1589a573beda",
+      "size": 1730
+    },
+    {
+      "path": "firestore.indexes.json",
+      "sha": "0e6de7cb808cd5b72ac8580bf2ba440e48a50d74",
+      "size": 1238
+    },
+    {
+      "path": "firestore.rules",
+      "sha": "9157a39f0930e65bd415c038dc28bb4e9ed7e645",
+      "size": 1687
+    },
+    {
+      "path": "functions/.eslintrc.js",
+      "sha": "0f8e2a9b7e8531d908ebeba6c72b7246a0c94d92",
+      "size": 699
+    },
+    {
+      "path": "functions/.gitignore",
+      "sha": "9be0f014f4ee173a1493f89483748be60e556b34",
+      "size": 153
+    },
+    {
+      "path": "functions/package-lock.json",
+      "sha": "749a3a98687ae67d3bf4c25380a22a4a71fb6b40",
+      "size": 525923
+    },
+    {
+      "path": "functions/package.json",
+      "sha": "7d74f72f5cf2210a425c4a34c00e7f8b52d2256f",
+      "size": 1100
+    },
+    {
+      "path": "functions/src/genkit-sample.ts",
+      "sha": "353e546f793b6f9e2a00c3c03a685b173240724b",
+      "size": 3437
+    },
+    {
+      "path": "functions/src/index.ts",
+      "sha": "b53528b5609af0315833f5a1c137dff31ae8f7f5",
+      "size": 260
+    },
+    {
+      "path": "functions/tsconfig.dev.json",
+      "sha": "7560eed4ca12649b9490987855d2dd3356eb3661",
+      "size": 42
+    },
+    {
+      "path": "functions/tsconfig.json",
+      "sha": "c5fae1f07f7b8934cfc52027dceca8a2105f7042",
+      "size": 371
+    },
+    {
+      "path": "icon-meanings.md",
+      "sha": "548ea85266c7ec7260a7e96f57a6cff3720b8dfa",
+      "size": 1162
+    },
+    {
+      "path": "index.html",
+      "sha": "bf8f7b4ca6611cceaaa39004d0ed454c1bdf3e9b",
+      "size": 11939
+    },
+    {
+      "path": "js/diagnostics.js",
+      "sha": "c9d4b4a114cac4775423a9d7e26b260d64b214ae",
+      "size": 3541
+    },
+    {
+      "path": "js/firebase.js",
+      "sha": "1ae06f8869d1c4724da8b1b8622cb7725c60f553",
+      "size": 9426
+    },
+    {
+      "path": "js/intelligent-engine.js",
+      "sha": "1c5095c59d73e8d312e71562a36d0e54e8f1f055",
+      "size": 11023
+    },
+    {
+      "path": "js/matchmaker.js",
+      "sha": "2c7abdad21eaa502a97967779db6a94b443f9aa3",
+      "size": 15219
+    },
+    {
+      "path": "js/matrix-progression.js",
+      "sha": "2992d321ea312b48f27614f8341c4ef406af96f2",
+      "size": 2022
+    },
+    {
+      "path": "js/nations.js",
+      "sha": "ec9d3c8c1aa28e84866b2330b6750cea5d48fff8",
+      "size": 9678
+    },
+    {
+      "path": "js/omniversal-runtime.js",
+      "sha": "fbae5272ad42be57d6578b50880a155769966239",
+      "size": 14488
+    },
+    {
+      "path": "js/router.js",
+      "sha": "5a0bf5a35059fc66e77ed7c89f41e2a84d704b26",
+      "size": 4144
+    },
+    {
+      "path": "js/subroutines-shell.js",
+      "sha": "ac4a6595cfa4d6206b8feb4fd0a6a2d78beaae96",
+      "size": 2609
+    },
+    {
+      "path": "js/ui.js",
+      "sha": "71f3c74b46d8a3f221b478813207aaacee019a79",
+      "size": 9587
+    },
+    {
+      "path": "js/unlocks.js",
+      "sha": "96a2c7263c5e9be71747a201e5bc990e489496b8",
+      "size": 4960
+    },
+    {
+      "path": "js/visionforge.js",
+      "sha": "6ed4b7073db62d94f4811cba5c95966d61204926",
+      "size": 6487
+    },
+    {
+      "path": "js/walletManager.js",
+      "sha": "1e86057faa2f969cd4c89c29eb591a1f479c1fde",
+      "size": 1755
+    },
+    {
+      "path": "key-master/.env.example",
+      "sha": "fee014c2201145fe9ac10e7171db200fb6cb4cfd",
+      "size": 410
+    },
+    {
+      "path": "key-master/README.md",
+      "sha": "20e0c50ec126fb2674f1e0eefb64109260a1978f",
+      "size": 3313
+    },
+    {
+      "path": "key-master/index.js",
+      "sha": "a1430528eabde3117505c51ce28c85fb14782a6b",
+      "size": 4725
+    },
+    {
+      "path": "key-master/package.json",
+      "sha": "609fd548f306d3ba3d579ff8ec8fff70df8c12de",
+      "size": 554
+    },
+    {
+      "path": "levelSystem.js",
+      "sha": "97ed149704f0f8ca38e91e0f59880028d588f4c3",
+      "size": 1035
+    },
+    {
+      "path": "library/amazing-grace-covenant/index.html",
+      "sha": "1bfb06cbdbcc418eee2f14d3631a5905af8b6e66",
+      "size": 547
+    },
+    {
+      "path": "library/expose-the-matrix/index.html",
+      "sha": "bda57d77422d0ced10d90d86c341a07aaacf646d",
+      "size": 10383
+    },
+    {
+      "path": "library/github-bypass-setup-app/index.html",
+      "sha": "dd49075d3391278f736c0455e8189fc3b047071b",
+      "size": 506
+    },
+    {
+      "path": "library/index.html",
+      "sha": "09a71d294880620411edc957adceb86219ddb00d",
+      "size": 6116
+    },
+    {
+      "path": "library/noah-and-the-ark/index.html",
+      "sha": "3cd14a36e69d5e8774d11b15a61f14a4cdf322d1",
+      "size": 5921
+    },
+    {
+      "path": "library/our-covenant-of-new-beginnings/index.html",
+      "sha": "615305cf2dd626314d5414ffb88acfe6d04266fc",
+      "size": 8341
+    },
+    {
+      "path": "listings.md",
+      "sha": "80bb43f250010f7b1224502c2d0883bd3165dee1",
+      "size": 2035
+    },
+    {
+      "path": "listings.yml",
+      "sha": "41e1a0fe100cfb6eeae109d3bc788c731141cf0e",
+      "size": 14677
+    },
+    {
+      "path": "logo.png",
+      "sha": "4b3b543eba99733bf6d977844a0d67bf1bb52265",
+      "size": 2224821
+    },
+    {
+      "path": "manifest.json",
+      "sha": "fd52d98e6f92425ed179edd6f137d9221c433ac8",
+      "size": 511
+    },
+    {
+      "path": "matrix-of-conscience/index.html",
+      "sha": "5c0ad651d43858502538643e33e7f387146aa966",
+      "size": 12163
+    },
+    {
+      "path": "matrix.html",
+      "sha": "b5c57179024938498ab82a68df0174005ffad0d1",
+      "size": 19383
+    },
+    {
+      "path": "matrix/.eslintrc.js",
+      "sha": "f4cb76caae28ed85c6d8dbe3bed31f81e3854a4c",
+      "size": 492
+    },
+    {
+      "path": "matrix/.gitignore",
+      "sha": "21ee8d3d1d808957f4d8fd025e6e930164c47962",
+      "size": 21
+    },
+    {
+      "path": "matrix/StoryEngineSynthesis.jsx",
+      "sha": "46d732b65976f075d2798e7dee3ebdee114c5ba0",
+      "size": 22826
+    },
+    {
+      "path": "matrix/index.js",
+      "sha": "d3e93edde8b28cc26f3f38610e6f6607dce87e8d",
+      "size": 872
+    },
+    {
+      "path": "matrix/karmaApply.ts",
+      "sha": "8fb70a1cc730aac3b7661b44e8fdda0208525df8",
+      "size": 2046
+    },
+    {
+      "path": "matrix/karmaEconomy.ts",
+      "sha": "3c9ddfd2bca8c3eb4f68892162e8539e2d9c9bbb",
+      "size": 1105
+    },
+    {
+      "path": "matrix/package-lock.json",
+      "sha": "fdbaf8184ceb7120af4ac22f1eea457b1be14558",
+      "size": 298066
+    },
+    {
+      "path": "matrix/package.json",
+      "sha": "35d3ff5d944b8e8543e9a8c49e5ba9972cec00a4",
+      "size": 638
+    },
+    {
+      "path": "matrix/reputationEngine.ts",
+      "sha": "c3a7a1a2d430b087905108b33ac70e9060f25fc7",
+      "size": 1890
+    },
+    {
+      "path": "matrix/socialGraph.ts",
+      "sha": "78a8ecdd91b2847755e29932b31ee3fc78053592",
+      "size": 1165
+    },
+    {
+      "path": "matrix/types.ts",
+      "sha": "f3a6c2e7a31974dcc1a9eb98abf8375117f9775e",
+      "size": 393
+    },
+    {
+      "path": "ministries/index.html",
+      "sha": "acdd599b10743a1ef97289b8afa82ff9d1745832",
+      "size": 42189
+    },
+    {
+      "path": "ministries/seven-star-canon.html",
+      "sha": "0901cf34934f823a8988c54b6bee117227d1f9ef",
+      "size": 16793
+    },
+    {
+      "path": "ministries/story-nodes.js",
+      "sha": "e168ba99205afa05adec8506098350c02897e208",
+      "size": 8494
+    },
+    {
+      "path": "ministry.html",
+      "sha": "605c5ff7f38fccc3022cc7dd28c7514b7bfa58aa",
+      "size": 13436
+    },
+    {
+      "path": "ministry/bible-journey-data.js",
+      "sha": "15a8aa077cb680e578bdf80dee69bd1eed5db8c2",
+      "size": 4627
+    },
+    {
+      "path": "ministry/bible-journey.html",
+      "sha": "e295c416fef7b4b8ff8aef16531761d9cdeef4cd",
+      "size": 27562
+    },
+    {
+      "path": "ministry/gallery/Matrix-of-conscience2",
+      "sha": "33ae62128d931bd5072fdd20cbf3da4234a43d14",
+      "size": 4073
+    },
+    {
+      "path": "ministry/index.html",
+      "sha": "79a5e2ab212dd0c627eadde300608d189241c838",
+      "size": 13743
+    },
+    {
+      "path": "ministry/the-red-queen.html",
+      "sha": "0c46fc1659d9738ef27550463f7d63771eb71352",
+      "size": 1119
+    },
+    {
+      "path": "mysterious-oppenheimer.iml",
+      "sha": "2080323532a4904d2573e6107c9b761f48d355bf",
+      "size": 575
+    },
+    {
+      "path": "nexus-icon.js",
+      "sha": "3a7463de03716ed0474a3d0e9bad0f5fa4d2b726",
+      "size": 1604
+    },
+    {
+      "path": "package-lock.json",
+      "sha": "bcc17704983256155de6faa1696172a5dbb1c0f5",
+      "size": 122135
+    },
+    {
+      "path": "package.json",
+      "sha": "1c3d77bf9995c397b04cfc7c8d60a73e867943bc",
+      "size": 835
+    },
+    {
+      "path": "privacy.html",
+      "sha": "999ef3a8d901fe06a2ffab0b2932271c9e836032",
+      "size": 2725
+    },
+    {
+      "path": "public/_headers",
+      "sha": "9691b2e07df8dff2a1a0792bfd0be53abe1040f3",
+      "size": 276
+    },
+    {
+      "path": "public/achievementTriggers.js",
+      "sha": "9599ccf0aecdcd5777477104ebbfc2ad30e7000c",
+      "size": 916
+    },
+    {
+      "path": "public/admin/css/matrix.css",
+      "sha": "55024c5b02469c768aba61ec104becdca5d570d6",
+      "size": 12185
+    },
+    {
+      "path": "public/admin/diagnostics.html",
+      "sha": "f71d99b5fc352f23e65540e969fea9d6b517231b",
+      "size": 3388
+    },
+    {
+      "path": "public/admin/forbidden.html",
+      "sha": "ec730fb213b02bd066aca1b36ab8beee3cd39870",
+      "size": 905
+    },
+    {
+      "path": "public/admin/index.html",
+      "sha": "8065a2f54d0aaf0a1783f3cc13a96832f24e7bd9",
+      "size": 2897
+    },
+    {
+      "path": "public/admin/js/admin-keys.js",
+      "sha": "ff9c361404896db456c2c05c504baa9e100231b4",
+      "size": 3678
+    },
+    {
+      "path": "public/admin/js/admin-logs.js",
+      "sha": "086193e9c952b2e5a04e9901aef711b5fbf1f079",
+      "size": 3664
+    },
+    {
+      "path": "public/admin/js/admin-router.js",
+      "sha": "a0268fcc7f42af386d48c5cb8248de0ed27f572b",
+      "size": 4612
+    },
+    {
+      "path": "public/admin/js/admin-tools-assign.js",
+      "sha": "71f0e9b202e81e9b6714470c9289a76cae995afc",
+      "size": 1868
+    },
+    {
+      "path": "public/admin/js/admin-tools-ui.js",
+      "sha": "b9c0a59b2c890e11162fc624623178e0c47a2aa8",
+      "size": 3190
+    },
+    {
+      "path": "public/admin/js/admin-users.js",
+      "sha": "9d26fe8b79798e05c0f361df4ac28ebeed3519a4",
+      "size": 3401
+    },
+    {
+      "path": "public/admin/js/auth.js",
+      "sha": "069518cc3b95d610da90294d139b5af76f40ca90",
+      "size": 7934
+    },
+    {
+      "path": "public/admin/js/diagnostics.js",
+      "sha": "8ae2dbffe2ba3f8eeb247e0a24a8afb228f0cd8f",
+      "size": 3298
+    },
+    {
+      "path": "public/admin/keys.html",
+      "sha": "87ae2858cdc5b0015d171df2baf0389cfe45eb9d",
+      "size": 6306
+    },
+    {
+      "path": "public/admin/login.html",
+      "sha": "18d8ababb329f5b20046148ec30b87cfe0d8ba82",
+      "size": 423
+    },
+    {
+      "path": "public/admin/logs.html",
+      "sha": "ab9c91922024deb0428e7d589730cacf1109371e",
+      "size": 3671
+    },
+    {
+      "path": "public/admin/network-defense.html",
+      "sha": "35ad48bfe61b19c9e6e7d18711684c5b1618241e",
+      "size": 2413
+    },
+    {
+      "path": "public/admin/toolbox.html",
+      "sha": "bc7432dcbe4cef70944c2df2bd0f08dda30031ac",
+      "size": 14576
+    },
+    {
+      "path": "public/admin/users.html",
+      "sha": "101d8002038c6526ef381b5aa5e0e9085d6445b9",
+      "size": 2605
+    },
+    {
+      "path": "public/arcade/app.jsx",
+      "sha": "de8ce2432fbc91f4fde6349ca79bfb5699fa3ebb",
+      "size": 8333
+    },
+    {
+      "path": "public/arcade/downloads/island-hope-quiz.html",
+      "sha": "3e053eaa91bb62118b1f7459cc39e6cac7e7b1ff",
+      "size": 10974
+    },
+    {
+      "path": "public/arcade/downloads/nexus-match-maker.zip",
+      "sha": "872e20b249ea83ac6d74beda316bb80276b19d4d",
+      "size": 36717
+    },
+    {
+      "path": "public/assets/StoryEngineSynthesis.jsx",
+      "sha": "46d732b65976f075d2798e7dee3ebdee114c5ba0",
+      "size": 22826
+    },
+    {
+      "path": "public/assets/audio/.gitkeep",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "public/assets/css/neon-theme.css",
+      "sha": "97454118873a40ad42c803c2cea623bf15251920",
+      "size": 2572
+    },
+    {
+      "path": "public/assets/icon-192.png",
+      "sha": "613a4ab59bb548c60602c856e4712f37824e9263",
+      "size": 413
+    },
+    {
+      "path": "public/assets/icon-512-maskable.png",
+      "sha": "0ba712b3065b27fc228c28535c58f6be7635ad72",
+      "size": 1495
+    },
+    {
+      "path": "public/assets/icon-512.png",
+      "sha": "3268ab6d8d0b4bcf9355d2274f0da475f9b47937",
+      "size": 1496
+    },
+    {
+      "path": "public/assets/icons/.gitkeep",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "public/assets/icons/star_crystal_blue.svg",
+      "sha": "fdf44a833bed54c1a7e0e64d630c0134c03c1d86",
+      "size": 797
+    },
+    {
+      "path": "public/assets/icons/star_crystal_gold.svg",
+      "sha": "52a3784056b9c1886de0e0c0706f7a5e5a6f41b4",
+      "size": 797
+    },
+    {
+      "path": "public/assets/icons/star_crystal_purple.svg",
+      "sha": "4463538668777bf1babb21daede6902c73c40518",
+      "size": 797
+    },
+    {
+      "path": "public/assets/icons/star_crystal_red.svg",
+      "sha": "ead6d1911aa0743714a36450485a4c029ef22228",
+      "size": 795
+    },
+    {
+      "path": "public/assets/images/logo.png",
+      "sha": "e2d86feb8fb12f0cf916c0eb96b8c8248ece9ec2",
+      "size": 59554
+    },
+    {
+      "path": "public/assets/images/supernova_explosion.svg",
+      "sha": "7d5145e54473a580f34ec94e4c44ac479380ed1a",
+      "size": 908
+    },
+    {
+      "path": "public/assets/js/ui-icons.js",
+      "sha": "07f22f25c18fab452bf64efe5e0919f27a35a33b",
+      "size": 3963
+    },
+    {
+      "path": "public/assets/logo.png",
+      "sha": "ff39eb3c5360e962dc334b9a578cc10cfdbfbe47",
+      "size": 8698
+    },
+    {
+      "path": "public/assets/svg/gems-atlas.svg",
+      "sha": "1fa87dc5ed57f74811062aa6a5363c09ffb9430c",
+      "size": 17320
+    },
+    {
+      "path": "public/assets/svg/gems/gem-alcyone.svg",
+      "sha": "38a899e3dd77c8c7149c956b7e50dc61eda569b2",
+      "size": 2295
+    },
+    {
+      "path": "public/assets/svg/gems/gem-celaeno.svg",
+      "sha": "30a56bcdbd5e7b6c2c3347b02e5bfde78aad1d62",
+      "size": 2303
+    },
+    {
+      "path": "public/assets/svg/gems/gem-electra.svg",
+      "sha": "3615cc72776f3e50d5ada4df4a9f48e1d45b9ce3",
+      "size": 1908
+    },
+    {
+      "path": "public/assets/svg/gems/gem-maia.svg",
+      "sha": "860871fa4c0762e5241266547268e1937aa79589",
+      "size": 1949
+    },
+    {
+      "path": "public/assets/svg/gems/gem-merope.svg",
+      "sha": "5a70dcf90d6414df8ca27eb4f87f400923c14375",
+      "size": 1933
+    },
+    {
+      "path": "public/assets/svg/gems/gem-sterope.svg",
+      "sha": "a8c360ef933680109edb9c3b5931d25e50d48242",
+      "size": 2503
+    },
+    {
+      "path": "public/assets/svg/gems/gem-taygete.svg",
+      "sha": "e66ea773e033570bdb0eb0ba0125e7cf3d60f55d",
+      "size": 2399
+    },
+    {
+      "path": "public/assets/svg/gems/stars.css",
+      "sha": "6a66ce22cec59540f00b21373d20d87fa84a9b72",
+      "size": 689
+    },
+    {
+      "path": "public/assets/svg/master-atlas.svg",
+      "sha": "fff34f0346377294d3eee5b62ad9e8a8b4245e36",
+      "size": 4008
+    },
+    {
+      "path": "public/assets/svg/stars/star-alcyone.svg",
+      "sha": "222bb176f989fd2cb34f0a113f87378757474031",
+      "size": 725
+    },
+    {
+      "path": "public/assets/svg/stars/star-celaeno.svg",
+      "sha": "34c9c261451f3d4439c7856745c4f26671d80d1d",
+      "size": 812
+    },
+    {
+      "path": "public/assets/svg/stars/star-electra.svg",
+      "sha": "ddf5ec2cf8c6d863332f4079957d0f9e2eb99baa",
+      "size": 829
+    },
+    {
+      "path": "public/assets/svg/stars/star-maia.svg",
+      "sha": "f203bb44647466be0cb7ce38b108edc03b8350ad",
+      "size": 1244
+    },
+    {
+      "path": "public/assets/svg/stars/star-merope.svg",
+      "sha": "db7283b6e656d3024a8641b47355b991f920e5a3",
+      "size": 370
+    },
+    {
+      "path": "public/assets/svg/stars/star-sterope.svg",
+      "sha": "db7283b6e656d3024a8641b47355b991f920e5a3",
+      "size": 370
+    },
+    {
+      "path": "public/assets/svg/stars/star-taygete.svg",
+      "sha": "7124aacfaa4d11603ce7a216265b4fe137504dad",
+      "size": 882
+    },
+    {
+      "path": "public/assets/vendor/hosted-only.js",
+      "sha": "9f3788018cd52c4c70fb3ead5db31a08ed0e2af6",
+      "size": 1421
+    },
+    {
+      "path": "public/assets/vendor/tailwindcss.js",
+      "sha": "00298fc7ae100792fcfbbf4f58767e50e8874c41",
+      "size": 273105
+    },
+    {
+      "path": "public/badges.js",
+      "sha": "5572d502fbdaedf29f97d85a50500299fa083bbb",
+      "size": 2162
+    },
+    {
+      "path": "public/config/animations/cosmic_star.json",
+      "sha": "7aa33b60a5012056c2eb0113b56ad86494971f2c",
+      "size": 140
+    },
+    {
+      "path": "public/config/animations/gem_star.json",
+      "sha": "3af52f795ce3e1ffeff97f99a133961c6b308d9f",
+      "size": 134
+    },
+    {
+      "path": "public/config/animations/rank_star.json",
+      "sha": "14ebede89ab85fdf82013886a5d1dadc67782eb0",
+      "size": 121
+    },
+    {
+      "path": "public/config/animations/shooting_star.json",
+      "sha": "f16ca8259cb4517d3083357716f202dfa771c56e",
+      "size": 151
+    },
+    {
+      "path": "public/config/animations/supernova.json",
+      "sha": "1692a970852f23a9fa98b4dde9c8edec1f2fd2bf",
+      "size": 166
+    },
+    {
+      "path": "public/daily.js",
+      "sha": "891f8351cf7e9e3dd03ab9cd48fa42c13326de6c",
+      "size": 1658
+    },
+    {
+      "path": "public/firebase.json",
+      "sha": "6c3f6bf284fe5cb69bb1a260b60bfd5af469849d",
+      "size": 170
+    },
+    {
+      "path": "public/fx/canvasParticles2.js",
+      "sha": "3a09cdf30436272ebb94c3ea377a37e15a77a5a4",
+      "size": 2843
+    },
+    {
+      "path": "public/fx/domPulse2.js",
+      "sha": "bd6228e18e0ec32a43e7037246d51fc6ee5baace",
+      "size": 1064
+    },
+    {
+      "path": "public/icons/.gitkeep",
+      "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0
+    },
+    {
+      "path": "public/levelSystem.js",
+      "sha": "97ed149704f0f8ca38e91e0f59880028d588f4c3",
+      "size": 1035
+    },
+    {
+      "path": "public/levels.json",
+      "sha": "db2c5842ef05afa706a4498e6d440da1e63eab33",
+      "size": 448
+    },
+    {
+      "path": "public/loreModule2.js",
+      "sha": "d29494f012a20dff2f45b6346e29732cb0ffcf18",
+      "size": 3878
+    },
+    {
+      "path": "public/manifest.json",
+      "sha": "50a582e930ee560ab113229321ccdf097d43b06b",
+      "size": 848
+    },
+    {
+      "path": "public/ministries/seven-star-canon.html",
+      "sha": "451ae88bc12d4554ded074d1848c234a06a4a3b1",
+      "size": 2680
+    },
+    {
+      "path": "public/progression.js",
+      "sha": "b6b9ab8eea963825b3ca04253063dbceb6e787ef",
+      "size": 1083
+    },
+    {
+      "path": "public/robots.txt",
+      "sha": "e43af34e5d9687f0b6eab1e47ab3c6f122bd3d9d",
+      "size": 72
+    },
+    {
+      "path": "public/sitemap.xml",
+      "sha": "83166c7399a538c0346f9401ae875df6b93653d8",
+      "size": 1605
+    },
+    {
+      "path": "public/star-map.js",
+      "sha": "ac37848747ca4ad0756fcdb07691aaf3213f3e42",
+      "size": 2217
+    },
+    {
+      "path": "public/style2.css",
+      "sha": "aed7ed6a8e8ff3df225d227c26b54d2902736c2d",
+      "size": 7567
+    },
+    {
+      "path": "public/sw-register.js",
+      "sha": "9fcfc3a40de561e19ad05de2473ddc3688762c49",
+      "size": 434
+    },
+    {
+      "path": "public/sw.js",
+      "sha": "683ad49b569bf0c92e709b0c2d9fc06d3b0caa72",
+      "size": 4779
+    },
+    {
+      "path": "scripts/Add-GitHubRulesetBypass.ps1",
+      "sha": "2de41b8c9b03117449190ead793df093362179cd",
+      "size": 1252
+    },
+    {
+      "path": "scripts/AmazingGrace.Tools.psm1",
+      "sha": "ccb9f7c02e4efe8f502409d6cf6d1498b3a72a83",
+      "size": 13655
+    },
+    {
+      "path": "scripts/Ella_Auditor.ps1",
+      "sha": "2f67f1de517231f9574d5cb773e30dc9c5d18e62",
+      "size": 5784
+    },
+    {
+      "path": "scripts/GitHub_token.gs",
+      "sha": "6c0facd1d13c9592e8dcaf72dd8bd992d9101954",
+      "size": 11768
+    },
+    {
+      "path": "scripts/Invoke-AmazingGraceMaintenance.ps1",
+      "sha": "0c8a210b1dd442d7be61a025d593064bd893ee6f",
+      "size": 190
+    },
+    {
+      "path": "scripts/RepositoryIndexer.ps1",
+      "sha": "c6ad8359573e5a278c49c62f3b13bc1844a87df6",
+      "size": 4223
+    },
+    {
+      "path": "scripts/Start-AmazingGracePreview.ps1",
+      "sha": "a8371171797491f51abae8840aab4fc156be0a89",
+      "size": 331
+    },
+    {
+      "path": "scripts/Test-AmazingGrace.ps1",
+      "sha": "8d8313d182e92ba5a1bd8caa4f7802c64a44e77c",
+      "size": 619
+    },
+    {
+      "path": "scripts/deploy.sh",
+      "sha": "5bfc6c3f92bbcd6a01728f2f6c5d965e9028f284",
+      "size": 1563
+    },
+    {
+      "path": "scripts/ella-auto-apply-review.js",
+      "sha": "797f59df59258fbe8ae2af4cb46d76027b0bba34",
+      "size": 5406
+    },
+    {
+      "path": "scripts/ella-health-audit.ps1",
+      "sha": "95ef51c3401b2534b73d4d7427ecd61f44071f87",
+      "size": 5786
+    },
+    {
+      "path": "scripts/ella-merge.js",
+      "sha": "7e3b91a60214ead03cf873d2117155df4a23dc39",
+      "size": 2606
+    },
+    {
+      "path": "scripts/github-ruleset-bypass.js",
+      "sha": "0ed8451a28c15d57dc0032c01175e83ade59dff1",
+      "size": 8934
+    },
+    {
+      "path": "scripts/nexus-audit.ps1",
+      "sha": "867b1cc0b06c881eb2dc9e077a046f2877019728",
+      "size": 3885
+    },
+    {
+      "path": "scripts/sync-property-listing.js",
+      "sha": "7060fdff937ce8ddb988c2229c8970aee3947865",
+      "size": 2696
+    },
+    {
+      "path": "scripts/sync-story-library-from-news.js",
+      "sha": "d8a66c259902147971ad361ea8108c7a12d899bf",
+      "size": 5518
+    },
+    {
+      "path": "scripts/test-vault.ps1",
+      "sha": "1a8b0bb400bb64b5929b2a9b80492b01690fb480",
+      "size": 603
+    },
+    {
+      "path": "scripts/validate-arcade-dist-links.mjs",
+      "sha": "e5474d33a0cf56733ff1ecdd06af1e137549f8f0",
+      "size": 3875
+    },
+    {
+      "path": "scripts/validate-dist-links.mjs",
+      "sha": "e5468e4b4ea708c1c68d9e9a3dcf5b5be6a8741a",
+      "size": 3799
+    },
+    {
+      "path": "scripts/vault-tool.js",
+      "sha": "a9f34134f4de329de530b9d0a6fbcdd2558f2407",
+      "size": 1708
+    },
+    {
+      "path": "server/.env.example",
+      "sha": "d7fea9d6f08004a692623c4e4b1b058089122dcd",
+      "size": 433
+    },
+    {
+      "path": "server/admin-auth.js",
+      "sha": "6162a866584ef922caa277e1a5d15225cbcba729",
+      "size": 1859
+    },
+    {
+      "path": "server/admin-store.js",
+      "sha": "29a470c99b87f39dd8758d4c927eb69725ac3661",
+      "size": 1169
+    },
+    {
+      "path": "server/mail.js",
+      "sha": "776a53029b02b10b80d87c270519971e3affecca",
+      "size": 8079
+    },
+    {
+      "path": "server/package-lock.json",
+      "sha": "46cb13300ddd94bb12eeb66a7b2235e7af7963df",
+      "size": 31192
+    },
+    {
+      "path": "server/package.json",
+      "sha": "abd22ebe498e09f5dc2d0c0cfc2613fc94a7a888",
+      "size": 286
+    },
+    {
+      "path": "server/railway.toml",
+      "sha": "597856d1960368597bc5b0768ac8a6e4c951044a",
+      "size": 182
+    },
+    {
+      "path": "src/App.jsx",
+      "sha": "cdb0e0637626c0a0086dc336082284ad8a8f2017",
+      "size": 10657
+    },
+    {
+      "path": "src/AuthorsMandate.jsx",
+      "sha": "306d869fbd21c314b4e9c5c2e3c0423f478306f4",
+      "size": 9147
+    },
+    {
+      "path": "src/MatrixApp.jsx",
+      "sha": "928069f803ff6c64bd58c68b4e59dc76b8e80b10",
+      "size": 3019
+    },
+    {
+      "path": "src/aeon/AeonEngineScreen.jsx",
+      "sha": "cafa3c42147192d62c6bd9038ee599940c3bd6d0",
+      "size": 11083
+    },
+    {
+      "path": "src/aeon/generateDestinyPath.js",
+      "sha": "5af7a300b97efe13b5c84c98f4b779a5dc6851a5",
+      "size": 416
+    },
+    {
+      "path": "src/aeon/generateResonanceEvent.js",
+      "sha": "2649a815d7664f34e0b488aa07a40b1a7b7bcd23",
+      "size": 505
+    },
+    {
+      "path": "src/aeon/useAeonEngine.js",
+      "sha": "02f1f4e414d052b946cd613d6e4df0560b9b08e3",
+      "size": 6577
+    },
+    {
+      "path": "src/arcade-main.jsx",
+      "sha": "4ffd826124ade35b9ce124e74b45e20e0e23eb22",
+      "size": 41
+    },
+    {
+      "path": "src/arcade-main.module.css",
+      "sha": "2bdc12cbf4ee5926b221c4512a22cd8ebac03cda",
+      "size": 3207
+    },
+    {
+      "path": "src/arcade-main.tsx",
+      "sha": "e411fc9c16962cc52b92825797a76e4610124325",
+      "size": 4823
+    },
+    {
+      "path": "src/arcade/authors-mandate/authors-mandate.css",
+      "sha": "980231dbd04fdf45b7a27a5bce43f45e2b321df8",
+      "size": 2791
+    },
+    {
+      "path": "src/arcade/main.jsx",
+      "sha": "6b9e8e718b988363849a31a7bffed6285ce2953e",
+      "size": 2534
+    },
+    {
+      "path": "src/arcade/matrix-of-conscience/MatrixOfConscience.jsx",
+      "sha": "5e5771287be4501743266bce7d85a3b1747526b3",
+      "size": 16674
+    },
+    {
+      "path": "src/arcade/matrix-of-conscience/matrix-of-conscience.css",
+      "sha": "64cade65c16ca83915e0c11860bf106965620eeb",
+      "size": 8229
+    },
+    {
+      "path": "src/arcade/matrix-of-conscience/matrix.js",
+      "sha": "08849f6df480293b79b4d3dc2433f3c8627cf21f",
+      "size": 2649
+    },
+    {
+      "path": "src/arcade/matrix-of-conscience/trialEngine.js",
+      "sha": "40d6ae38cafbf6fcf5c3d253f8d3f1bcc9358705",
+      "size": 1726
+    },
+    {
+      "path": "src/arcade/puzzle/StarMatchEngine.js",
+      "sha": "d11300ac70b6a5f18cac82a572cae8ad3296098e",
+      "size": 4883
+    },
+    {
+      "path": "src/arcade/quick-click/QuickClickApp.tsx",
+      "sha": "6bcd47bf27137fbc1e3d5245d95e2be09916ce16",
+      "size": 22550
+    },
+    {
+      "path": "src/arcade/quick-click/gameLogic.ts",
+      "sha": "d26a6c9b26b921764002c9985969a9d772de00a1",
+      "size": 756
+    },
+    {
+      "path": "src/arcade/quick-click/main.tsx",
+      "sha": "f22aba709226da2b49d47316e34442e1a1a1bd50",
+      "size": 350
+    },
+    {
+      "path": "src/arcade/star-match/gameLoop.js",
+      "sha": "6dfff2e086b2ea8428b242becbfdc26553c6872b",
+      "size": 1675
+    },
+    {
+      "path": "src/arcade/star-match/match3.css",
+      "sha": "181000abb71f2aa480d1cd656293cb9a5f412c0c",
+      "size": 1201
+    },
+    {
+      "path": "src/arcade/star-match/starMatchEngine.js",
+      "sha": "083353558bc07962ad6eceb1fb1038341bf951b6",
+      "size": 5265
+    },
+    {
+      "path": "src/arcade/star-matrix/constellationState.js",
+      "sha": "3e11a22048773677de16855b66121e4da8c7ce04",
+      "size": 3285
+    },
+    {
+      "path": "src/ascension/AscensionHistoryPanel.jsx",
+      "sha": "69eb53bb86223046c0e714857a734744e1b35820",
+      "size": 675
+    },
+    {
+      "path": "src/ascension/AscensionScreen.jsx",
+      "sha": "30efacaa625d25c8134ce8719e8e818f15f0bdba",
+      "size": 6962
+    },
+    {
+      "path": "src/ascension/CelestialLadderScreen.jsx",
+      "sha": "496d12bd9eda81fc9ad3768836688d109280db07",
+      "size": 4883
+    },
+    {
+      "path": "src/ascension/LadderNode.jsx",
+      "sha": "1c4214c44148bc13b6c5e11dfd206673b26a64d9",
+      "size": 286
+    },
+    {
+      "path": "src/ascension/PreOriginField.jsx",
+      "sha": "d0f95d78fcce85ccb910263e3a3e8c16c4f0aad8",
+      "size": 1943
+    },
+    {
+      "path": "src/ascension/UnutterableConstant.jsx",
+      "sha": "a70095ea1a53f667b7583267024d149e924435ef",
+      "size": 1131
+    },
+    {
+      "path": "src/ascension/generateRealmName.js",
+      "sha": "937a83c006494fea9c56f7eef5571d639361ce78",
+      "size": 397
+    },
+    {
+      "path": "src/ascension/useAscensionEngine.js",
+      "sha": "76fbb1ee6c5d3515f75a74a93ce761c255bfb334",
+      "size": 2062
+    },
+    {
+      "path": "src/ascension3d/CelestialLadder3D.jsx",
+      "sha": "d6df2c5bfc026c164907d88601b9e44569e19fbf",
+      "size": 6469
+    },
+    {
+      "path": "src/ascension3d/HypercubeGlyph.jsx",
+      "sha": "4a84f192ba456242a82c63dacb4a60046c99da2f",
+      "size": 2011
+    },
+    {
+      "path": "src/ascension3d/LadderNode3D.jsx",
+      "sha": "4fea84b2a50ba7d68a9ebc4f7e93d79d9403d974",
+      "size": 383
+    },
+    {
+      "path": "src/authors-mandate.css",
+      "sha": "980231dbd04fdf45b7a27a5bce43f45e2b321df8",
+      "size": 2791
+    },
+    {
+      "path": "src/book/BookOfLifeScreen.jsx",
+      "sha": "d1a20eab508c8319ad796d4284fdcf41c25eb06b",
+      "size": 10420
+    },
+    {
+      "path": "src/book/BookOfWorksPanel.jsx",
+      "sha": "7839c8cf9eb748ebd74936709e4746c9a04160eb",
+      "size": 2530
+    },
+    {
+      "path": "src/book/EmpyreanSphereScreen.jsx",
+      "sha": "32d67bd58d3fa62b2ef059a3507c689cd44f948b",
+      "size": 16470
+    },
+    {
+      "path": "src/book/OriginPointScreen.jsx",
+      "sha": "c8b1a02738b0806ca056b65ddef36e32dacd8043",
+      "size": 9480
+    },
+    {
+      "path": "src/book/useBookOfWorks.js",
+      "sha": "8148f18bc47bc2052a7de652233c49b448d2af86",
+      "size": 1221
+    },
+    {
+      "path": "src/choir/useInnerCourtChoir.js",
+      "sha": "683e9f4318ed0e19737f53075950284faa141b97",
+      "size": 1113
+    },
+    {
+      "path": "src/components/AuthorsMandate.jsx",
+      "sha": "25fd8ab06dc5da77585603ff14125c70db796511",
+      "size": 7505
+    },
+    {
+      "path": "src/components/ListingSearch.tsx",
+      "sha": "bdcaecadcf40211c6732c1049195ee4cc7aa0d73",
+      "size": 6351
+    },
+    {
+      "path": "src/components/MatrixOfConscience.tsx",
+      "sha": "9fcedba390167eef548c892849542d0e809a1f1c",
+      "size": 27138
+    },
+    {
+      "path": "src/components/authors-mandate.css",
+      "sha": "8cae383e9eb990148614c6320edee0d1909460ef",
+      "size": 2942
+    },
+    {
+      "path": "src/components/matrix-of-conscience.css",
+      "sha": "746054dd48e9250bd686e3043ca0ed80841fc8ab",
+      "size": 5495
+    },
+    {
+      "path": "src/conscience/ConscienceCalibrationOverlay.jsx",
+      "sha": "5d1ee970b7f1034962783e882e341102305841f5",
+      "size": 1600
+    },
+    {
+      "path": "src/conscience/useConscienceCalibration.js",
+      "sha": "69c16e920b0cfdcb09d247c75a82c72f5b1597d0",
+      "size": 913
+    },
+    {
+      "path": "src/conscience/useConscienceHUD.jsx",
+      "sha": "c7151888f2df7391d7d26d3972287eba9b04fbda",
+      "size": 1989
+    },
+    {
+      "path": "src/context/FamilyStatsContext.tsx",
+      "sha": "2aa75332703d82d027164e4219e20c29884100c3",
+      "size": 711
+    },
+    {
+      "path": "src/core/eventBus.js",
+      "sha": "4279028133e0275e19a303fa53f4ff5406aad13f",
+      "size": 509
+    },
+    {
+      "path": "src/data/listings.ts",
+      "sha": "4d8bfca420d856e6ff5beb531b22535d48a5bb28",
+      "size": 3529
+    },
+    {
+      "path": "src/dual-ascent/DualAscentContext.jsx",
+      "sha": "b84f19d6bfa406448de4cafad405612f958dd5f9",
+      "size": 1363
+    },
+    {
+      "path": "src/dual-ascent/DualAscentData.js",
+      "sha": "8a1f91e60bf86ef4955f2f5ced97216c23cdce4c",
+      "size": 3864
+    },
+    {
+      "path": "src/dual-ascent/MirrorLayerScreen.jsx",
+      "sha": "c9c35733bf3f09b7f60f7930b347fa9f7997f0d6",
+      "size": 1530
+    },
+    {
+      "path": "src/dual-ascent/SheilaPathScreen.jsx",
+      "sha": "ca9ef9dbc2b3201a36f506b1df637bf1d087ed20",
+      "size": 1535
+    },
+    {
+      "path": "src/dual-ascent/YiPathScreen.jsx",
+      "sha": "35ddd8dfbde7a41a61aa75ca7e6c2184a3799107",
+      "size": 2049
+    },
+    {
+      "path": "src/dual-ascent/dual-ascent.css",
+      "sha": "9880af34a079bd3a41aa7e1ec3509833407060fb",
+      "size": 3420
+    },
+    {
+      "path": "src/economy/matrixEconomy.ts",
+      "sha": "2e1ad6c5bdd1df209d8ce713de49ef187b55d646",
+      "size": 11014
+    },
+    {
+      "path": "src/engine/match-maker.js",
+      "sha": "15d1ab512c8d1b4d3f357ec0c38366c5c929b6c9",
+      "size": 12505
+    },
+    {
+      "path": "src/firebase-config.ts",
+      "sha": "61be34fd4cefa17ba4eead1363e88430badb2599",
+      "size": 327
+    },
+    {
+      "path": "src/firebase/app.ts",
+      "sha": "41c83400b542aa55724c479c7e30a89301d8901b",
+      "size": 1994
+    },
+    {
+      "path": "src/firebase/nexus-firestore.ts",
+      "sha": "a3fae5375c726452d622c46903d96ba5ac683e0c",
+      "size": 2592
+    },
+    {
+      "path": "src/firebase/path.ts",
+      "sha": "230fda033b3efdb522befa9f1f8d2d97c3cc1027",
+      "size": 268
+    },
+    {
+      "path": "src/fx/NarrativeFX.js",
+      "sha": "b59a0e59cc5bba489b2c562df5c0296d615b4651",
+      "size": 4083
+    },
+    {
+      "path": "src/fx/scarletLattice.ts",
+      "sha": "2edd469e8edbc26d7e92367e1144caa768ba0a13",
+      "size": 5956
+    },
+    {
+      "path": "src/holy/HolyEncounterScreen.jsx",
+      "sha": "aed9106b221d002b50dec50176e940a97d20662d",
+      "size": 3860
+    },
+    {
+      "path": "src/holy/getHolyEncounter.js",
+      "sha": "7467e1546a478cac7781fd6b390a2f88e4ddc300",
+      "size": 700
+    },
+    {
+      "path": "src/holy/holyEncounterScript.js",
+      "sha": "e66665328d435396b00857a3f71fc931b368563d",
+      "size": 1186
+    },
+    {
+      "path": "src/holy/useHolyEncounterEngine.js",
+      "sha": "85c51cc6e9c3abe0110ebf6d64e8ebe021418e99",
+      "size": 1490
+    },
+    {
+      "path": "src/hooks/useFamilyStats.ts",
+      "sha": "3b773feea20893030da52163288aeeb2a852110b",
+      "size": 2971
+    },
+    {
+      "path": "src/hud/HUD.jsx",
+      "sha": "62449ed48696a24990cfc3a7a69ac0a2faeb3cb0",
+      "size": 900
+    },
+    {
+      "path": "src/hud/HUDContext.jsx",
+      "sha": "08b90747ebf07d50c16b39a403448da3d73d4035",
+      "size": 2571
+    },
+    {
+      "path": "src/hud/overlays/CombatOverlay.jsx",
+      "sha": "acc36dcf3e01882ca448906bf9a002c27cb2dcb0",
+      "size": 297
+    },
+    {
+      "path": "src/hud/overlays/DialogueOverlay.jsx",
+      "sha": "6268946cab64d9aaed13da7302893415ddeaa456",
+      "size": 297
+    },
+    {
+      "path": "src/hud/overlays/ExternalOverlayHost.jsx",
+      "sha": "64f9f45dd80ab7d2a083fb607a25720ea292980b",
+      "size": 369
+    },
+    {
+      "path": "src/hud/overlays/Match3Overlay.jsx",
+      "sha": "8aa4ab169ca5d064787dd2d3345707c8a91a5b52",
+      "size": 323
+    },
+    {
+      "path": "src/hud/overlays/OverlayRenderer.jsx",
+      "sha": "c11f3c8c63b508466c92268f781fb617d3f22d68",
+      "size": 498
+    },
+    {
+      "path": "src/hud/panels/ModulePanel.jsx",
+      "sha": "206fdc02d189547b64e4c82efb54dd3503c29033",
+      "size": 763
+    },
+    {
+      "path": "src/hud/panels/NotificationsPanel.jsx",
+      "sha": "30d089e2f8cce1e0a9a12ad92f927c6cde7b75fc",
+      "size": 365
+    },
+    {
+      "path": "src/hud/panels/PlayerPanel.jsx",
+      "sha": "6675540ac8bd4598acdf694cef7bc039f0022062",
+      "size": 537
+    },
+    {
+      "path": "src/hud/panels/SystemPanel.jsx",
+      "sha": "cf7a2701627f9c1c82206555ba15c3cfb1c8d9a5",
+      "size": 410
+    },
+    {
+      "path": "src/hud/panels/WorldPanel.jsx",
+      "sha": "c1baa0169684a131c70442ef386227b9ed54c5c1",
+      "size": 390
+    },
+    {
+      "path": "src/hud/theme/animations.css",
+      "sha": "24516c708e1b6ba1f2f5e7e1a911a89ef81754f0",
+      "size": 731
+    },
+    {
+      "path": "src/hud/theme/hud.css",
+      "sha": "82473a2cafeadfdfbb66cf695cc7ec0f8fe5991b",
+      "size": 34058
+    },
+    {
+      "path": "src/hud/theme/layout.css",
+      "sha": "7ae01ca5a47254fee6c81608270a6fca0131898a",
+      "size": 791
+    },
+    {
+      "path": "src/hud/theme/tokens.css",
+      "sha": "1ab1c186aa15d957e9bbccce8e6aefacbb9842ad",
+      "size": 930
+    },
+    {
+      "path": "src/hud/useHUDEventBindings.jsx",
+      "sha": "f47dc873bda94ad252c7fc222379cbef7a2d098f",
+      "size": 940
+    },
+    {
+      "path": "src/inner-court/InnerCourtScreen.jsx",
+      "sha": "49c14fad5498ff4d2554533e18f3b084e6f3e10a",
+      "size": 5622
+    },
+    {
+      "path": "src/inner-court/RitualsPanel.jsx",
+      "sha": "1987269add996264d2c7d963cf083294f1131bad",
+      "size": 3277
+    },
+    {
+      "path": "src/inner-court/rituals.json",
+      "sha": "98c6e65fc950befba7441d50929ec277ef20180d",
+      "size": 452
+    },
+    {
+      "path": "src/inner-court/useRituals.js",
+      "sha": "5919028ecf8c7a06f76928c0f754882542732e7e",
+      "size": 983
+    },
+    {
+      "path": "src/listings-main.tsx",
+      "sha": "a39eb2bba133ae8c369b7cd9b4ea8c94ca7458ea",
+      "size": 257
+    },
+    {
+      "path": "src/lore/loreCodex.js",
+      "sha": "a2a0550b72ecda45eba59ec7c96a82e407d3983e",
+      "size": 4824
+    },
+    {
+      "path": "src/main.jsx",
+      "sha": "19f05db5590c2a1cdaf5aec42e82bfbba9cfa5f8",
+      "size": 610
+    },
+    {
+      "path": "src/migrations/migrateLegacyState.js",
+      "sha": "9fe2e3b0bb744826494a4d4b95ae8a2fae1e5dff",
+      "size": 570
+    },
+    {
+      "path": "src/modules/bible-study/BibleStudyOverlay.jsx",
+      "sha": "849497caae689d9244598dd16b7533d87de97d13",
+      "size": 823
+    },
+    {
+      "path": "src/modules/bible-study/bible-study.sys",
+      "sha": "3c879b016d7499e6e3b01d9f36510c5d4f901168",
+      "size": 93
+    },
+    {
+      "path": "src/modules/bible-study/manifest.yaml",
+      "sha": "98ead816bd98272d627666684aca5b8314089e32",
+      "size": 337
+    },
+    {
+      "path": "src/modules/bible-study/questions.json",
+      "sha": "e0b9e288437f12ec8f99acf6d5fc6d783b90339c",
+      "size": 638
+    },
+    {
+      "path": "src/modules/bible-study/useBibleStudyEngine.js",
+      "sha": "677677fda0536edf235a3fff63b15b1ffc5d769b",
+      "size": 914
+    },
+    {
+      "path": "src/modules/bible-study/useBibleStudyHUD.jsx",
+      "sha": "af950c06d7fe19231341a472cf9c6c50fe6761e4",
+      "size": 1942
+    },
+    {
+      "path": "src/modules/seven-lamps/SevenLampsOverlay.jsx",
+      "sha": "d3cb10b789053caff010720c35ba55fe44268bd4",
+      "size": 1127
+    },
+    {
+      "path": "src/modules/seven-lamps/lamps.json",
+      "sha": "4e4245e991825faa977b3c1c741b2a249c57b6cd",
+      "size": 553
+    },
+    {
+      "path": "src/modules/seven-lamps/useSevenLampsHUD.jsx",
+      "sha": "86de1d980c52ce1abc823fe62d40c7cc48b271c8",
+      "size": 1412
+    },
+    {
+      "path": "src/modules/seven-stars/SevenStarsConstellation.jsx",
+      "sha": "023409d47077848254bb15c4a20ca7d04e6f0ef8",
+      "size": 653
+    },
+    {
+      "path": "src/modules/seven-stars/SevenStarsOverlay.jsx",
+      "sha": "f42a8efae243bfd9dea5081faa28a05fb510e3fb",
+      "size": 633
+    },
+    {
+      "path": "src/modules/seven-stars/lore.json",
+      "sha": "a583669c208f996f2d9ca5dab384ad40f54fabad",
+      "size": 1541
+    },
+    {
+      "path": "src/modules/seven-stars/manifest.yaml",
+      "sha": "32da44d194f15fdf94613110e470dde792780121",
+      "size": 380
+    },
+    {
+      "path": "src/modules/seven-stars/seven-stars.sys",
+      "sha": "4e16486f157b172c94f2dddb1f0e14fa11f9acfd",
+      "size": 93
+    },
+    {
+      "path": "src/modules/seven-stars/useSevenStarsHUD.jsx",
+      "sha": "2f2c4870b702a0516c92fd0ce636806db1af5894",
+      "size": 1508
+    },
+    {
+      "path": "src/modules/seven-stars/useSevenStarsLore.js",
+      "sha": "02640d13655442261cca79e6718ab8290a168d58",
+      "size": 335
+    },
+    {
+      "path": "src/modules/seven-stars/useSevenStarsProgress.js",
+      "sha": "3093da80691359e46ea6557914eafa9d940dc331",
+      "size": 1314
+    },
+    {
+      "path": "src/modules/tower-defense/TowerDefenseOverlay.jsx",
+      "sha": "c4fc30844824995c14019fae777391bea08001b3",
+      "size": 646
+    },
+    {
+      "path": "src/modules/tower-defense/useTowerDefenseHUD.jsx",
+      "sha": "47682168eef24e28af74af5ed96a6254aa8bc31d",
+      "size": 807
+    },
+    {
+      "path": "src/oracle-chamber/VisionCodexScreen.jsx",
+      "sha": "34028f76c93baaf11b8ef5fd39b39218265ff53b",
+      "size": 4127
+    },
+    {
+      "path": "src/oracle-chamber/getPropheticVision.js",
+      "sha": "5780c34416b5a665bacd7aefb4964d3508bb47a7",
+      "size": 1961
+    },
+    {
+      "path": "src/oracle-chamber/useVisionCodex.js",
+      "sha": "93762bf0b8e1dafea61d19907bc6e2f36ed5ce5d",
+      "size": 890
+    },
+    {
+      "path": "src/oracle/OraclePanel.jsx",
+      "sha": "d0fcdf3a6d207c98baa2323a4c4b60927b0bf959",
+      "size": 666
+    },
+    {
+      "path": "src/oracle/getOracleTone.js",
+      "sha": "20ee01bab390a2782b70cd9c12a10f7de0a2da30",
+      "size": 321
+    },
+    {
+      "path": "src/oracle/oracleMessages.js",
+      "sha": "f9f2e7c9478d955f2f799d25f81d875a700bcc2e",
+      "size": 773
+    },
+    {
+      "path": "src/oracle/useOracle.js",
+      "sha": "822808b70ca6a19fa40e632c5bbeefc17ced4d11",
+      "size": 996
+    },
+    {
+      "path": "src/router/useNexusRouter.js",
+      "sha": "a1f9176b8d76e9cbac8ee77608fa652dd74857c5",
+      "size": 302
+    },
+    {
+      "path": "src/scroll/ScrollOfDestinyPanel.jsx",
+      "sha": "6179471f05b4e0c7403ff8f814e4370c71369f3b",
+      "size": 5599
+    },
+    {
+      "path": "src/sound/NexusSoundFX.js",
+      "sha": "2b056fa4a0ef4b741ed6181922bb1fbdc2da5995",
+      "size": 3383
+    },
+    {
+      "path": "src/spiritual/SpiritualFormationPanel.jsx",
+      "sha": "bbc6a666403d2d3d47142fcf38ed58b7cc7113ef",
+      "size": 2725
+    },
+    {
+      "path": "src/stars/StarTile.js",
+      "sha": "ca35ca6285a2e050595416bcb4d07b14e07f29f0",
+      "size": 1346
+    },
+    {
+      "path": "src/stars/starLore.json",
+      "sha": "6dbfb49ddf6606dcf8bc59d99c945410faf6567a",
+      "size": 3594
+    },
+    {
+      "path": "src/stars/starMap.js",
+      "sha": "e46e5db884f1547b453e411ddcb51b0c187a1c1f",
+      "size": 1773
+    },
+    {
+      "path": "src/stars/starMapRenderer.js",
+      "sha": "92e27408f440fac146d4a6c865cc28e550b2cd73",
+      "size": 3139
+    },
+    {
+      "path": "src/stars/starTiles.css",
+      "sha": "8d01b69a5164150b68c96ad5c1c78fd3a0caec2d",
+      "size": 9111
+    },
+    {
+      "path": "src/stars/starUiKit.js",
+      "sha": "9e83d77481ac087004c263bb6f1d603d03a8b3fa",
+      "size": 2026
+    },
+    {
+      "path": "src/story-navigator.js",
+      "sha": "42d68a0d6e70ae012dd52f0dbe0729472ff3560b",
+      "size": 1449
+    },
+    {
+      "path": "src/temple-guardians/GuardianScreen.jsx",
+      "sha": "472fc26ed351452764aa675613f51be073450127",
+      "size": 4692
+    },
+    {
+      "path": "src/temple-guardians/getGuardianChallenge.js",
+      "sha": "58ead3855a28580e1f8ad83d640f4ebee4a8881c",
+      "size": 932
+    },
+    {
+      "path": "src/temple/GuardianNode.jsx",
+      "sha": "15c9c4a710b05c56b7d41fa2d97eeac7ec154d29",
+      "size": 299
+    },
+    {
+      "path": "src/temple/OracleWhispers.jsx",
+      "sha": "614f8d8bf5a93b3d394742d875c9616224815d9f",
+      "size": 159
+    },
+    {
+      "path": "src/temple/TempleNavigationScreen.jsx",
+      "sha": "c5466ad56882f2087e844aca67bfd07844a6468f",
+      "size": 15662
+    },
+    {
+      "path": "src/temple/TempleNode.jsx",
+      "sha": "350129dba2dc5f3b4f5480cb20d2b6fe5ec863a8",
+      "size": 4002
+    },
+    {
+      "path": "src/temple/TemplePathway.jsx",
+      "sha": "a02078000aa332390bae240319f46e1fd5747c5f",
+      "size": 165
+    },
+    {
+      "path": "src/temple/TempleVeilCinematic.jsx",
+      "sha": "535ffb95167318d757f3898e09d32e51d6638e28",
+      "size": 450
+    },
+    {
+      "path": "src/temple/VeilTearOverlay.jsx",
+      "sha": "c92bafbd8f221d496856fe8c2d532b8584514696",
+      "size": 224
+    },
+    {
+      "path": "src/temple/useOracleWhispers.js",
+      "sha": "9fde38a0a1017a8ef65af37d80b9e98dad68df86",
+      "size": 854
+    },
+    {
+      "path": "src/temple/useTempleRouter.js",
+      "sha": "cbef1e3077ac2600935884f0c2adf3b37663a9d6",
+      "size": 1124
+    },
+    {
+      "path": "src/temple/useTempleVeil.js",
+      "sha": "1a3bec23a56dd716301e95ed168c5d3e11d568a4",
+      "size": 620
+    },
+    {
+      "path": "src/temple3d/TempleHologram.jsx",
+      "sha": "4c332ee0f47f847fe630662f740e125ff77aa38f",
+      "size": 9928
+    },
+    {
+      "path": "src/throne/ThroneJudgmentSequence.jsx",
+      "sha": "5ffdb31b20b1c58cc305f8b2be3a74ac283f158c",
+      "size": 1371
+    },
+    {
+      "path": "src/throne/ThroneRoomScreen.jsx",
+      "sha": "d71031364910f9fddd96ac0723e4d5d81fc5dcfe",
+      "size": 4437
+    },
+    {
+      "path": "src/throne/useThroneJudgment.js",
+      "sha": "883e9a6f3fd3d3297da758ef6a29f74d0ba4aa58",
+      "size": 501
+    },
+    {
+      "path": "src/throne/useThroneRoom.js",
+      "sha": "0c69be4675b96a90f05698779e81a090a63f6bdf",
+      "size": 420
+    },
+    {
+      "path": "src/types/scarlet-lattice.d.ts",
+      "sha": "32c95ec4585e75c4296b9516538bdd2fbfd6d497",
+      "size": 481
+    },
+    {
+      "path": "src/ui/Alert.jsx",
+      "sha": "90e0e3fb82c3576e7615549e492101799c084b6b",
+      "size": 135
+    },
+    {
+      "path": "src/ui/Button.jsx",
+      "sha": "fcbc4235b19e5dee1d878ea581ca1982ad2c72ad",
+      "size": 190
+    },
+    {
+      "path": "src/ui/Window.jsx",
+      "sha": "6672b17c1d5fcb0f14573ddf06345b0fab0499b0",
+      "size": 328
+    },
+    {
+      "path": "src/virtue/VirtueEngine.js",
+      "sha": "4d76e2a15a2c9899f5adb1fe4f7131efc0cb4348",
+      "size": 560
+    },
+    {
+      "path": "src/virtue/VirtueEnginePanel.jsx",
+      "sha": "c1fea79ca8bfd08882a7db6e84247b76b2580eb5",
+      "size": 2458
+    },
+    {
+      "path": "src/virtue/useVirtueEngine.js",
+      "sha": "9a418e5d3d118a1f6d2fb813b32fc36648ba89cd",
+      "size": 414
+    },
+    {
+      "path": "storage.rules",
+      "sha": "776621d857ace1792558d964e269a7e6d2633cce",
+      "size": 161
+    },
+    {
+      "path": "stories/Ella.jpg",
+      "sha": "48b69c336bebe96b4811389f267d2976f3d07250",
+      "size": 336659
+    },
+    {
+      "path": "stories/Libary Theme System",
+      "sha": "470fc062f351dba2e1f4640656600ac4b69c349e",
+      "size": 3195
+    },
+    {
+      "path": "stories/amazing-grace-covenant/index.html",
+      "sha": "2ae67138e76a1def9703f2975a2a4bcfcb5ca337",
+      "size": 2588
+    },
+    {
+      "path": "stories/blog/architectural-js-synthesis.html",
+      "sha": "f320bbf878517fa444b61cee5d53dd57760aa0a2",
+      "size": 36030
+    },
+    {
+      "path": "stories/blog/rebellion.html",
+      "sha": "fef005389d57f8601dafef1d624e5260682910b5",
+      "size": 373
+    },
+    {
+      "path": "stories/books/Noah",
+      "sha": "f9c8df5331034ae3fd77c4926c3c100eac843f53",
+      "size": 8243
+    },
+    {
+      "path": "stories/books/The Matrix of Conscience",
+      "sha": "d71a65ec3f203688db7dac31afee152d991a8bb9",
+      "size": 68122
+    },
+    {
+      "path": "stories/books/the-lamp-in-the-window.html",
+      "sha": "9cd1a3e2265b3e884ca5f8b9a29a846b3d394fb6",
+      "size": 10217
+    },
+    {
+      "path": "stories/chapter-34-package/collapse-engine-arena.json",
+      "sha": "f79dc228ff405cc8b6ba7e41feaa76da1dcf453f",
+      "size": 824
+    },
+    {
+      "path": "stories/chapter-34-package/mirror-path-traversal.json",
+      "sha": "4ff0b565e2812c36f55384ff437134a0694a5100",
+      "size": 1152
+    },
+    {
+      "path": "stories/chapter-34-package/package.json",
+      "sha": "6489050e6c5ddf59d5e457a57748b265468af406",
+      "size": 633
+    },
+    {
+      "path": "stories/chapter-34-package/prototype-loop.json",
+      "sha": "3c79c93d776f5daffeab04c374c269c240f1d731",
+      "size": 565
+    },
+    {
+      "path": "stories/characters/ella.html",
+      "sha": "97b2b935c8c9159b12434c4cf0c805779e0b0301",
+      "size": 25600
+    },
+    {
+      "path": "stories/characters/m45.md",
+      "sha": "85c267ad7b561e20d9534139fc054af4ef04adc7",
+      "size": 4034
+    },
+    {
+      "path": "stories/collapse-engine/index.html",
+      "sha": "0a57a825c7a050c28ee7b794e7af90360d16259d",
+      "size": 9858
+    },
+    {
+      "path": "stories/expose-the-matrix/Rebellion.html",
+      "sha": "1b8cac8aad66b92c50f5afbfb06414ec1f0cfec6",
+      "size": 36697
+    },
+    {
+      "path": "stories/expose-the-matrix/index.html",
+      "sha": "353650722d89d71c62f794c8b42e574508c8cfbd",
+      "size": 34590
+    },
+    {
+      "path": "stories/fixing-copilot-ruleset-bypass-errors/index.html",
+      "sha": "fbdcf4c43aff9c7a0923ed109b8f613ba451d5b3",
+      "size": 3269
+    },
+    {
+      "path": "stories/github-bypass-setup-app/index.html",
+      "sha": "0043447adb6675e8f57517217353dd80f7ef035c",
+      "size": 3525
+    },
+    {
+      "path": "stories/index.html",
+      "sha": "0e4accda7a21ff54052242709096a858e03e6274",
+      "size": 7562
+    },
+    {
+      "path": "stories/libary.js",
+      "sha": "5b5b76beea4bd493e9a5c538357b1acf8749c842",
+      "size": 895
+    },
+    {
+      "path": "stories/library.json",
+      "sha": "85f99b2a6f29f74d84f618be440b33fe9687dc87",
+      "size": 8646
+    },
+    {
+      "path": "stories/matrix.html",
+      "sha": "d31cf4bf3a9034196128bbf0a0df6dfd5f538001",
+      "size": 24249
+    },
+    {
+      "path": "stories/mirror-path/index.html",
+      "sha": "8ca1aa72723ffcac3ce8dbb5bb0af18753f5c796",
+      "size": 16773
+    },
+    {
+      "path": "stories/nexus-prime-2087/index.html",
+      "sha": "1a6036c331985cd0e5a2802fc0de70dd10606259",
+      "size": 10541
+    },
+    {
+      "path": "stories/noah-and-the-ark/index.html",
+      "sha": "1fb7c79e90b0eac76f77bc35d8f73a086fdda3d0",
+      "size": 8544
+    },
+    {
+      "path": "stories/our-covenant-of-new-beginnings/index.html",
+      "sha": "bd23bab5f528abf6330903cd33e5ddc3d641bb65",
+      "size": 13395
+    },
+    {
+      "path": "stories/rebellion2027/index.html",
+      "sha": "9a9abf78e7f74f0d59398fcb91f7540ea33e936b",
+      "size": 10619
+    },
+    {
+      "path": "stories/template.html",
+      "sha": "a3f5dc5f958710155a74193ccac0092e811bd518",
+      "size": 7124
+    },
+    {
+      "path": "support/index.html",
+      "sha": "475fc595f57f2908c57ef715563f58a568dd2bbb",
+      "size": 24583
+    },
+    {
+      "path": "test-vault.ps1",
+      "sha": "0edcb605e82aaad42622df1e3677e73279b72c25",
+      "size": 1040
+    },
+    {
+      "path": "tests/admin-auth.test.ts",
+      "sha": "14b4eff1d44b8d6d958e96f548ec410413bec5c4",
+      "size": 2751
+    },
+    {
+      "path": "tests/admin-store.test.ts",
+      "sha": "f9083ff551a16db27ec7f9e86d4bcbbf382e8fde",
+      "size": 1775
+    },
+    {
+      "path": "tests/arcade-games-validation.test.ts",
+      "sha": "e4cd2d000f6560b475107d455f9871e8c3a529b6",
+      "size": 5127
+    },
+    {
+      "path": "tests/arcade-quality-audit.test.ts",
+      "sha": "7d8fa132d4bbe593d108de819f94b29b602283b2",
+      "size": 885
+    },
+    {
+      "path": "tests/arcade-smoke-tests.test.ts",
+      "sha": "25e575f66e92a29e828dec420acbcd6002417335",
+      "size": 8538
+    },
+    {
+      "path": "tests/boss-ai-features.test.ts",
+      "sha": "b353120a3fae583acf00c37d68d554f850a39429",
+      "size": 13758
+    },
+    {
+      "path": "tests/canonical-matchmaker.test.ts",
+      "sha": "b6f48031e5a772e084212caa49285d05f8807b38",
+      "size": 3062
+    },
+    {
+      "path": "tests/chapter34-package.test.ts",
+      "sha": "5ab7e7d4596d741341d17d7711052bf25a474325",
+      "size": 2771
+    },
+    {
+      "path": "tests/cloudflare-pages-config.test.ts",
+      "sha": "0396824d35c4fd5648fe275f43ced46c01e32f64",
+      "size": 996
+    },
+    {
+      "path": "tests/color-contrast.test.ts",
+      "sha": "87cd464cf70dc9a7ee7bb0c89afe02804a0f72dc",
+      "size": 3492
+    },
+    {
+      "path": "tests/constellationState.test.ts",
+      "sha": "58c4845680e512ff932172d5fcc20919be82fd59",
+      "size": 2964
+    },
+    {
+      "path": "tests/daily.test.ts",
+      "sha": "1ede765a3d8f0f39078c2ad821327905587f27e2",
+      "size": 6340
+    },
+    {
+      "path": "tests/elite-animations.test.ts",
+      "sha": "4ddcf0bc2a2358c4cd57831bd5fbb0f7c65233a9",
+      "size": 3460
+    },
+    {
+      "path": "tests/ellaAutoApply.test.ts",
+      "sha": "90824551963d87c34db17cd6642bb00505e7d674",
+      "size": 1643
+    },
+    {
+      "path": "tests/github-bypass-stories-and-tooling.test.ts",
+      "sha": "c12b960d8ea580d9dc82b0e8ed68a11f300e6f22",
+      "size": 1999
+    },
+    {
+      "path": "tests/github-ruleset-bypass.test.ts",
+      "sha": "fe548acfd599d808e4b0506333ecae55ae91b005",
+      "size": 567
+    },
+    {
+      "path": "tests/homepage-listings-content.test.ts",
+      "sha": "9230eaeecce0716a488c5cff2497f6b52f375a69",
+      "size": 1913
+    },
+    {
+      "path": "tests/index-1142-gallery.test.ts",
+      "sha": "1452d4e3286fbe3a1919023caf5dd0a166a8f7f0",
+      "size": 1106
+    },
+    {
+      "path": "tests/intelligent-engine.test.ts",
+      "sha": "1e57fde314bf3fe527584c75ae18df1addcc9585",
+      "size": 5263
+    },
+    {
+      "path": "tests/levelSystem.test.ts",
+      "sha": "46728f9f0863942dba7ad5f3ed2cd57ec6a74f7c",
+      "size": 3247
+    },
+    {
+      "path": "tests/library-json-dist-copy.test.ts",
+      "sha": "10a6866cb75369cfe84f3293e1e9d793ca205224",
+      "size": 1440
+    },
+    {
+      "path": "tests/library-video-section.test.ts",
+      "sha": "f13119cebdbd170958357ccd9782bc6bc98dd068",
+      "size": 534
+    },
+    {
+      "path": "tests/lore-archive-integration.test.ts",
+      "sha": "f40dfcfcd62fb99a2b618a65521d9268840645fa",
+      "size": 2488
+    },
+    {
+      "path": "tests/match-maker-extension-scaffold.test.ts",
+      "sha": "7644707123f76ef60c8c12916a3a1facbcc0be50",
+      "size": 1933
+    },
+    {
+      "path": "tests/matrix-conscience-terminal.test.ts",
+      "sha": "0bc4ee3bea9b7926eff7991f20ff7a6e7f73b2fa",
+      "size": 3689
+    },
+    {
+      "path": "tests/matrix-legacy-replacement.test.ts",
+      "sha": "b089dec617784313e82998932d32c68370ac7cef",
+      "size": 1251
+    },
+    {
+      "path": "tests/matrix-mobile-optimization.test.ts",
+      "sha": "44e0f6eb638b95c71f7a3297bcac806a1041761e",
+      "size": 1708
+    },
+    {
+      "path": "tests/matrix-story-integration.test.ts",
+      "sha": "b5ff4af3fa3faa50d16b20281fdb4572df7b54b3",
+      "size": 1626
+    },
+    {
+      "path": "tests/matrix-triweave-bundle.test.ts",
+      "sha": "ebdcaa11ad8453fc4ac2294fe70959816a4cf9e7",
+      "size": 670
+    },
+    {
+      "path": "tests/matrixEconomy.test.ts",
+      "sha": "50d251baea3160e6d95b5e88bf9ba05cd7a78d42",
+      "size": 11350
+    },
+    {
+      "path": "tests/migrations.spec.js",
+      "sha": "a2990f8285ff46cb2155b014a560ae4d6d5f0fc5",
+      "size": 1338
+    },
+    {
+      "path": "tests/ministry-gallery.test.ts",
+      "sha": "2d4f3af708784f28b4fb356396692ac3296e5811",
+      "size": 1467
+    },
+    {
+      "path": "tests/ministry-media-library.test.ts",
+      "sha": "574a47b39d4a04efde52c79997b83fab8f1ed146",
+      "size": 1139
+    },
+    {
+      "path": "tests/mobile-nav-focus.test.ts",
+      "sha": "d433a57902a689e64aebb82aab0eefff54ed6a5b",
+      "size": 459
+    },
+    {
+      "path": "tests/nexus-dynamic-omniverse.test.ts",
+      "sha": "fdbf93862f9ed4c83ca2b371ce1c749b97e8f5ae",
+      "size": 1610
+    },
+    {
+      "path": "tests/node-version-consistency.test.ts",
+      "sha": "3ec3ea9c5c4ba90645e0eaf36438448b1398ccb8",
+      "size": 846
+    },
+    {
+      "path": "tests/omniversal-runtime.test.ts",
+      "sha": "c9ccec760ef651bb3c6704f7e837f8d84a874cab",
+      "size": 3051
+    },
+    {
+      "path": "tests/pages-availability-check-workflow.test.ts",
+      "sha": "c118c914c221687b35d24b971b7ebf5abc0501c4",
+      "size": 297
+    },
+    {
+      "path": "tests/performance-optimizations.test.ts",
+      "sha": "12ed1f67d8dd7036b13c653f63ad2e6c40ddcbc5",
+      "size": 4693
+    },
+    {
+      "path": "tests/podcast-library-link.test.ts",
+      "sha": "b532a5d4e3048bc324069b025eb94e1182664bb9",
+      "size": 834
+    },
+    {
+      "path": "tests/powershell-tooling.test.ts",
+      "sha": "c4113a4b18f7179142ea5f752bb1461c182db942",
+      "size": 1680
+    },
+    {
+      "path": "tests/progression.test.ts",
+      "sha": "514ad279319f1a8cf42bade56f4b21c8ad6215f3",
+      "size": 3638
+    },
+    {
+      "path": "tests/quick-click-game.test.ts",
+      "sha": "05b36f309dbae9c831bd01234737ee96ab5f40e5",
+      "size": 1072
+    },
+    {
+      "path": "tests/quick-click-logic.test.ts",
+      "sha": "0548b50ee80ff56d3bf887862c15b0fdbc76b3ff",
+      "size": 1304
+    },
+    {
+      "path": "tests/rebellion-skin-integration.test.ts",
+      "sha": "6e16dfbdd3af3d551a4fe46b2495d55a1ddd40dc",
+      "size": 563
+    },
+    {
+      "path": "tests/rulesets-and-agents-doc.test.ts",
+      "sha": "0c49954a0e1b6217486cd589be8ac43d051adae2",
+      "size": 647
+    },
+    {
+      "path": "tests/site-cleanup.test.ts",
+      "sha": "39f00ea9b9c5a67e953b21709b9358d695bc2f87",
+      "size": 2823
+    },
+    {
+      "path": "tests/starMap.test.ts",
+      "sha": "939805cd7692f850e6cb885bb66b2c6b892db77d",
+      "size": 2832
+    },
+    {
+      "path": "tests/stories-blog-feature.test.ts",
+      "sha": "653aef3e869c2979f53f420d9e58e0c12331c442",
+      "size": 941
+    },
+    {
+      "path": "tests/story-library-covenant-entry.test.ts",
+      "sha": "bcfe86f8ffeab5f2365efce2f482c6dfe67167e6",
+      "size": 1341
+    },
+    {
+      "path": "tests/story-library-news-entries.test.ts",
+      "sha": "8c8d94b4eb3414fc947b1017ce91fc81613e4ebb",
+      "size": 644
+    },
+    {
+      "path": "tests/story-library-noah-entry.test.ts",
+      "sha": "0ae874f1175014356254503098a523bcd1f9362d",
+      "size": 1536
+    },
+    {
+      "path": "tests/story-library-rebellion-entry.test.ts",
+      "sha": "91fdb8290f11e5f85b7fd9ce20e6d4a33cbd76a7",
+      "size": 2186
+    },
+    {
+      "path": "tests/story-route-cleanup.test.ts",
+      "sha": "974d728cf986ffe0f014c329a546d6979aa8c2c6",
+      "size": 4033
+    },
+    {
+      "path": "tests/templeSubsystems.test.ts",
+      "sha": "2cdd3933186fb593e61d7230283c4fe5052d9f94",
+      "size": 5905
+    },
+    {
+      "path": "tests/text-contrast-theme-vars.test.ts",
+      "sha": "dc2694a931e488cb7597862e5a3117c97fa0cf77",
+      "size": 622
+    },
+    {
+      "path": "tests/two-blueprints.test.ts",
+      "sha": "11199337c5741a2588a25f95f75c05aac0101ac8",
+      "size": 7800
+    },
+    {
+      "path": "tests/validate-dist-links-script.test.ts",
+      "sha": "0c2f20ddd65a8bb60b95a562c7c164c7c10b2f58",
+      "size": 480
+    },
+    {
+      "path": "tests/workflow-cleanup.test.ts",
+      "sha": "740abc3e35905e0ececfe4186076cfe314beff0c",
+      "size": 1124
+    },
+    {
+      "path": "theme.css",
+      "sha": "01225fdfc20561f429b0b5ee2c99c61b873974f8",
+      "size": 455
+    },
+    {
+      "path": "tools/create-module.js",
+      "sha": "5a9a882786621ac818b71d7e16f19824f27fa499",
+      "size": 987
+    },
+    {
+      "path": "tsconfig.json",
+      "sha": "c7e80ab60f7264ea3a62b846968a6142a7716a56",
+      "size": 320
+    },
+    {
+      "path": "typography-alignment.md",
+      "sha": "b0e39228e1e753e9a636958c0e4044d4e2a2b8c8",
+      "size": 2170
+    },
+    {
+      "path": "ui-icons.js",
+      "sha": "9994beb872d32980c5e49279d04e1751e13eaabe",
+      "size": 1973
+    },
+    {
+      "path": "vite.config.ts",
+      "sha": "8c3985cb4730edb346ce0e35c6cc0e967d3e93a1",
+      "size": 6235
+    },
+    {
+      "path": "vitest.config.ts",
+      "sha": "f624398e8deca6144a8c7a3ab3ca16543215a468",
+      "size": 121
+    },
+    {
+      "path": "walletManager.js",
+      "sha": "f3717acd601d2cc05acd91dae7b29e4c37c0e385",
+      "size": 5180
+    },
+    {
+      "path": "wrangler.toml",
+      "sha": "01fb5c8107740cdc33560a20c1876dafc28a3f89",
+      "size": 273
+    }
+  ]
+}
