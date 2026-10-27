@@ -589,6 +589,49 @@ textarea {
 .skip-link:focus {
   top: 10px;
 }
+.study-article {
+  max-width: 800px;
+}
+.study-back {
+  display: inline-block;
+  margin-bottom: 32px;
+}
+.study-header h1 {
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
+}
+.study-readings {
+  margin: 30px 0 36px;
+}
+.study-readings p {
+  margin: 10px 0 0;
+}
+.study-readings a,
+.study-prose p a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.study-prose {
+  font-size: 1.06rem;
+  line-height: 1.85;
+}
+.study-prose h2 {
+  margin-top: 42px;
+}
+.study-reflection {
+  background: var(--sage);
+  border-radius: var(--radius);
+  padding: 26px;
+  margin-top: 38px;
+}
+.study-reflection h2 {
+  margin-top: 0;
+}
+.study-reflection ol {
+  padding-left: 24px;
+}
+.study-reflection li {
+  margin-bottom: 12px;
+}
 @media (max-width: 900px) {
   .header-inner {
     flex-wrap: wrap;
@@ -599,6 +642,7 @@ textarea {
     width: 100%;
     justify-content: center;
     gap: 35px;
+    flex-wrap: wrap;
   }
   .hero {
     gap: 30px;
