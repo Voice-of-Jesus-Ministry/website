@@ -40,6 +40,21 @@ export default function Home() {
         </div>
       </section>
       <PracticeSummary />
+      <section className="section" aria-labelledby="bible-study-heading">
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow">READ. REFLECT. GROW.</p>
+            <h2 id="bible-study-heading">Bible Study</h2>
+          </div>
+          <Link className="text-link" href="/bible-study">Explore the studies →</Link>
+        </div>
+        <Link className="feature-card" href="/bible-study/peters-failure-and-restoration">
+          <span className="tag">GRACE & DISCIPLESHIP</span>
+          <h3>From the Courtyard to the Shore: Peter’s Failure and Restoration</h3>
+          <p>Between two fires, Peter discovers the limits of his own strength and the restoring mercy of Jesus.</p>
+          <span className="card-link">Read the study →</span>
+        </Link>
+      </section>
       <section className="section">
         <div className="section-heading">
           <div>
