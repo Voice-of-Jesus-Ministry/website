@@ -1,6 +1,6 @@
 # Voice of Jesus Ministry
 
-A free ministry and learning hub: Scripture practice, small games, and a local study workspace. Selected features are adapted from [AmazingGrace](https://github.com/NicholaiMadias/AmazingGrace); housing listings and the original deployment remain in that repository.
+A free ministry and learning hub: Scripture practice, small games, and a local study workspace.
 
 ## Available in this branch
 
