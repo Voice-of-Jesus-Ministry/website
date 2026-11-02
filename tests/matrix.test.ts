@@ -8,7 +8,7 @@ test('seven chapters complete, quiz rewards cannot be collected twice, and spend
  let s=freshCampaign();for(let chapter=0;chapter<7;chapter++){
   s=finishMission(s);for(let i=0;i<3;i++)s=answerQuestion(s,QUIZZES[chapter][i].answer);
   assert.equal(s.earned,(chapter+1)*75);assert.equal(answerQuestion(s,0),s);
-  if(chapter<6){const key=['power','focus','shield'].find(k=>availableUpgrade(chapter,k))!;s=buyUpgrade(s,key);assert.equal(s.upgrades[key],1);s=nextMission(s);assert.equal(s.level,chapter+1);assert.deepEqual(restoreCampaign(JSON.stringify(s)),s);}
+  if(chapter<6){const key=(['power','focus','shield'] as const).find(k=>availableUpgrade(chapter,k))!;s=buyUpgrade(s,key);assert.equal(s.upgrades[key],1);s=nextMission(s);assert.equal(s.level,chapter+1);assert.deepEqual(restoreCampaign(JSON.stringify(s)),s);}
  }assert.equal(s.phase,'victory');assert.equal(s.bank,s.earned-s.spent);assert.equal(s.earned,525);
 });
 test('store refuses overspending, invalid items, and more than two of an upgrade',()=>{

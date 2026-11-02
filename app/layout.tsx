@@ -34,7 +34,7 @@ export default function RootLayout({
           <header className="site-header">
             <div className="header-inner">
               <Link className="brand" href="/">
-                <img src="/logo.png" width="72" height="72" alt="" />
+                <img src="/favicon.png" width="72" height="72" alt="" />
                 <span>
                   Voice of Jesus Ministry
                   <small>Hear His voice. Follow His Word.</small>
