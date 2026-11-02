@@ -16,6 +16,7 @@ export default function Privacy() {
         or cloud-storage credentials.
       </p>
       <h2>External services</h2>
+      <p>When member accounts are enabled, Clerk handles sign-in and account registration, including Google sign-in and email links. Account providers process the information needed to authenticate you. Photo and video submissions are not available in this release.</p>
       <p>
         Following a link to Blogger, YouTube, Messenger, or GitHub opens that service,
         which has its own privacy practices. This app does not embed their

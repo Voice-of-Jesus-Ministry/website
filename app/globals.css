@@ -3,7 +3,7 @@
   --ink: #f2eee4;
   --muted: #c6c0b2;
   --gold: #d5b461;
-  --cream: #080b12;
+  --cream: #060909;
   --line: #2a303b;
   --sage: #18251f;
   --radius: 20px;
@@ -799,3 +799,35 @@ textarea {
     animation: none !important;
   }
 }
+
+/* Ministry identity: warm gold, deep teal, and readable dark surfaces. */
+body { background: radial-gradient(ellipse at 85% 10%, #15302b55, transparent 45rem), #060909; }
+.site-header { background: #060909; }
+.site-header .brand { letter-spacing: .02em; font-size: .95rem; }
+.site-header .brand img { width: 72px !important; height: 72px !important; max-width: none !important; }
+.site-header .brand small { color: #aabbb4; font-size: .72rem; }
+.eyebrow, .tag, .card-link { color: #dfc478; }
+.text-link, nav a, .site-footer a { color: #a5d9d0; }
+.hero { grid-template-columns: 1.2fr 1fr; padding: 68px 0; gap: 48px; }
+.hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.8rem); line-height: 1.16; }
+.hero .lede { max-width: 38rem; color: #c6d1cc; }
+.ministry-seal { text-align: center; }
+.ministry-seal img { width: min(100%, 390px); height: auto; display: block; margin: auto; }
+.ministry-seal p { font-family: Georgia, serif; color: #e2d6b2; margin: 8px 0 0; }
+.ministry-seal span { display: block; font: .75rem Arial, sans-serif; color: #9caea5; margin-top: 6px; }
+.feature-card { background: #0d1513; border-color: #2c3b34; box-shadow: none; }
+.feature-card:hover { background: #12201b; border-color: #8c7947; }
+.feature-card h3, .feature-card h2 { color: #f3efdf; }
+.feature-card p { color: #bdcbc3; }
+.community-panel { background: #10231d; border: 1px solid #365145; }
+.community-panel h2 { color: #f3efdf; }
+.community-panel p { color: #c2d1c8; }
+a.button { background: transparent; border: 0; border-radius: 0; padding: 0; color: #a5d9d0; }
+a.button:hover { background: transparent; text-decoration: underline; }
+.guest-badge { border-color: #3c5047; color: #b8c9c0; }
+@media(max-width:700px) { .hero { grid-template-columns: 1fr; padding: 38px 0; gap: 24px; } .ministry-seal img { width: 240px; } .header-inner { flex-wrap: wrap; } .header-inner nav { flex-wrap: wrap; gap: 18px; } .brand small { display: none; } }
+/* Accessible wordmark sizing and compact header layout. */
+.site-header .brand{gap:12px;min-width:0}
+.site-header .brand img{display:block;width:168px;height:auto;max-width:100%;object-fit:contain;flex:0 1 auto}
+@media(max-width:900px){.site-header .header-inner{gap:14px}.site-header .header-inner nav{gap:clamp(14px,3vw,26px)}}
+@media(max-width:620px){.site-header .header-inner{min-height:76px;padding:12px 18px;gap:12px}.site-header .brand{gap:9px}.site-header .brand img{width:132px;height:auto;max-width:44vw}.site-header .brand small{font-size:.57rem;letter-spacing:0}.site-header .guest-badge{font-size:.62rem;padding:6px 9px}.site-header .header-inner nav{gap:clamp(12px,4vw,22px)}}

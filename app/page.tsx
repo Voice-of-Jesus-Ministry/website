@@ -1,28 +1,26 @@
 import Link from "next/link";
-import { headers } from "next/headers";
 import { PracticeSummary } from "../components/PracticeSummary";
-import { ProfilePage } from "./profile/page";
 
-export default async function Home() {
-  const host = (await headers()).get("host") ?? "";
-  if (host === "nicholai.online" || host === "www.nicholai.online") return <ProfilePage />;
+export default function Home() {
   return (
     <div className="container">
       <section className="hero">
         <div>
-          <p className="eyebrow">FAITH. CURIOSITY. COMMUNITY.</p>
+          <p className="eyebrow">THE VOICE OF JESUS MINISTRY</p>
           <h1>
-            A little discovery.
-            <br />A deeper connection.
+            Rooted in Scripture.
+            <br />Growing in grace.
           </h1>
           <p className="lede">
-            A welcoming place to explore Scripture, challenge yourself, and make
-            room for what matters.
+            Explore the words of Jesus through Bible study, prayer, and thoughtful play.
+            Learn at your own pace, then share the journey with our community.
           </p>
           <div className="actions">
-            <Link className="button" href="/arcade">
-            <Link className="button" href="/gallery" style={{ marginLeft: '1rem', background: 'transparent', border: '1px solid currentColor', color: 'inherit' }}>View Gallery <span aria-hidden="true">↗</span></Link>
-              Explore the games <span aria-hidden="true">↗</span>
+            <Link className="text-link" href="/bible-study">
+              Explore Bible studies <span aria-hidden="true">→</span>
+            </Link>
+            <Link className="text-link" href="/arcade/bible-quiz">
+              Try a Bible quiz <span aria-hidden="true">→</span>
             </Link>
             <a
               className="text-link"
@@ -35,13 +33,9 @@ export default async function Home() {
             Free to explore. No payment or account required.
           </p>
         </div>
-        <div className="hero-art" aria-hidden="true">
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
-          <div className="cross">✦</div>
-          <span className="art-caption">
-            LET YOUR LIGHT SHINE · MATTHEW 5:16
-          </span>
+        <div className="ministry-seal">
+          <img src="/ministry-logo.png" alt="The Voice of Jesus Ministry: a cross above waves held in welcoming hands" width="440" height="440" />
+          <p>“My sheep hear my voice.” <span>John 10:27</span></p>
         </div>
       </section>
       <section className="section" aria-labelledby="seven-stars-heading">
@@ -68,7 +62,7 @@ export default async function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow">START SOMETHING GOOD</p>
-            <h2>One place. More possibilities.</h2>
+            <h2>Read. Reflect. Put faith into practice.</h2>
           </div>
           <Link className="text-link" href="/arcade">
             See all games →
