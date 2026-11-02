@@ -58,7 +58,8 @@ export default function GalatiansStudy() {
 <blockquote>{"\"I am crucified with Christ: nevertheless I live; yet not I, but Christ liveth in me...\""}</blockquote>
 <p>{"Paul describes the Christian life as a union with Christ. The old life ruled by sin has been put to death, and believers are now called to live by faith in the Son of God."}</p>
 <p>{"The Christian life is not simply about following rules. It is about allowing Christ to live and work through us each day."}</p>
-<h2>{"Key Lessons From Galatians 1-2\n1. Guard the Gospel"}</h2>
+<h2>Key Lessons From Galatians 1–2</h2>
+<h3>1. Guard the Gospel</h3>
 <p>{"Believers must carefully evaluate every teaching against Scripture. The Gospel is not ours to modify."}</p>
 <h3>{"2. Salvation Is By Grace Through Faith"}</h3>
 <p>{"No amount of human effort can earn God's favor. Salvation is a gift received through faith in Jesus Christ."}</p>
