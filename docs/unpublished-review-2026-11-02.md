@@ -15,3 +15,8 @@
 - Generated AGENTS files, screenshots, scoring-agent folders, LMS scripts, and personal certificate images remain outside this release.
 
 Firebase sign-in, moderated uploads, and the personal document tool still require implementation/configuration; analytics does not activate them.
+
+## Live hosting discovery
+Amazing Grace has project-level Vercel rewrites to the Nexus Toolbox Sites project (`appgprj_6ae28e0f1058819194c168ccc57f7bb9`). These serve the homepage, toolbox, About assets, library, professional profile and tower-defense assets. Updating the GitHub static build alone does not update those responses. The same page-view integration was therefore published to the existing public Sites source (version 31, source `8759b337b14838736b4769e94db8bbfa332ebf63`), limited to requests on amazinggracehl.org/www.amazinggracehl.org. Live homepage and toolbox HTML verified HTTP 200 with analytics integration. Existing rewrites and audience were preserved.
+
+Production verification: ministry `acea967`, personal `b069a09`, housing `c4273d1` all READY. Ministry and personal browser checks show Vercel's generated analytics scripts loaded; the study rendered without overflow. Dashboard ingestion of new visits has not been independently confirmed. Ministry 20 tests and personal 7 tests passed; all three local builds passed and their production deployments completed.
