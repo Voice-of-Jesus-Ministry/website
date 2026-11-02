@@ -78,15 +78,15 @@ export default function Home() {
             </p>
             <span className="card-link">Begin a study round →</span>
           </Link>
-          <Link href="/arcade/quick-click" className="feature-card">
+          <Link href="/arcade/matrix-of-conscience" className="feature-card">
             <span className="card-icon gold">✦</span>
             <span className="tag">PLAY</span>
-            <h3>Quick Click</h3>
+            <h3>Matrix of Conscience</h3>
             <p>
-              A twenty-second burst of focus. Find the stars and improve your
-              personal best.
+              One seven-chapter campaign. Explore a story, answer Bible questions,
+              and spend earned points on your next mission.
             </p>
-            <span className="card-link">Take the challenge →</span>
+            <span className="card-link">Begin the campaign →</span>
           </Link>
           <Link href="/tools" className="feature-card">
             <span className="card-icon sage">✎</span>
