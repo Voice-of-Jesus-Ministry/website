@@ -15,7 +15,7 @@ const experience = [
   ["Nielsen Media Research", "Network Administrator & EVS Support Specialist", "Mar 2011 – Oct 2016"],
 ];
 
-export default function ProfilePage() {
+export function ProfilePage() {
   return <div className="container page narrow">
     <p className="eyebrow">NICHOLAI MARO MADIAS · NICHOLAI.ONLINE</p>
     <h1>Platform engineering with a human center.</h1>
@@ -26,3 +26,5 @@ export default function ProfilePage() {
     <section className="community-panel"><div><p className="eyebrow">SOURCE OF TRUTH</p><h2>Open to thoughtful systems work.</h2><p>This profile uses the same chronology and titles as the master resume. Tailored versions should preserve the dates and emphasize the skills most relevant to the role.</p></div></section>
   </div>;
 }
+
+export default ProfilePage;
