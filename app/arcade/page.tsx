@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { PracticeSummary } from "../../components/PracticeSummary";
+
 export default function Arcade() {
   return (
     <div className="container page">
       <p className="eyebrow">THE ARCADE</p>
       <h1>Play with purpose.</h1>
       <p className="lede">
-        Two small challenges. One shared journey. Your best result in each game
-        contributes up to 100 practice XP.
+        Choose a Bible quiz or a quick focus challenge, or enter Matrix of Conscience: a story and defense campaign with Scripture questions between missions. XP from Bible Quiz and Quick Click is saved on this browser; Matrix progress is saved separately.
       </p>
       <PracticeSummary />
       <div className="card-grid two section">
@@ -28,6 +28,14 @@ export default function Arcade() {
             Tab and Enter.
           </p>
           <span className="card-link">Play Quick Click →</span>
+        </Link>
+        <Link className="feature-card" href="/arcade/matrix-of-conscience">
+          <span className="card-icon gold" aria-hidden="true">✦</span>
+          <h2>Matrix of Conscience</h2>
+          <p>
+            Follow one seven-chapter story through defense, matching, space flight, and a maze. Answer Bible questions between levels and spend bonus points on the next mission.
+          </p>
+          <span className="card-link">Enter the campaign &rarr;</span>
         </Link>
       </div>
       <p className="notice">
