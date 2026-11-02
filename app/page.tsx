@@ -1,7 +1,11 @@
 import Link from "next/link";
+import { headers } from "next/headers";
 import { PracticeSummary } from "../components/PracticeSummary";
+import { ProfilePage } from "./profile/page";
 
-export default function Home() {
+export default async function Home() {
+  const host = (await headers()).get("host") ?? "";
+  if (host === "nicholai.online" || host === "www.nicholai.online") return <ProfilePage />;
   return (
     <div className="container">
       <section className="hero">
