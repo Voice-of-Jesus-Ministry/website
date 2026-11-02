@@ -12,6 +12,12 @@ export default function BibleStudy() {
       <p className="eyebrow">READ. REFLECT. GROW.</p>
       <h1>Bible Study</h1>
       <p className="lede">Make room for Scripture. Explore the lives, questions, and encounters that draw us closer to Jesus.</p>
+      <Link className="feature-card" href="/bible-study/galatians-1-2">
+        <span className="tag">GRACE & FAITH · GALATIANS 1–2</span>
+        <h2>Standing Firm in the True Gospel</h2>
+        <p>Explore Paul’s message of grace, justification by faith, and life in Christ, with Scripture readings, reflection questions, and prayer.</p>
+        <span className="card-link">Read the study →</span>
+      </Link>
       <Link className="feature-card" href="/bible-study/peters-failure-and-restoration">
         <span className="tag">GRACE & DISCIPLESHIP · 5 MIN READ</span>
         <h2>From the Courtyard to the Shore</h2>
