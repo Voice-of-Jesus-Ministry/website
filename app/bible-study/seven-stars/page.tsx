@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = { title: "The Mystery of the Seven Stars | Voice of Jesus Ministry", description: "A Scripture, astronomy, and reflection lesson for curious learners." };
+
+export default function SevenStarsLesson() {
+  return <article className="container page study-article">
+    <Link className="text-link study-back" href="/bible-study">← All Bible studies</Link>
+    <header className="study-header"><p className="eyebrow">SCRIPTURE · ASTRONOMY · REFLECTION</p><h1>The Mystery of the Seven Stars</h1><p className="lede">A playful lesson about faithful witness, wise choices, and the lights we help one another see.</p></header>
+    <aside className="notice study-readings"><strong>Read alongside this study</strong><p><a href="https://www.biblegateway.com/passage/?search=Revelation%201%3A16%2C%202%3A1-7&version=KJV">Revelation 1:16; 2:1–7</a> · <a href="https://www.biblegateway.com/passage/?search=Psalm%2019%3A1-4&version=KJV">Psalm 19:1–4</a> · <a href="https://www.biblegateway.com/passage/?search=Matthew%205%3A14-16&version=KJV">Matthew 5:14–16</a></p></aside>
+    <div className="prose study-prose"><p>John’s vision uses stars as a picture of witness held in the hand of Christ. The image invites curiosity: the sky is wide, Scripture is deep, and learning can become an act of attention.</p><h2>Find the signal</h2><p>Begin by noticing what is already present. What does the night sky reveal about order, patience, and perspective? What does a local community reveal about care, courage, and responsibility?</p><h2>Choose a faithful response</h2><p>In the Seven Churches, encouragement and correction belong together. A strong learner does not only collect points; they practice listening, tell the truth about mistakes, and choose a next step that serves others.</p><h2>Play to remember</h2><p>After reading, try the <Link href="/arcade/bible-quiz">Bible Quiz</Link> for bonus points, then visit the <Link href="/arcade">learning arcade</Link> to practice recall, pattern recognition, and reflection through short challenges.</p><section className="study-reflection"><h2>Questions for reflection</h2><ol><li>What light has helped me keep going recently?</li><li>Which part of learning feels worth practicing again?</li><li>How can my knowledge become useful to someone else?</li></ol><Link className="button" href="/arcade/bible-quiz">Take the Bible quiz →</Link></section><h2>Prayer</h2><p>Lord Jesus, help us learn with humility, notice the light You have placed around us, and use what we learn to encourage others. Amen.</p></div>
+  </article>;
+}

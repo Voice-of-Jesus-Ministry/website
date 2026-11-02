@@ -17,6 +17,7 @@ export default function Home() {
           </p>
           <div className="actions">
             <Link className="button" href="/arcade">
+            <Link className="button" href="/gallery" style={{ marginLeft: '1rem', background: 'transparent', border: '1px solid currentColor', color: 'inherit' }}>View Gallery <span aria-hidden="true">↗</span></Link>
               Explore the games <span aria-hidden="true">↗</span>
             </Link>
             <a
@@ -38,6 +39,10 @@ export default function Home() {
             LET YOUR LIGHT SHINE · MATTHEW 5:16
           </span>
         </div>
+      </section>
+      <section className="section" aria-labelledby="seven-stars-heading">
+        <div className="section-heading"><div><p className="eyebrow">NEW · MISSION-BASED LEARNING</p><h2 id="seven-stars-heading">The Mystery of the Seven Stars</h2></div><Link className="text-link" href="/bible-study/seven-stars">Open the lesson →</Link></div>
+        <Link className="feature-card" href="/bible-study/seven-stars"><span className="tag">SCRIPTURE · ASTRONOMY · REFLECTION</span><h3>Learn, play, and follow the light</h3><p>A guided lesson that connects the Seven Churches, the Pleiades, and thoughtful choices—then sends learners into an arcade challenge for bonus points.</p><span className="card-link">Start the lesson →</span></Link>
       </section>
       <PracticeSummary />
       <section className="section" aria-labelledby="bible-study-heading">

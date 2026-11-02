@@ -32,9 +32,9 @@ export default function RootLayout({
           <header className="site-header">
             <div className="header-inner">
               <Link className="brand" href="/">
-                <img src="/icon.svg" width="42" height="42" alt="" />
+                <img src="/logo.svg" width="190" height="70" alt="Voice of Jesus Ministry" />
                 <span>
-                  VOICE OF JESUS<small>Hear His voice. Follow His Word.</small>
+                  <small>Hear His voice. Follow His Word.</small>
                 </span>
               </Link>
               <nav aria-label="Main navigation">
