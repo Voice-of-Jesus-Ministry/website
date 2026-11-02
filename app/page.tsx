@@ -33,10 +33,9 @@ export default function Home() {
             Free to explore. No payment or account required.
           </p>
         </div>
-        <div className="ministry-seal">
-          <img src="/ministry-logo.png" alt="The Voice of Jesus Ministry: a cross above waves held in welcoming hands" width="440" height="440" />
-          <p>“My sheep hear my voice.” <span>John 10:27</span></p>
-        </div>
+        <figure className="ministry-photo">
+          <img src="/M23.jpg" alt="Children and families gathered at a community event" width="4032" height="3024" fetchPriority="high" />
+        </figure>
       </section>
       <section className="section" aria-labelledby="seven-stars-heading">
         <div className="section-heading"><div><p className="eyebrow">NEW · MISSION-BASED LEARNING</p><h2 id="seven-stars-heading">The Mystery of the Seven Stars</h2></div><Link className="text-link" href="/bible-study/seven-stars">Open the lesson →</Link></div>

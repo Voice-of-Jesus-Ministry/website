@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     "Prayer",
     "Discipleship",
   ],
-  icons: { icon: "/ministry-emblem.png", apple: "/ministry-emblem.png" },
+  icons: { icon: "/favicon.png", apple: "/icon.png" },
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
           <header className="site-header">
             <div className="header-inner">
               <Link className="brand" href="/">
-                <img src="/ministry-logo.png" width="72" height="72" alt="" />
+                <img src="/logo.png" width="72" height="72" alt="" />
                 <span>
                   Voice of Jesus Ministry
                   <small>Hear His voice. Follow His Word.</small>

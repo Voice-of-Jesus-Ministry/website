@@ -811,6 +811,8 @@ body { background: radial-gradient(ellipse at 85% 10%, #15302b55, transparent 45
 .hero { grid-template-columns: 1.2fr 1fr; padding: 68px 0; gap: 48px; }
 .hero h1 { font-size: clamp(2.3rem, 4.5vw, 3.8rem); line-height: 1.16; }
 .hero .lede { max-width: 38rem; color: #c6d1cc; }
+.ministry-photo { margin: 0; border: 1px solid #365145; border-radius: 18px; overflow: hidden; }
+.ministry-photo img { display: block; width: 100%; height: auto; }
 .ministry-seal { text-align: center; }
 .ministry-seal img { width: min(100%, 390px); height: auto; display: block; margin: auto; }
 .ministry-seal p { font-family: Georgia, serif; color: #e2d6b2; margin: 8px 0 0; }
