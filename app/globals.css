@@ -1,11 +1,11 @@
 :root {
-  --navy: #102c40;
-  --ink: #183647;
-  --muted: #546872;
+  --navy: #d8b85d;
+  --ink: #f2eee4;
+  --muted: #c6c0b2;
   --gold: #d5b461;
-  --cream: #faf8f2;
-  --line: #e4e7e0;
-  --sage: #dfe9dd;
+  --cream: #080b12;
+  --line: #2a303b;
+  --sage: #18251f;
   --radius: 20px;
 }
 * {
@@ -16,7 +16,7 @@ html {
 }
 body {
   margin: 0;
-  background: var(--cream);
+  background: radial-gradient(circle at top, #151923 0, var(--cream) 42rem);
   color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.65;
@@ -94,7 +94,7 @@ img {
   max-width: 850px;
 }
 .site-header {
-  background: #fffdf8;
+  background: #0b0e16e8;
   border-bottom: 1px solid var(--line);
 }
 .header-inner {
@@ -257,7 +257,7 @@ nav a:hover,
   grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
   align-items: center;
   border: 1px solid var(--line);
-  background: #fffdf8;
+  background: #111620;
   border-radius: 12px;
   padding: 22px 28px;
   gap: 25px;
@@ -318,7 +318,7 @@ nav a:hover,
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 30px;
-  background: #fffdf8;
+  background: #111620;
   transition:
     border-color 0.15s,
     transform 0.15s;
@@ -413,7 +413,7 @@ nav a:hover,
   border-radius: 0 10px 10px 0;
 }
 .game-panel {
-  background: #fffdf8;
+  background: #111620;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 40px;
@@ -447,7 +447,7 @@ progress {
 }
 .choice {
   border: 1px solid #ccd7cf;
-  background: white;
+  background: #151a24;
   color: var(--ink);
   text-align: left;
   border-radius: 9px;
