@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 import { ProgressProvider } from "../components/ProgressProvider";
+import { ClerkProvider } from "@clerk/nextjs";
+import { accountsConfigured } from "../lib/account-config";
 
 export const metadata: Metadata = {
   title: "Voice of Jesus Ministry",
@@ -14,7 +16,7 @@ export const metadata: Metadata = {
     "Prayer",
     "Discipleship",
   ],
-  icons: { icon: "/favicon.svg", apple: "/icon.svg" },
+  icons: { icon: "/ministry-emblem.png", apple: "/ministry-emblem.png" },
 };
 
 export default function RootLayout({
@@ -22,7 +24,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
+  const content = (
     <html lang="en">
       <body>
         <a className="skip-link" href="#main">
@@ -32,8 +34,9 @@ export default function RootLayout({
           <header className="site-header">
             <div className="header-inner">
               <Link className="brand" href="/">
-                <img src="/logo.svg" width="190" height="70" alt="Voice of Jesus Ministry" />
+                <img src="/ministry-logo.png" width="72" height="72" alt="" />
                 <span>
+                  Voice of Jesus Ministry
                   <small>Hear His voice. Follow His Word.</small>
                 </span>
               </Link>
@@ -41,10 +44,10 @@ export default function RootLayout({
                 <Link href="/bible-study">Bible Study</Link>
                 <Link href="/arcade">Play & learn</Link>
                 <Link href="/tools">Workspace</Link>
-                <a href="https://voiceofjesusnet.blogspot.com/">Blog</a>
+                <Link href="/blog">Blog</Link>
               </nav>
               <Link href="/account" className="guest-badge">
-                Guest · this device
+                Account
               </Link>
             </div>
           </header>
@@ -63,4 +66,5 @@ export default function RootLayout({
       </body>
     </html>
   );
+  return accountsConfigured() ? <ClerkProvider>{content}</ClerkProvider> : content;
 }
