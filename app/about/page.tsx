@@ -5,11 +5,11 @@ export const metadata: Metadata = {
  description: "Learn about Voice of Jesus Ministry, our Bible studies, coastal outreach, and legal organization: VOICE OF JESUS MINISTRY INC, EIN 43-2759368."
 };
 const board = [
- { name: "Nicholai Madias", role: "President & Director", initials: "NM" },
- { name: "Sheila Garcia", role: "Vice President & Director", initials: "SG" },
- { name: "Lea Asis", role: "Secretary & Director", initials: "LA" },
- { name: "Sharon Barber", role: "Treasurer & Director", initials: "SB" },
- { name: "Pastor Allen Oprecina", role: "Director · Bible Study Leader", initials: "AO" },
+ { name: "Nicholai Madias", role: "President & Director", image: "/media/people/nicholai-madias.png", art: false },
+ { name: "Sheila Garcia", role: "Vice President & Director", image: "/media/people/sheila-garcia.png", art: false },
+ { name: "Lea Asis", role: "Secretary & Director", image: "/media/people/lea-asis.png", art: false },
+ { name: "Sharon Barber", role: "Treasurer & Director", image: "/media/people/sharon-barber.jpg", art: false },
+ { name: "Pastor Allen Oprecina", role: "Director · Bible Study Leader", image: "/media/people/allen-oprecina-ministry.jpg", art: true },
 ];
 export default function About() {
  return <article className="container page narrow prose">
@@ -22,7 +22,7 @@ export default function About() {
    <p className="eyebrow">OUR TEAM</p><h2 id="team-heading">United in faith. Committed to service.</h2>
    <p>Meet the board of directors of Voice of Jesus Ministry. Pastor Allen leads our weekly Bible study, connecting students and ministry family across the United States and the Philippines.</p>
    <div className="board-grid">{board.map(member => <article className="board-member" key={member.name}>
-    <span className="board-monogram" aria-hidden="true">{member.initials}</span>
+    <div className={`board-portrait${member.art ? " ministry-art" : ""}`}><img src={member.image} alt={member.art ? "Illustration of Pastor Allen teaching Bible study" : `Illustrated portrait of ${member.name}`} width="640" height="800" loading="lazy" /></div>
     <h3>{member.name}</h3><p>{member.role}</p>
    </article>)}</div>
   </section>

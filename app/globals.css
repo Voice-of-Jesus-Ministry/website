@@ -850,3 +850,11 @@ a.button:hover { background: transparent; text-decoration: underline; }
 .ministry-purpose{border-left:3px solid #dfc478;padding-left:24px}
 .ministry-supporters{padding:28px;background:#10231d;border-radius:14px;border:1px solid #365145}
 @media(max-width:600px){.board-grid{grid-template-columns:1fr}.board-member{padding:22px}}
+
+/* Board portraits keep faces legible and preserve original ministry artwork. */
+.board-member{padding:0;overflow:hidden}
+.board-portrait{aspect-ratio:4/5;background:#eee9dd;overflow:hidden}
+.board-portrait img{display:block;width:100%;height:100%;object-fit:contain;margin:0}
+.board-portrait.ministry-art{background:#f2e8cc}
+.board-member h3{margin:22px 24px 8px}
+.board-member>p{margin:0 24px 24px}
