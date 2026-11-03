@@ -34,7 +34,7 @@ export default function RootLayout({
         <ProgressProvider>
           <header className="site-header">
             <div className="header-inner">
-              <Link className="brand" href="/">
+              <Link className="brand" href="/" aria-label="Voice of Jesus Ministry home">
                 <img src="/favicon.png" width="72" height="72" alt="" />
                 <span>
                   Voice of Jesus Ministry
@@ -42,12 +42,10 @@ export default function RootLayout({
                 </span>
               </Link>
               <nav aria-label="Main navigation">
-                <Link href="/about#team">Our Team</Link>
-                <Link href="/bible-study">Bible Study</Link>
-                <Link href="/arcade">Play & learn</Link>
-                <Link href="/tools">Workspace</Link>
+                <Link href="/about#team"><span className="nav-wide">Our Team</span><span className="nav-short">Team</span></Link>
+                <Link href="/bible-study"><span className="nav-wide">Bible Study</span><span className="nav-short">Study</span></Link>
+                <Link href="/arcade">Arcade</Link>
                 <Link href="/blog">Blog</Link>
-                <Link href="/missions/2026">Mission 2026</Link>
               </nav>
               <Link href="/account" className="guest-badge">
                 Account
