@@ -46,6 +46,7 @@ export default function RootLayout({
                 <Link href="/arcade">Play & learn</Link>
                 <Link href="/tools">Workspace</Link>
                 <Link href="/blog">Blog</Link>
+                <Link href="/missions/2026">Mission 2026</Link>
               </nav>
               <Link href="/account" className="guest-badge">
                 Account

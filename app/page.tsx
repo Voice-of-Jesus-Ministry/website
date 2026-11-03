@@ -41,6 +41,9 @@ export default function Home() {
         <div className="section-heading"><div><p className="eyebrow">NEW · MISSION-BASED LEARNING</p><h2 id="seven-stars-heading">The Mystery of the Seven Stars</h2></div><Link className="text-link" href="/bible-study/seven-stars">Open the lesson →</Link></div>
         <Link className="feature-card" href="/bible-study/seven-stars"><span className="tag">SCRIPTURE · ASTRONOMY · REFLECTION</span><h3>Learn, play, and follow the light</h3><p>A guided lesson that connects the Seven Churches, the Pleiades, and thoughtful choices—then sends learners into an arcade challenge for bonus points.</p><span className="card-link">Start the lesson →</span></Link>
       </section>
+      <section className="section" aria-labelledby="mission-heading">
+        <Link className="feature-card" href="/missions/2026"><span className="tag">MISSION 2026 · OUTREACH & FELLOWSHIP</span><h2 id="mission-heading">Living by Grace, Walking by Faith</h2><p>45 students reached. Over 100 meals served. Celebrate the people and fellowship behind this year’s coastal mission.</p><span className="card-link">Explore the mission gallery →</span></Link>
+      </section>
       <PracticeSummary />
       <section className="section" aria-labelledby="bible-study-heading">
         <div className="section-heading">
