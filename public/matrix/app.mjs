@@ -9,8 +9,7 @@ function button(text,action){const b=document.createElement('button');b.textCont
 function clear(node){node.replaceChildren();}
 function info(text){$('status').textContent=text;}
 function header(){
- const c=CHAPTERS[state.level];$('chapter-art').src='/matrix/art/'+c.art;$('chapter-number').textContent=`CHAPTER ${state.level+1} / 7`;$('chapter-title').textContent=c.title;$('chapter-story').textContent=c.text;
- $('scripture').textContent=`Read ${c.reference} ↗`;$('scripture').href='https://www.biblegateway.com/passage/?search='+encodeURIComponent(c.reference)+'&version=KJV';$('goal').textContent=c.goal;
+ const c=CHAPTERS[state.level];$('goal').textContent=c.goal;
  clear($('chapters'));CHAPTERS.forEach((c,i)=>{const li=document.createElement('li');li.textContent=`${i+1}. ${c.title}`;li.className=i===state.level?'current':i<state.level?'done':'';$('chapters').append(li);});
 }
 function hud(){const c=CHAPTERS[state.level];$('mode').textContent=`${c.mode.toUpperCase()} · ${mission?.score??0} mission score`;$('integrity').textContent=`Integrity: ${Math.ceil(mission?.hp??100)}`;$('energy').textContent=c.mode==='defense'?`Energy: ${mission?.energy??180}`:c.mode==='match'?`Symbols: ${mission?.cleared??0} / 24`:'';$('wallet').textContent=`Quiz points: ${state.bank}`;}
