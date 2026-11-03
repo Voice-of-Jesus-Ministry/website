@@ -868,3 +868,15 @@ a.button:hover { background: transparent; text-decoration: underline; }
 .home-resources h3 a:hover,.home-editorial h2 a:hover,.home-editorial h3 a:hover{text-decoration:underline}
 .home-editorial{padding:0;background:none;border:0;box-shadow:none}
 .home-community{margin:64px 0;padding:32px 0;border-top:1px solid #365145}
+
+/* Compact mobile navigation stays on one row with a home logo. */
+.nav-short{display:none}
+@media(max-width:900px){
+ .site-header .header-inner{flex-wrap:nowrap;min-height:64px;padding:10px 12px;gap:12px}
+ .site-header .brand{flex:0 0 44px;margin:0;gap:0}
+ .site-header .brand>span,.site-header .guest-badge,.nav-wide{display:none}
+ .nav-short{display:inline}
+ .site-header .brand img{width:44px!important;height:44px!important;max-width:none!important}
+ .site-header .header-inner nav{order:0;width:auto;flex:1;min-width:0;flex-wrap:nowrap;justify-content:space-evenly;gap:clamp(8px,3vw,24px);font-size:clamp(.8rem,3.4vw,.95rem)}
+ .site-header nav a{white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}
+}

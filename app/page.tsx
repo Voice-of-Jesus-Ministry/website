@@ -40,9 +40,7 @@ export default function Home() {
         <div className="section-heading"><div><p className="eyebrow">NEW · MISSION-BASED LEARNING</p><h2 id="seven-stars-heading">The Mystery of the Seven Stars</h2></div><Link className="text-link" href="/bible-study/seven-stars">Open the lesson →</Link></div>
         <article className="home-editorial"><span className="tag">SCRIPTURE · ASTRONOMY · REFLECTION</span><h3><Link href="/bible-study/seven-stars">Learn, play, and follow the light</Link></h3><p>A guided lesson that connects the Seven Churches, the Pleiades, and thoughtful choices—then sends learners into an arcade challenge for bonus points.</p></article>
       </section>
-      <section className="section" aria-labelledby="mission-heading">
-        <article className="home-editorial"><span className="tag">MISSION 2026 · OUTREACH & FELLOWSHIP</span><h2 id="mission-heading"><Link href="/missions/2026">Living by Grace, Walking by Faith</Link></h2><p>45 students reached. Over 100 meals served. Celebrate the people and fellowship behind this year’s coastal mission.</p></article>
-      </section>
+
       <section className="section" aria-labelledby="bible-study-heading">
         <div className="section-heading">
           <div>
@@ -71,7 +69,6 @@ export default function Home() {
         <div className="home-resources">
           <article><h3><Link href="/arcade/bible-quiz">Bible Study Quiz</Link></h3><p>Ten questions, thoughtful feedback, and Scripture references to keep exploring.</p></article>
           <article><h3><Link href="/arcade/matrix-of-conscience">Matrix of Conscience</Link></h3><p>Seven gameplay levels with Bible questions between missions. Spend earned points on your next level.</p></article>
-          <article><h3><Link href="/tools">Your study workspace</Link></h3><p>Capture a reflection, collect ideas, and download your notes to keep.</p></article>
         </div>
       </section>
       <section className="home-community">

@@ -6,3 +6,5 @@
 .scripture-reflection blockquote{margin:24px 0;padding:4px 24px;border-left:3px solid #e0c47b;background:#0b1513}
 .scripture-reflection blockquote p{font:1.2rem/1.8 Georgia,serif;color:#eee5c8}
 .scripture-reflection cite{display:block;font-size:.85rem;color:#9eddd8;margin-bottom:20px;font-style:normal}
+
+@media(max-width:900px){header{flex-wrap:nowrap;padding:10px 12px;gap:12px;min-height:64px}.brand{flex:0 0 44px;gap:0}.brand>span{display:none}.brand img{width:44px;height:44px}header nav{flex:1;min-width:0;justify-content:space-evenly;gap:clamp(8px,3vw,24px);font-size:clamp(.8rem,3.4vw,.95rem)}header nav a{white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}}
