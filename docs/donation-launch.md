@@ -7,7 +7,7 @@ Reviewed November 2, 2026.
 - EIN: 43-2759368
 - IRS name control: VOIC (administrative use; not needed on the website).
 - CP 575 E is an EIN assignment notice, not a 501(c)(3) determination letter. It explicitly states the EIN does not automatically establish tax exemption.
-- The About page publishes only legal name/EIN, not the full IRS letter or its mailing address.
+- The About page publishes legal name/EIN, the confirmed board roles, and the purpose statement. It does not publish the IRS letter, signatures, or private mailing addresses. See ministry-leadership-and-purpose.md for the November 3 roster.
 - Existing external mission fundraiser: https://gofund.me/6a70a3e0f. Its beneficiary and tax-deductibility have not been independently established. Do not relabel it as the corporation’s tax-deductible checkout.
 
 ## Decisions and documents needed
