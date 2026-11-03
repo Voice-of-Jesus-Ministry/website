@@ -8,7 +8,7 @@ const board = [
  { name: "Nicholai Madias", role: "President & Director", image: "/media/people/nicholai-madias.png", art: false },
  { name: "Sheila Garcia", role: "Vice President & Director", image: "/media/people/sheila-garcia.png", art: false },
  { name: "Lea Asis", role: "Secretary & Director", image: "/media/people/lea-asis.png", art: false },
- { name: "Sharon Barber", role: "Treasurer & Director", image: "/media/people/sharon-barber.jpg", art: false },
+ { name: "Pastor Sharon Barber", role: "Treasurer & Director", image: "/media/people/sharon-barber.jpg", art: false },
  { name: "Pastor Allen Oprecina", role: "Director · Bible Study Leader", image: "/media/people/allen-oprecina-ministry.jpg", art: true },
 ];
 export default function About() {

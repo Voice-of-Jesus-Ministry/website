@@ -11,7 +11,7 @@ EIN: 43-2759368
 | Nicholai Madias | President and Director | PD |
 | Sheila Garcia | Vice President and Director | VPD |
 | Lea Asis | Secretary and Director | SD |
-| Sharon Barber | Treasurer and Director | TD |
+| Sharon Barber | Pastor; Treasurer and Director | TD |
 | Allen Oprecina | Director; Pastor and Bible Study Leader | D |
 
 ## Purpose supplied for the corrected filing
@@ -26,3 +26,5 @@ Store approved portraits in public/media/people/ with descriptive names (nichola
 
 ## Portrait production brief
 Built-in image generation: identity-preserving individual head-and-shoulders pencil portraits from the supplied three-person photo; use Sharon’s supplied portrait only as the graphite style reference. Preserve age, facial proportions, hairstyle, glasses/scarf, clothing and expression; remove the boat and other people; no text or watermark. Subjects are selected by the user-supplied photo order: Nicholai left, Sheila center, Lea right. Three separate outputs, with originals retained.
+
+Nick confirmed on November 3, 2026 that Sharon Barber is also a certified pastor. Display her name as Pastor Sharon Barber; her corporate offices remain Treasurer and Director. No certifying organization or credential number has been supplied.
