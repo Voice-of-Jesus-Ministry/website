@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { PracticeSummary } from "../components/PracticeSummary";
 
 export default function Home() {
   return (
@@ -39,12 +38,11 @@ export default function Home() {
       </section>
       <section className="section" aria-labelledby="seven-stars-heading">
         <div className="section-heading"><div><p className="eyebrow">NEW · MISSION-BASED LEARNING</p><h2 id="seven-stars-heading">The Mystery of the Seven Stars</h2></div><Link className="text-link" href="/bible-study/seven-stars">Open the lesson →</Link></div>
-        <Link className="feature-card" href="/bible-study/seven-stars"><span className="tag">SCRIPTURE · ASTRONOMY · REFLECTION</span><h3>Learn, play, and follow the light</h3><p>A guided lesson that connects the Seven Churches, the Pleiades, and thoughtful choices—then sends learners into an arcade challenge for bonus points.</p><span className="card-link">Start the lesson →</span></Link>
+        <article className="home-editorial"><span className="tag">SCRIPTURE · ASTRONOMY · REFLECTION</span><h3><Link href="/bible-study/seven-stars">Learn, play, and follow the light</Link></h3><p>A guided lesson that connects the Seven Churches, the Pleiades, and thoughtful choices—then sends learners into an arcade challenge for bonus points.</p></article>
       </section>
       <section className="section" aria-labelledby="mission-heading">
-        <Link className="feature-card" href="/missions/2026"><span className="tag">MISSION 2026 · OUTREACH & FELLOWSHIP</span><h2 id="mission-heading">Living by Grace, Walking by Faith</h2><p>45 students reached. Over 100 meals served. Celebrate the people and fellowship behind this year’s coastal mission.</p><span className="card-link">Explore the mission gallery →</span></Link>
+        <article className="home-editorial"><span className="tag">MISSION 2026 · OUTREACH & FELLOWSHIP</span><h2 id="mission-heading"><Link href="/missions/2026">Living by Grace, Walking by Faith</Link></h2><p>45 students reached. Over 100 meals served. Celebrate the people and fellowship behind this year’s coastal mission.</p></article>
       </section>
-      <PracticeSummary />
       <section className="section" aria-labelledby="bible-study-heading">
         <div className="section-heading">
           <div>
@@ -53,12 +51,12 @@ export default function Home() {
           </div>
           <Link className="text-link" href="/bible-study">Explore the studies →</Link>
         </div>
-        <Link className="feature-card" href="/bible-study/peters-failure-and-restoration">
+        <article className="home-editorial">
           <span className="tag">GRACE & DISCIPLESHIP</span>
-          <h3>From the Courtyard to the Shore: Peter’s Failure and Restoration</h3>
+          <h3><Link href="/bible-study/peters-failure-and-restoration">From the Courtyard to the Shore: Peter’s Failure and Restoration</Link></h3>
           <p>Between two fires, Peter discovers the limits of his own strength and the restoring mercy of Jesus.</p>
-          <span className="card-link">Read the study →</span>
-        </Link>
+
+        </article>
       </section>
       <section className="section">
         <div className="section-heading">
@@ -70,40 +68,13 @@ export default function Home() {
             See all games →
           </Link>
         </div>
-        <div className="card-grid">
-          <Link href="/arcade/bible-quiz" className="feature-card">
-            <span className="card-icon">Aa</span>
-            <span className="tag">LEARN</span>
-            <h3>Bible Study Quiz</h3>
-            <p>
-              Ten questions, thoughtful feedback, and Scripture references to
-              keep exploring.
-            </p>
-            <span className="card-link">Begin a study round →</span>
-          </Link>
-          <Link href="/arcade/matrix-of-conscience" className="feature-card">
-            <span className="card-icon gold">✦</span>
-            <span className="tag">PLAY</span>
-            <h3>Matrix of Conscience</h3>
-            <p>
-              One seven-chapter campaign. Explore a story, answer Bible questions,
-              and spend earned points on your next mission.
-            </p>
-            <span className="card-link">Begin the campaign →</span>
-          </Link>
-          <Link href="/tools" className="feature-card">
-            <span className="card-icon sage">✎</span>
-            <span className="tag">CREATE</span>
-            <h3>Your study workspace</h3>
-            <p>
-              Capture a reflection, collect ideas, and download your notes to
-              keep.
-            </p>
-            <span className="card-link">Open your workspace →</span>
-          </Link>
+        <div className="home-resources">
+          <article><h3><Link href="/arcade/bible-quiz">Bible Study Quiz</Link></h3><p>Ten questions, thoughtful feedback, and Scripture references to keep exploring.</p></article>
+          <article><h3><Link href="/arcade/matrix-of-conscience">Matrix of Conscience</Link></h3><p>Seven gameplay levels with Bible questions between missions. Spend earned points on your next level.</p></article>
+          <article><h3><Link href="/tools">Your study workspace</Link></h3><p>Capture a reflection, collect ideas, and download your notes to keep.</p></article>
         </div>
       </section>
-      <section className="community-panel">
+      <section className="home-community">
         <div>
           <p className="eyebrow">GROW TOGETHER</p>
           <h2>There’s a place for you here.</h2>
@@ -113,7 +84,7 @@ export default function Home() {
           </p>
         </div>
         <div className="actions">
-          <a className="button" href="https://m.me/j/AbbK3MZd144YgdvI/">
+          <a className="text-link" href="https://m.me/j/AbbK3MZd144YgdvI/">
             Join Bible study ↗
           </a>
           <a
