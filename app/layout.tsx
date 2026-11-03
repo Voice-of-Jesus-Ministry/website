@@ -42,6 +42,7 @@ export default function RootLayout({
                 </span>
               </Link>
               <nav aria-label="Main navigation">
+                <Link href="/about#team">Our Team</Link>
                 <Link href="/bible-study">Bible Study</Link>
                 <Link href="/arcade">Play & learn</Link>
                 <Link href="/tools">Workspace</Link>
