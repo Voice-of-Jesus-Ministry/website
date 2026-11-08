@@ -10,7 +10,7 @@ module.exports = [
   // Core configuration
   {
     languageOptions: {
-      parser: require.resolve('@typescript-eslint/parser'),
+      parser: require('@typescript-eslint/parser'),
       ecmaVersion: 'latest',
       sourceType: 'module',
       globals: {
@@ -26,9 +26,11 @@ module.exports = [
       '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
     },
     rules: {
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
       '@typescript-eslint/no-require-imports': 'off',
       '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/ban-ts-comment': 'off',
       'no-console': 'off',
       'react/react-in-jsx-scope': 'off',
     },

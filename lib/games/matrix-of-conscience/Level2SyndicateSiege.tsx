@@ -174,7 +174,7 @@ export default function Level2SyndicateSiege({ onBack, onVictory, sectorId }: Le
       let crGained = 0;
 
       // Move enemies
-      for (let e of nextEnemies) {
+      for (const e of nextEnemies) {
         if (!e.alive) continue;
         if (e.delay > 0) { e.delay--; continue; }
         e.pathIndex += e.speed;
@@ -193,7 +193,7 @@ export default function Level2SyndicateSiege({ onBack, onVictory, sectorId }: Le
       }
 
       // Towers attack
-      for (let t of nextTowers) {
+      for (const t of nextTowers) {
         t.cooldown = Math.max(0, t.cooldown - 1);
         if (t.cooldown > 0) continue;
 
