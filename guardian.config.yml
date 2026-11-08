@@ -1,0 +1,23 @@
+# Guardian Governance Configuration
+voting:
+  window_seconds: 120
+  approval_threshold: 2
+  require_strict_majority: true
+
+weights:
+  user: 4
+  guardian: 1
+  electra: 1
+  ella: 1
+
+commands:
+  approve: "/guardian-approve"
+  reject: "/guardian-reject"
+
+roles:
+  electra:
+    description: "Property, SEO, and accessibility auditor"
+  ella:
+    description: "Proposed fix & code quality evaluator"
+  guardian:
+    description: "Aggregation of findings and consensus keeper"
