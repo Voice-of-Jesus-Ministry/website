@@ -51,7 +51,7 @@ export default function Level3SovereignConscience({ onBack, onVictory, sectorId 
 
     useEffect(() => {
         if (screen === 'game' && canvasRef.current) {
-            let startMoney = 800;
+            const startMoney = 800;
             let startHealth = 100;
             if (directive === 'diplomacy') startHealth += 15;
 
@@ -217,7 +217,7 @@ export default function Level3SovereignConscience({ onBack, onVictory, sectorId 
         engine.towers.forEach((t: any) => {
             const isSurge = engine.surgeTiles.some((tile: any) => tile.col === t.col && tile.row === t.row);
             const isAegis = engine.towers.some((other: any) => other.type === 'aegis' && Math.hypot(other.col - t.col, other.row - t.row) <= 1.5);
-            let disabled = isSurge && isBlackout && !isAegis;
+            const disabled = isSurge && isBlackout && !isAegis;
 
             if (t.cooldownTimer > 0 && !disabled) {
                 let speed = 1;
@@ -277,7 +277,7 @@ export default function Level3SovereignConscience({ onBack, onVictory, sectorId 
             const dx = p.target.x - p.x, dy = p.target.y - p.y;
             const dist = Math.hypot(dx, dy);
             if (dist < p.speed) {
-                let isShielded = engine.enemies.some((e: any) => e.type === 'siphon' && Math.hypot(e.x - p.target.x, e.y - p.target.y) <= 85 && e !== p.target);
+                const isShielded = engine.enemies.some((e: any) => e.type === 'siphon' && Math.hypot(e.x - p.target.x, e.y - p.target.y) <= 85 && e !== p.target);
                 let dmg = p.damage * (isShielded ? 0.65 : 1);
                 
                 if (p.target.type === 'vanguard') {
