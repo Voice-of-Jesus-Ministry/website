@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import TowerDefenseBoss from './TowerDefenseBoss';
 import { useConscience } from './ConscienceProvider';
+import { Match3Minigame } from './Match3Minigame';
 
 const TOWER_DEFS = {
     basic:  { cost: 50,  range: 100, damage: 15, cooldown: 30, color: '#00f2ff', label: 'B' },
@@ -45,6 +46,7 @@ export default function Level1NexusDefense({ onBack, onVictory, sectorId }: Leve
     const [gameActive, setGameActive] = useState(false);
     const [waveActive, setWaveActive] = useState(false);
     const [isLevelWon, setIsLevelWon] = useState(false);
+    const [showMatch3, setShowMatch3] = useState(false);
     
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const engineRef = useRef<any>(null);
@@ -639,6 +641,7 @@ export default function Level1NexusDefense({ onBack, onVictory, sectorId }: Leve
                     <div style={{ width: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', background: 'rgba(15, 23, 42, 0.6)', padding: '1rem 1.5rem', borderRadius: '8px', border: '1px solid #1e293b' }}>
                         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}>
                             <div>CORES: <span style={{ color: '#00f2ff', fontWeight: 700 }}>{money}</span></div>
+                            <button onClick={() => setShowMatch3(true)} style={{ background: '#7effd8', color: '#050610', border: 'none', padding: '0.2rem 0.6rem', borderRadius: '4px', cursor: 'pointer', fontSize: '0.8rem', fontWeight: 'bold' }}>⭐ Match-3 Points ({playerPoints} pts)</button>
                             {playerPoints >= 100 && (
                               <button onClick={() => { if(spendPlayerPoints(100)) { engineRef.current.money += 100; setMoney(engineRef.current.money); } }} style={{ background: '#38bdf8', color: '#000', border: 'none', padding: '0.2rem 0.5rem', borderRadius: '4px', cursor: 'pointer', fontSize: '0.8rem' }}>Buy 100 Cores (-100 BP)</button>
                             )}
@@ -707,6 +710,8 @@ export default function Level1NexusDefense({ onBack, onVictory, sectorId }: Leve
                     </div>
                 </div>
             )}
+
+            {showMatch3 && <Match3Minigame onClose={() => setShowMatch3(false)} />}
 
             {isLevelWon && (
                 <div style={{ position: 'fixed', inset: 0, zIndex: 100, background: 'rgba(9, 13, 22, 0.95)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '2rem' }}>
