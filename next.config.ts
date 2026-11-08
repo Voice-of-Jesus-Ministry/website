@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  turbopack: {
+    // Explicit root to avoid warning about package-lock.json outside repo
+    root: __dirname,
+  },
   poweredByHeader: false,
   async redirects() {
     return [{
