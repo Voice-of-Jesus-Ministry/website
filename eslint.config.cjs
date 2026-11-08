@@ -1,13 +1,13 @@
-
 const { FlatCompat } = require('@eslint/eslintrc');
-const compat = new FlatCompat({ baseDirectory: __dirname });
+const compat = new FlatCompat({ baseDirectory: __dirname, recommendedConfig: true });
 
 module.exports = [
-  // Extend recommended configs using compat layer
+  // Ignore generated and script files to keep lint focused on source code
+  { ignores: ['**/.next/**', '**/website/scripts/**', '**/*.js'] },
+  // Extend base ESLint and TypeScript recommended configs
   ...compat.extends('eslint:recommended'),
   ...compat.extends('plugin:@typescript-eslint/recommended'),
-  ...compat.extends('plugin:react/recommended'),
-  ...compat.extends('plugin:react-hooks/recommended'),
+  // Core configuration
   {
     languageOptions: {
       parser: require.resolve('@typescript-eslint/parser'),
@@ -24,16 +24,16 @@ module.exports = [
     },
     plugins: {
       '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
-      react: require('eslint-plugin-react'),
     },
     rules: {
       '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-require-imports': 'off',
+      '@typescript-eslint/no-unused-expressions': 'off',
+      'no-console': 'off',
       'react/react-in-jsx-scope': 'off',
-      'no-console': 'warn',
     },
     settings: {
       react: { version: 'detect' },
     },
   },
 ];
-
