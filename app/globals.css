@@ -65,7 +65,7 @@ h1 {
   margin-bottom: 24px;
 }
 h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
   margin-bottom: 18px;
 }
 h3 {
@@ -708,6 +708,10 @@ textarea {
   }
   .hero h1 {
     font-size: 3.2rem;
+  }
+  h2 {
+    font-size: 1.55rem;
+    letter-spacing: -0.03em;
   }
   .hero-art {
     height: 235px;
