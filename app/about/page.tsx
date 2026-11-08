@@ -9,7 +9,7 @@ const board = [
  { name: "Sheila Garcia", role: "Vice President & Director", image: "/media/people/sheila-garcia.png", art: false },
  { name: "Lea Asis", role: "Secretary & Director", image: "/media/people/lea-asis.png", art: false },
  { name: "Pastor Sharon Barber", role: "Treasurer & Director", image: "/media/people/sharon-barber.jpg", art: false },
- { name: "Pastor Allen Oprecina", role: "Director · Bible Study Leader", image: "/media/people/allen-oprecina-ministry.jpg", art: true },
+ { name: "Pastor Allan Oprecina", role: "Director · Bible Study Leader", image: "/media/people/allen-oprecina-ministry.jpg", art: true },
 ];
 export default function About() {
  return <article className="container page narrow prose">
@@ -20,9 +20,9 @@ export default function About() {
   <Link className="text-link" href="/missions/2026">Meet the people of Mission 2026 →</Link>
   <section id="team" className="ministry-team" aria-labelledby="team-heading">
    <p className="eyebrow">OUR TEAM</p><h2 id="team-heading">United in faith. Committed to service.</h2>
-   <p>Meet the board of directors of Voice of Jesus Ministry. Pastor Allen leads our weekly Bible study, connecting students and ministry family across the United States and the Philippines.</p>
+   <p>Meet the board of directors of Voice of Jesus Ministry. Pastor Allan leads our weekly Bible study, connecting students and ministry family across the United States and the Philippines.</p>
    <div className="board-grid">{board.map(member => <article className="board-member" key={member.name}>
-    <div className={`board-portrait${member.art ? " ministry-art" : ""}`}><img src={member.image} alt={member.art ? "Illustration of Pastor Allen teaching Bible study" : `Illustrated portrait of ${member.name}`} width="640" height="800" loading="lazy" /></div>
+    <div className={`board-portrait${member.art ? " ministry-art" : ""}`}><img src={member.image} alt={member.art ? "Illustration of Pastor Allan teaching Bible study" : `Illustrated portrait of ${member.name}`} width="640" height="800" loading="lazy" /></div>
     <h3>{member.name}</h3><p>{member.role}</p>
    </article>)}</div>
   </section>
