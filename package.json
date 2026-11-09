@@ -17,7 +17,7 @@
     "check": "npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
-    "@clerk/nextjs": "^7.9.23",
+    "@clerk/nextjs": "^7.9.25",
     "@types/express": "^5.0.6",
     "@vercel/analytics": "^2.0.1",
     "firebase": "^13.2.0",
