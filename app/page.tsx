@@ -35,6 +35,12 @@ export default function Home() {
         <figure className="ministry-photo">
           <img src="/media/photos/2026/mission/m26.jpg" alt="Children and families gathered at a community event" width="4032" height="3024" fetchPriority="high" />
         </figure>
+        <figure className="ministry-photo">
+          <img src="/media/photos/2026/mission/Allan.jpg" alt="Allan" width="4032" height="3024" fetchPriority="high" />
+        </figure>
+        <figure className="ministry-photo">
+          <img src="/media/photos/2026/mission/study.jpg" alt="Study" width="4032" height="3024" fetchPriority="high" />
+        </figure>
       </section>
       <section className="section" aria-labelledby="seven-stars-heading">
         <div className="section-heading"><div><p className="eyebrow">NEW · MISSION-BASED LEARNING</p><h2 id="seven-stars-heading">The Mystery of the Seven Stars</h2></div><Link className="text-link" href="/bible-study/seven-stars">Open the lesson →</Link></div>
