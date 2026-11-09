@@ -33,7 +33,7 @@ export default function Home() {
           </p>
         </div>
         <figure className="ministry-photo">
-          <img src="/M23.jpg" alt="Children and families gathered at a community event" width="4032" height="3024" fetchPriority="high" />
+          <img src="/media/photos/2026/mission/m26.jpg" alt="Children and families gathered at a community event" width="4032" height="3024" fetchPriority="high" />
         </figure>
       </section>
       <section className="section" aria-labelledby="seven-stars-heading">
