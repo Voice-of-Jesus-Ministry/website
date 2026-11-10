@@ -1,3 +1,10 @@
+# .gitignore
+venv/
+__pycache__/
+history/
+outputs/
+*.log
+.env
 node_modules/
 .next/
 out/
@@ -6,3 +13,5 @@ out/
 *.tsbuildinfo
 playwright-report/
 test-results/
+
+*.mp4
