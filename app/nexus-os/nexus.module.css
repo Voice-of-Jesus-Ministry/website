@@ -1,0 +1,71 @@
+.nexusRoot {
+  --nexus-black: #000000;
+  --matrix-green: #00ff66;
+  --nexus-blue: #00ccff;
+  --warning-red: #ff3333;
+  --shadow-violet: #334455;
+  --gold-star: #ffd700;
+  --memory-white: #e8f6ff;
+  background-color: var(--nexus-black);
+  color: var(--matrix-green);
+  font-family: monospace;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.topBar {
+  height: 56px;
+  border-bottom: 1px solid var(--matrix-green);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.mainArea {
+  display: flex;
+  flex: 1;
+  height: calc(100vh - 96px);
+}
+.leftNav {
+  width: 240px;
+  border-right: 1px solid var(--matrix-green);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+.leftNav a {
+  color: var(--nexus-blue);
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.2s;
+}
+.leftNav a:hover, .leftNav a.active {
+  background: rgba(0, 255, 102, 0.1);
+  color: var(--matrix-green);
+  text-shadow: 0 0 8px var(--matrix-green);
+}
+.viewport {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+.statusBar {
+  height: 40px;
+  border-top: 1px solid var(--matrix-green);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 0.85rem;
+}
+.meterContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .leftNav { width: 64px; }
+  .leftNav a { padding: 10px; text-align: center; }
+  .navLabel { display: none; }
+}
