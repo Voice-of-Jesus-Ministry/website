@@ -5,8 +5,8 @@ export default function Donate() {
  return <article className="container page narrow prose">
   <p className="eyebrow">GIVE WITH UNDERSTANDING</p><h1>Support faith, fellowship, and practical care.</h1>
   <p className="lede">Thank you for helping sustain Bible teaching, nourishment, and community outreach.</p>
-  <h2>Current mission fundraiser</h2><p>Pastor Allen’s village operations fundraiser supports needs including safe water, classroom solar power, and a reliable boat motor.</p>
-  <a className="text-link" href="https://gofund.me/6a70a3e0f" target="_blank" rel="noopener noreferrer">Visit Pastor Allen’s fundraiser ↗</a>
+  <h2>Current mission fundraiser</h2><p>Pastor Allan's village operations fundraiser supports needs including safe water, classroom solar power, and a reliable boat motor.</p>
+  <a className="text-link" href="https://gofund.me/6a70a3e0f" target="_blank" rel="noopener noreferrer">Visit Pastor Allan's fundraiser ↗</a>
   <p>Review the campaign’s organizer, beneficiary, use of funds, and donation terms on GoFundMe before giving.</p>
   <section className="notice" aria-labelledby="tax-heading"><h2 id="tax-heading">Tax-deductible donations</h2>
    <p>VOICE OF JESUS MINISTRY INC · EIN 43-2759368</p>
