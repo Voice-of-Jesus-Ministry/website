@@ -24,10 +24,10 @@ export default function Mission2026() {
    <p>Because of your prayers, generosity, and faith, we have reached <strong>45 students and served over 100 meals so far in 2026</strong>. Your partnership supports faith-based community outreach dedicated to serving and sustaining an isolated coastal settlement.</p>
   </section>
   <section className="mission-support" aria-labelledby="support-heading"><p className="eyebrow">SUPPORT OUR VILLAGE OPERATIONS</p><h2 id="support-heading">Strengthening the lifelines of community.</h2>
-   <p>Under Pastor Allen’s leadership, the ministry is working to sustain coastal operations, strengthen community resilience, and expand outreach. The shelters where children gather provide a foundation for nourishment, youth summer camps, Bible teaching, and fellowship.</p>
+   <p>Under Pastor Allan's leadership, the ministry is working to sustain coastal operations, strengthen community resilience, and expand outreach. The shelters where children gather provide a foundation for nourishment, youth summer camps, Bible teaching, and fellowship.</p>
    <div className="mission-priorities"><div><h3>Safe water</h3><p>A dependable water supply for daily community needs.</p></div><div><h3>Classroom solar power</h3><p>Reliable power to support teaching and learning.</p></div><div><h3>A lifeline boat motor</h3><p>A robust marine engine to maintain essential transportation and support community safety.</p></div></div>
    <p>These are ongoing needs. Thank you for being the hands and feet of Jesus with us.</p>
-   <a className="text-link" href="https://gofund.me/6a70a3e0f" target="_blank" rel="noopener noreferrer">Support Pastor Allen’s village ministry ↗</a>
+   <a className="text-link" href="https://gofund.me/6a70a3e0f" target="_blank" rel="noopener noreferrer">Support Pastor Allan's village ministry ↗</a>
    <p className="quiet">Visit the fundraiser for operational updates, infrastructure goals, and donations.</p>
   </section>
   <section id="mission-gallery" className="mission-gallery" aria-labelledby="gallery-heading"><p className="eyebrow">MISSION 2026 PHOTO GALLERY</p><h2 id="gallery-heading">The people. The journey. The fellowship.</h2>

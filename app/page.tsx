@@ -42,10 +42,6 @@ export default function Home() {
           <img src="/media/photos/2026/mission/study.jpg" alt="Study" width="4032" height="3024" fetchPriority="high" />
         </figure>
       </section>
-      <section className="section" aria-labelledby="seven-stars-heading">
-        <div className="section-heading"><div><p className="eyebrow">NEW · MISSION-BASED LEARNING</p><h2 id="seven-stars-heading">The Mystery of the Seven Stars</h2></div><Link className="text-link" href="/bible-study/seven-stars">Open the lesson →</Link></div>
-        <article className="home-editorial"><span className="tag">SCRIPTURE · ASTRONOMY · REFLECTION</span><h3><Link href="/bible-study/seven-stars">Learn, play, and follow the light</Link></h3><p>A guided lesson that connects the Seven Churches, the Pleiades, and thoughtful choices—then sends learners into an arcade challenge for bonus points.</p></article>
-      </section>
 
       <section className="section" aria-labelledby="bible-study-heading">
         <div className="section-heading">
@@ -57,7 +53,7 @@ export default function Home() {
         </div>
         <article className="home-editorial">
           <span className="tag">GRACE & DISCIPLESHIP</span>
-          <h3><Link href="/bible-study/peters-failure-and-restoration">From the Courtyard to the Shore: Peter’s Failure and Restoration</Link></h3>
+          <h3><Link href="/bible-study/peters-failure-and-restoration">From the Courtyard to the Shore: Peter's Failure and Restoration</Link></h3>
           <p>Between two fires, Peter discovers the limits of his own strength and the restoring mercy of Jesus.</p>
 
         </article>
@@ -80,14 +76,14 @@ export default function Home() {
       <section className="home-community">
         <div>
           <p className="eyebrow">GROW TOGETHER</p>
-          <h2>There’s a place for you here.</h2>
+          <h2>There's a place for you here.</h2>
           <p>
             Join our online Bible study on Thursdays at 8 pm Eastern, or catch
             up with a teaching whenever you have a quiet moment.
           </p>
         </div>
         <div className="actions">
-          <a className="text-link" href="https://m.me/j/AbbK3MZd144YgdvI/">
+          <a className="text-link" href="https://m.me/cm/AbYwya7_jv6a4Y_v/?send_source=cm%3Acopy_invite_link">
             Join Bible study ↗
           </a>
           <a
