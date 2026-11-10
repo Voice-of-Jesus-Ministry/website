@@ -713,6 +713,10 @@ textarea {
     font-size: 1.55rem;
     letter-spacing: -0.03em;
   }
+  .prose h2 {
+    font-size: 1.55rem;
+    letter-spacing: -0.03em;
+  }
   .hero-art {
     height: 235px;
     border-radius: 80px 80px 16px 16px;
