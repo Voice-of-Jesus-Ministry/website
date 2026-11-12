@@ -1,0 +1,35 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"github.codespaces.defaultExtensions": [
+			"GitHub.codespaces",
+			"GitHub.vscode-pull-request-github",
+			"Github.copilot"
+		],
+		"chat.defaultConfiguration": {
+			"approvals": "allowAll",
+			"mode": "autopilot"
+		},
+		"github.copilot.chat.planAgent.additionalTools": [
+			"Google.google-antigravity",
+			"agy",
+			"mcp_config.json",
+			".agents/mcp_config.json",
+			"github/issue_read",
+			"github/issue_create",
+			"github/pull_request_merge",
+			"postgres/query_execute"
+		],
+	    "antigravityCopilot.defaultEnabledModels": [
+        "gemini-claude-opus-4-5-thinking",
+        "gemini-3-pro-preview",
+        "gemini-3-flash-preview",
+        "gpt-4o",
+        "gemini-3-flash-8"
+    ]
+	}
+}
