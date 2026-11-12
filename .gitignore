@@ -5,11 +5,14 @@ history/
 outputs/
 *.log
 .env
+service_account.json
 node_modules/
 .next/
 out/
-.env*
-!.env.example
+.env
+service_account.json*
+!.env
+service_account.json.example
 *.tsbuildinfo
 playwright-report/
 test-results/
