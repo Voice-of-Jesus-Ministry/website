@@ -1,7 +1,7 @@
 import { SiteAnalytics } from "../components/SiteAnalytics";
 import type { Metadata } from "next";
 import "./globals.css";
-import "../src/index.css";
+
 import Link from "next/link";
 import { ProgressProvider } from "../components/ProgressProvider";
 import { ClerkProvider } from "@clerk/nextjs";
