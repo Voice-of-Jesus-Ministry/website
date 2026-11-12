@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "settings": {
+    "defaultAgent": "antigravity",
+    "plugins": ["firebase"],
+    "skills": ["firebase-read", "firebase-write", "github-create-pr", "github-merge-pr", "cd", "memory", "review"]
+  },
+  "extensions": {
+    "vscode": {
+      "defaultExtensions": [
+        "GitHub.codespaces",
+        "GitHub.vscode-pull-request-github",
+        "google-antigravity.antigravity"
+      ]
+    }
+  }
+}

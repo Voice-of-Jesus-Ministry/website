@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "engines": {
-    "node": ">=22.18.0"
-  },
+  "engines": { "node": ">=22.18.0" },
   "scripts": {
     "export-logs": "C:\\Python314\\python.exe backend\\export_logs_to_sheets.py",
     "lint": "eslint . --ext .ts,.tsx",
@@ -39,7 +37,6 @@
     "autoprefixer": "^10.6.2",
     "eslint": "^10.14.0",
     "postcss": "^8.5.32",
-    "tailwindcss": "^4.3.5",
-    "typescript": "^5.9.0"
+    "tailwindcss": "^4.3.5"
   }
 }

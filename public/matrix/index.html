@@ -70,7 +70,7 @@
         document.getElementById('loginBtn').addEventListener('click', async () => {
             const statusDiv = document.getElementById('status');
             statusDiv.innerText = "Establishing secure connection...";
-            
+
             try {
                 const result = await signInWithPopup(auth, provider);
                 const user = result.user;

@@ -9,12 +9,8 @@ service_account.json
 node_modules/
 .next/
 out/
-.env
-service_account.json*
-!.env
-service_account.json.example
 *.tsbuildinfo
 playwright-report/
 test-results/
-
 *.mp4
+!.env.example
