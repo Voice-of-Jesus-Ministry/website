@@ -5,8 +5,6 @@
   "type": "module",
   "engines": { "node": ">=22.18.0" },
   "scripts": {
-    "export": "next export",
-
     "export-logs": "C:\\Python314\\python.exe backend\\export_logs_to_sheets.py",
     "lint": "eslint . --ext .ts,.tsx",
     "dev": "next dev",
