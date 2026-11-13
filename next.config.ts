@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  output: 'export',
+  trailingSlash: true,
+  images: { unoptimized: true },
   turbopack: {
     // Explicit root to avoid warning about package-lock.json outside repo
     root: __dirname,
