@@ -21,7 +21,9 @@ jobs:
         run: |
           # Example for a Vite/React app:
           npm ci
-          npm run build
+          npm ci
+        npm run build
+        npm run export   # generate ./out for Firebase
       - name: Deploy to Firebase Hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
