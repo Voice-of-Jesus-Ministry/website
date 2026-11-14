@@ -1,8 +1,19 @@
+# .gitignore
+venv/
+__pycache__/
+history/
+outputs/
+*.log
+.env
+backend/service_account.json
+backend/service_account_secret.json
 node_modules/
 .next/
 out/
-.env*
-!.env.example
 *.tsbuildinfo
 playwright-report/
 test-results/
+*.mp4
+!.env.example
+website/
+website-fresh/

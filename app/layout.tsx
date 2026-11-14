@@ -1,7 +1,11 @@
+import { SiteAnalytics } from "../components/SiteAnalytics";
 import type { Metadata } from "next";
 import "./globals.css";
+
 import Link from "next/link";
 import { ProgressProvider } from "../components/ProgressProvider";
+import { ClerkProvider } from "@clerk/nextjs";
+import { accountsConfigured } from "../lib/account-config";
 
 export const metadata: Metadata = {
   title: "Voice of Jesus Ministry",
@@ -14,7 +18,7 @@ export const metadata: Metadata = {
     "Prayer",
     "Discipleship",
   ],
-  icons: { icon: "/favicon.svg", apple: "/icon.svg" },
+  icons: { icon: "/favicon.png", apple: "/icon.png" },
 };
 
 export default function RootLayout({
@@ -22,7 +26,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
+  const content = (
     <html lang="en">
       <body>
         <a className="skip-link" href="#main">
@@ -31,19 +35,21 @@ export default function RootLayout({
         <ProgressProvider>
           <header className="site-header">
             <div className="header-inner">
-              <Link className="brand" href="/">
-                <img src="/icon.svg" width="42" height="42" alt="" />
+              <Link className="brand" href="/" aria-label="Voice of Jesus Ministry home">
+                <img src="/favicon.png" width="72" height="72" alt="" />
                 <span>
-                  VOICE OF JESUS<small>Hear His voice. Follow His Word.</small>
+                  Voice of Jesus Ministry
+                  <small>Hear His voice. Follow His Word.</small>
                 </span>
               </Link>
               <nav aria-label="Main navigation">
-                <Link href="/arcade">Play & learn</Link>
-                <Link href="/tools">Workspace</Link>
-                <a href="https://voiceofjesusnet.blogspot.com/">Blog</a>
+                <Link href="/about#team"><span className="nav-wide">Our Team</span><span className="nav-short">Team</span></Link>
+                <Link href="/bible-study"><span className="nav-wide">Bible Study</span><span className="nav-short">Study</span></Link>
+                <Link href="/arcade">Arcade</Link>
+                <Link href="/blog">Blog</Link>
               </nav>
               <Link href="/account" className="guest-badge">
-                Guest · this device
+                Account
               </Link>
             </div>
           </header>
@@ -51,6 +57,8 @@ export default function RootLayout({
           <footer className="site-footer">
             <span>Voice of Jesus Ministry</span>
             <div>
+              <Link href="/about">About</Link>
+              <Link href="/donate">Support</Link>
               <Link href="/privacy">Privacy</Link>
               <a href="https://github.com/Voice-of-Jesus-Ministry/website">
                 Source & credits
@@ -59,7 +67,9 @@ export default function RootLayout({
             </div>
           </footer>
         </ProgressProvider>
+        <SiteAnalytics />
       </body>
     </html>
   );
+  return accountsConfigured() ? <ClerkProvider>{content}</ClerkProvider> : content;
 }

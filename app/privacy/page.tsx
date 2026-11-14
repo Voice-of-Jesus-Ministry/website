@@ -16,13 +16,16 @@ export default function Privacy() {
         or cloud-storage credentials.
       </p>
       <h2>External services</h2>
+      <p>When member accounts are enabled, Clerk handles sign-in and account registration, including Google sign-in and email links. Account providers process the information needed to authenticate you. Photo and video submissions are not available in this release.</p>
       <p>
         Following a link to Blogger, YouTube, Messenger, or GitHub opens that service,
         which has its own privacy practices. This app does not embed their
-        players or add advertising or analytics scripts. The hosting service may
+        players or add advertising scripts. The hosting service may
         process ordinary request information, such as IP addresses and access
         logs.
       </p>
+      <h2>Visitor analytics</h2>
+      <p>We use Vercel Web Analytics for aggregate page views and referrals without analytics cookies. Query strings and URL fragments are removed before page-view events are sent. We do not send workspace notes, quiz answers, uploaded documents, or account details as analytics events.</p>
       <h2>Shared devices</h2>
       <p>
         Local storage is not a private vault. People using the same browser

@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Noah & Norea: Cleansing the Gloom</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;600;700&display=swap');
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background-color: #050508;
+            font-family: 'Inter', sans-serif;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+            touch-action: none;
+        }
+
+        /* Glassmorphism UI components */
+        .glass-panel {
+            background: rgba(15, 12, 28, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 215, 0, 0.18);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7);
+        }
+
+        .gold-glow {
+            text-shadow: 0 0 12px rgba(245, 184, 46, 0.6), 0 0 24px rgba(245, 184, 46, 0.3);
+        }
+
+        .fire-glow {
+            text-shadow: 0 0 12px rgba(255, 85, 36, 0.7), 0 0 24px rgba(255, 85, 36, 0.4);
+        }
+
+        .gloom-glow {
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Custom Scrollbar for upgrade logs */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(10, 10, 15, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(212, 175, 55, 0.4);
+            border-radius: 3px;
+        }
+
+        /* Touch Joystick styling */
+        .joystick-base {
+            width: 120px;
+            height: 120px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+            touch-action: none;
+        }
+
+        .joystick-thumb {
+            width: 50px;
+            height: 50px;
+            background: rgba(245, 184, 46, 0.6);
+            box-shadow: 0 0 15px rgba(245, 184, 46, 0.8);
+            border-radius: 50%;
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 overflow-hidden select-none">
+
+    <!-- Main Game Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- HUD Layer -->
+    <div id="hudOverlay" class="absolute inset-0 pointer-events-none flex flex-col justify-between p-4 md:p-6 hidden">
+        <!-- Top Bar: Stats & Objectives -->
+        <div class="flex justify-between items-start w-full gap-4">
+            <!-- Hero Statuses -->
+            <div class="flex flex-col gap-2 pointer-events-auto">
+                <!-- Norea HP -->
+                <div class="glass-panel p-2.5 rounded-xl flex items-center gap-3 w-56 md:w-64">
+                    <div class="w-10 h-10 rounded-lg bg-red-950/80 border border-orange-500/50 flex items-center justify-center text-orange-400 font-bold">
+                        <i class="fa-solid fa-fire text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-amber-300">Norea (Flame)</span>
+                            <span id="noreaHpText" class="text-red-300">100/100</span>
+                        </div>
+                        <div class="w-full bg-gray-950 h-2.5 rounded-full overflow-hidden border border-red-900/40">
+                            <div id="noreaHpBar" class="bg-gradient-to-r from-red-600 to-orange-400 h-full w-full transition-all duration-200"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Noah Shield / Spirit -->
+                <div class="glass-panel p-2.5 rounded-xl flex items-center gap-3 w-56 md:w-64">
+                    <div class="w-10 h-10 rounded-lg bg-amber-950/80 border border-yellow-500/50 flex items-center justify-center text-yellow-400 font-bold">
+                        <i class="fa-solid fa-shield-halved text-lg"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex justify-between text-xs font-semibold mb-1">
+                            <span class="text-yellow-200">Noah (Ward)</span>
+                            <span id="noahShieldText" class="text-amber-200">100%</span>
+                        </div>
+                        <div class="w-full bg-gray-950 h-2.5 rounded-full overflow-hidden border border-yellow-900/40">
+                            <div id="noahShieldBar" class="bg-gradient-to-r from-yellow-600 to-amber-300 h-full w-full transition-all duration-200"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Objective & Level Progress -->
+            <div class="glass-panel px-4 py-3 rounded-2xl flex flex-col items-center pointer-events-auto min-w-[220px] text-center">
+                <div class="text-xs uppercase tracking-widest text-amber-400 font-semibold mb-1">Altars Cleansed</div>
+                <div class="flex items-center gap-2 mb-2">
+                    <span id="altarCounter" class="font-cinzel text-2xl font-black text-amber-200 gold-glow">0 / 4</span>
+                    <i class="fa-solid fa-torii-gate text-amber-400"></i>
+                </div>
+                <div class="w-full bg-gray-900 h-2 rounded-full overflow-hidden border border-amber-500/30">
+                    <div id="altarProgressBar" class="bg-gradient-to-r from-amber-500 to-yellow-300 h-full w-0 transition-all duration-300"></div>
+                </div>
+                <div id="essenceText" class="text-xs text-amber-300/80 mt-2 flex items-center gap-1">
+                    <i class="fa-solid fa-sparkles text-amber-400"></i> Purified Light: <span id="essenceVal" class="font-bold text-amber-100">0</span>
+                </div>
+            </div>
+
+            <!-- Controls / Pause -->
+            <div class="pointer-events-auto flex items-center gap-2">
+                <button id="soundToggleBtn" class="glass-panel w-11 h-11 rounded-xl flex items-center justify-center text-amber-300 hover:text-white hover:bg-amber-500/20 transition">
+                    <i class="fa-solid fa-volume-high text-lg"></i>
+                </button>
+                <button id="pauseBtn" class="glass-panel w-11 h-11 rounded-xl flex items-center justify-center text-amber-300 hover:text-white hover:bg-amber-500/20 transition">
+                    <i class="fa-solid fa-pause text-lg"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Synergy Prompt Banner (Appears when Norea is inside Noah's Shield) -->
+        <div id="synergyBanner" class="self-center bg-amber-500/20 border border-amber-400/60 rounded-full px-5 py-2 backdrop-blur-md flex items-center gap-3 transform translate-y-4 opacity-0 transition-all duration-300">
+            <i class="fa-solid fa-sun text-yellow-300 animate-spin text-lg"></i>
+            <span class="text-sm font-semibold text-yellow-100 tracking-wide uppercase">Sunfire Synergy Active! <span class="text-amber-300 text-xs font-normal">Cast fire for explosive purifications</span></span>
+        </div>
+
+        <!-- Bottom Ability Bar -->
+        <div class="flex justify-center items-end w-full gap-3 md:gap-6 pointer-events-auto pb-2">
+            <!-- Norea Flame Nova Ability -->
+            <div class="relative group">
+                <button id="ability1Btn" class="glass-panel w-14 h-14 md:w-16 md:h-16 rounded-2xl flex flex-col items-center justify-center relative overflow-hidden active:scale-95 transition border-orange-500/40">
+                    <i class="fa-solid fa-fire-flame-curved text-2xl text-orange-400 mb-1"></i>
+                    <span class="text-[10px] font-bold text-gray-300 uppercase">Flame Nova</span>
+                    <div id="ability1CdOverlay" class="absolute inset-0 bg-black/75 flex items-center justify-center text-white font-bold text-sm h-0 transition-all duration-100"></div>
+                </button>
+                <div class="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-gray-900 text-amber-300 text-[10px] px-2 py-0.5 rounded border border-amber-500/30 opacity-80 whitespace-nowrap">Key: [E] or [Tap]</div>
+            </div>
+
+            <!-- Noah Holy Anchor Skill -->
+            <div class="relative group">
+                <button id="ability2Btn" class="glass-panel w-16 h-16 md:w-20 md:h-20 rounded-2xl flex flex-col items-center justify-center relative overflow-hidden active:scale-95 transition border-yellow-400/60 shadow-lg shadow-amber-500/20">
+                    <i class="fa-solid fa-ankh text-3xl text-yellow-300 mb-1"></i>
+                    <span class="text-xs font-bold text-amber-200 uppercase">Sanctuary Anchor</span>
+                    <div id="ability2CdOverlay" class="absolute inset-0 bg-black/75 flex items-center justify-center text-white font-bold text-sm h-0 transition-all duration-100"></div>
+                </button>
+                <div class="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-gray-900 text-amber-300 text-[10px] px-2 py-0.5 rounded border border-amber-500/30 opacity-80 whitespace-nowrap">Key: [Space]</div>
+            </div>
+
+            <!-- Noah Light Purge Skill -->
+            <div class="relative group">
+                <button id="ability3Btn" class="glass-panel w-14 h-14 md:w-16 md:h-16 rounded-2xl flex flex-col items-center justify-center relative overflow-hidden active:scale-95 transition border-amber-500/40">
+                    <i class="fa-solid fa-wand-magic-sparkles text-2xl text-amber-300 mb-1"></i>
+                    <span class="text-[10px] font-bold text-gray-300 uppercase">Aegis Burst</span>
+                    <div id="ability3CdOverlay" class="absolute inset-0 bg-black/75 flex items-center justify-center text-white font-bold text-sm h-0 transition-all duration-100"></div>
+                </button>
+                <div class="absolute -top-7 left-1/2 transform -translate-x-1/2 bg-gray-900 text-amber-300 text-[10px] px-2 py-0.5 rounded border border-amber-500/30 opacity-80 whitespace-nowrap">Key: [Q]</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Touch Joystick UI for Mobile -->
+    <div id="touchJoystick" class="joystick-base hidden">
+        <div id="joystickThumb" class="joystick-thumb"></div>
+    </div>
+
+    <!-- Start / Story Menu Screen -->
+    <div id="startMenu" class="absolute inset-0 bg-black/85 backdrop-blur-md flex items-center justify-center p-4 z-50">
+        <div class="glass-panel max-w-2xl w-full p-6 md:p-10 rounded-3xl text-center border-amber-500/30 shadow-2xl flex flex-col items-center">
+            <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-orange-600 via-amber-500 to-yellow-300 p-1 mb-4 flex items-center justify-center shadow-lg shadow-amber-500/30">
+                <div class="w-full h-full rounded-full bg-gray-950 flex items-center justify-center">
+                    <i class="fa-solid fa-hands-holding-circle text-3xl text-amber-400"></i>
+                </div>
+            </div>
+
+            <h1 class="font-cinzel text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-400 to-orange-500 mb-3 gold-glow">
+                NOAH & NOREA
+            </h1>
+            <p class="text-sm md:text-base text-amber-200/80 tracking-widest uppercase mb-6 font-semibold">
+                Cleansing the Gloom
+            </p>
+
+            <div class="bg-gray-950/70 border border-amber-500/20 rounded-2xl p-4 md:p-6 mb-8 text-left text-xs md:text-sm text-gray-300 space-y-3 leading-relaxed">
+                <p>
+                    <strong class="text-amber-300 font-semibold">The Premise:</strong> An ancient suffocating corruption known as <span class="text-purple-400 font-semibold">The Gloom</span> has swallowed the realm. To survive, former adversaries Noah and Norea must stand together as one.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+                    <div class="bg-amber-950/30 p-3 rounded-xl border border-amber-500/20 flex gap-3 items-center">
+                        <i class="fa-solid fa-shield-halved text-2xl text-yellow-400"></i>
+                        <div>
+                            <div class="font-bold text-yellow-200 text-xs">Noah (The Anchor)</div>
+                            <div class="text-[11px] text-gray-400">Creates sacred Ward Barriers that repel Gloom & protect Norea.</div>
+                        </div>
+                    </div>
+                    <div class="bg-red-950/30 p-3 rounded-xl border border-orange-500/20 flex gap-3 items-center">
+                        <i class="fa-solid fa-fire text-2xl text-orange-400"></i>
+                        <div>
+                            <div class="font-bold text-orange-300 text-xs">Norea (The Spark)</div>
+                            <div class="text-[11px] text-gray-400">Unleashes divine fire magic to burn back shadows and purify Altars.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button id="startGameBtn" class="w-full md:w-3/4 py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-yellow-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-gray-950 font-cinzel font-black text-lg tracking-wider shadow-lg shadow-amber-500/30 active:scale-95 transition transform">
+                BEGIN THE PURIFICATION
+            </button>
+        </div>
+    </div>
+
+    <!-- Upgrade / Sanctum Modal -->
+    <div id="upgradeModal" class="absolute inset-0 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 z-40 hidden">
+        <div class="glass-panel max-w-xl w-full p-6 md:p-8 rounded-3xl text-center border-amber-500/40">
+            <div class="text-xs uppercase tracking-widest text-amber-400 font-bold mb-1">Altar Cleansed!</div>
+            <h2 class="font-cinzel text-2xl md:text-3xl font-bold text-amber-100 mb-2 gold-glow">Divine Synergy Upgrade</h2>
+            <p class="text-xs text-gray-300 mb-6">Choose a sacred blessing to strengthen Noah and Norea's union against the expanding Gloom.</p>
+
+            <div id="upgradeOptionsContainer" class="grid grid-cols-1 gap-3 mb-6">
+                <!-- Dynamic cards populated by JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over / Victory Modal -->
+    <div id="gameOverModal" class="absolute inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center p-4 z-50 hidden">
+        <div class="glass-panel max-w-lg w-full p-8 rounded-3xl text-center border-amber-500/30 flex flex-col items-center">
+            <div id="endTitleIcon" class="w-20 h-20 rounded-full flex items-center justify-center text-4xl mb-4">
+                <i class="fa-solid fa-skull"></i>
+            </div>
+            <h2 id="endTitle" class="font-cinzel text-3xl font-black mb-2">THE REALM FELL</h2>
+            <p id="endSubtitle" class="text-sm text-gray-300 mb-6">The Gloom overwhelmed the sacred sanctuary.</p>
+
+            <div class="bg-gray-950/80 border border-amber-500/20 rounded-2xl p-4 w-full mb-6 space-y-2 text-sm text-gray-300">
+                <div class="flex justify-between"><span>Altars Cleansed:</span><span id="endAltars" class="font-bold text-amber-300">0 / 4</span></div>
+                <div class="flex justify-between"><span>Shades Purified:</span><span id="endKills" class="font-bold text-orange-400">0</span></div>
+                <div class="flex justify-between"><span>Purified Light Essence:</span><span id="endScore" class="font-bold text-yellow-300">0</span></div>
+            </div>
+
+            <button id="restartBtn" class="w-full py-3.5 rounded-2xl bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-gray-950 font-cinzel font-black text-base tracking-wider shadow-lg shadow-amber-500/20 transition">
+                REKINDLE THE LIGHT
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Web Audio Synthesizer for zero-dependency retro SFX
+        class AudioSynth {
+            constructor() {
+                this.ctx = null;
+                this.enabled = true;
+            }
+
+            init() {
+                if (!this.ctx) {
+                    this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+                }
+            }
+
+            playCast() {
+                if (!this.enabled || !this.ctx) return;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(300, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(800, this.ctx.currentTime + 0.15);
+                gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.15);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + 0.15);
+            }
+
+            playExplosion() {
+                if (!this.enabled || !this.ctx) return;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(150, this.ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(30, this.ctx.currentTime + 0.3);
+                gain.gain.setValueAtTime(0.3, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.3);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + 0.3);
+            }
+
+            playCleanse() {
+                if (!this.enabled || !this.ctx) return;
+                const now = this.ctx.currentTime;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(440, now);
+                osc.frequency.setValueAtTime(554.37, now + 0.1); // C#
+                osc.frequency.setValueAtTime(659.25, now + 0.2); // E
+                gain.gain.setValueAtTime(0.25, now);
+                gain.gain.exponentialRampToValueAtTime(0.01, now + 0.5);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(now + 0.5);
+            }
+
+            playShield() {
+                if (!this.enabled || !this.ctx) return;
+                const osc = this.ctx.createOscillator();
+                const gain = this.ctx.createGain();
+                osc.type = 'triangle';
+                osc.frequency.setValueAtTime(200, this.ctx.currentTime);
+                osc.frequency.linearRampToValueAtTime(400, this.ctx.currentTime + 0.2);
+                gain.gain.setValueAtTime(0.2, this.ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, this.ctx.currentTime + 0.25);
+                osc.connect(gain);
+                gain.connect(this.ctx.destination);
+                osc.start();
+                osc.stop(this.ctx.currentTime + 0.25);
+            }
+        }
+
+        const audio = new AudioSynth();
+
+        const canvas = document.getElementById('gameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        let width = canvas.width = window.innerWidth;
+        let height = canvas.height = window.innerHeight;
+
+        window.addEventListener('resize', () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        });
+
+        // Game State Engine Variables
+        let gameState = 'MENU'; // MENU, PLAYING, UPGRADE, GAMEOVER
+        let essenceScore = 0;
+        let killedShades = 0;
+        let altarsCleansedCount = 0;
+        const totalAltars = 4;
+        let gameTime = 0;
+
+        // Key Input Tracking
+        const keys = { w: false, a: false, s: false, d: false, e: false, q: false, space: false };
+        const mouse = { x: width / 2, y: height / 2, isDown: false };
+
+        window.addEventListener('keydown', (e) => {
+            const k = e.key.toLowerCase();
+            if (k === 'w' || k === 'arrowup') keys.w = true;
+            if (k === 'a' || k === 'arrowleft') keys.a = true;
+            if (k === 's' || k === 'arrowdown') keys.s = true;
+            if (k === 'd' || k === 'arrowright') keys.d = true;
+            if (k === 'e') triggerAbility1();
+            if (k === ' ') triggerAbility2();
+            if (k === 'q') triggerAbility3();
+        });
+
+        window.addEventListener('keyup', (e) => {
+            const k = e.key.toLowerCase();
+            if (k === 'w' || k === 'arrowup') keys.w = false;
+            if (k === 'a' || k === 'arrowleft') keys.a = false;
+            if (k === 's' || k === 'arrowdown') keys.s = false;
+            if (k === 'd' || k === 'arrowright') keys.d = false;
+        });
+
+        canvas.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+
+        canvas.addEventListener('mousedown', () => {
+            mouse.isDown = true;
+        });
+
+        canvas.addEventListener('mouseup', () => {
+            mouse.isDown = false;
+        });
+
+        // Norea: The Agile Fire Caster (Player Controlled)
+        class Norea {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 16;
+                this.speed = 3.8;
+                this.hp = 100;
+                this.maxHp = 100;
+                this.autoAttackCd = 0;
+                this.fireRate = 18; // Frames between standard flame bolts
+                this.damageMultiplier = 1.0;
+            }
+
+            update() {
+                let dx = 0;
+                let dy = 0;
+
+                if (keys.w) dy -= 1;
+                if (keys.s) dy += 1;
+                if (keys.a) dx -= 1;
+                if (keys.d) dx += 1;
+
+                // Handle touch joystick input if present
+                if (joystickInput.active) {
+                    dx = joystickInput.x;
+                    dy = joystickInput.y;
+                }
+
+                if (dx !== 0 && dy !== 0) {
+                    const len = Math.hypot(dx, dy);
+                    dx /= len;
+                    dy /= len;
+                }
+
+                this.x += dx * this.speed;
+                this.y += dy * this.speed;
+
+                // Keep inside bounds
+                this.x = Math.max(30, Math.min(width - 30, this.x));
+                this.y = Math.max(30, Math.min(height - 30, this.y));
+
+                // Auto attack towards nearest enemy or mouse direction
+                if (this.autoAttackCd > 0) this.autoAttackCd--;
+                else {
+                    this.castFlameBolt();
+                    this.autoAttackCd = this.fireRate;
+                }
+            }
+
+            castFlameBolt() {
+                let targetAngle = Math.atan2(mouse.y - this.y, mouse.x - this.x);
+
+                // Check for nearest shade if mouse isn't clicking
+                if (enemies.length > 0 && !mouse.isDown) {
+                    let nearest = null;
+                    let minDist = 350;
+                    for (let e of enemies) {
+                        let d = Math.hypot(e.x - this.x, e.y - this.y);
+                        if (d < minDist) {
+                            minDist = d;
+                            nearest = e;
+                        }
+                    }
+                    if (nearest) {
+                        targetAngle = Math.atan2(nearest.y - this.y, nearest.x - this.x);
+                    }
+                }
+
+                // Is inside Noah's aura?
+                const distToNoah = Math.hypot(this.x - noah.x, this.y - noah.y);
+                const isSupercharged = distToNoah < noah.auraRadius;
+
+                projectiles.push(new FlameBolt(
+                    this.x, this.y, 
+                    targetAngle, 
+                    isSupercharged ? 12 : 8, 
+                    isSupercharged ? 35 * this.damageMultiplier : 20 * this.damageMultiplier,
+                    isSupercharged
+                ));
+
+                audio.playCast();
+            }
+
+            draw() {
+                // Glow effect
+                ctx.save();
+                ctx.shadowColor = '#ff5500';
+                ctx.shadowBlur = 15;
+
+                // Character body
+                ctx.fillStyle = '#ff4500';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Inner robe detail
+                ctx.fillStyle = '#ffe066';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius * 0.5, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.restore();
+            }
+        }
+
+        // Noah: The Defender / Anchor
+        class Noah {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 18;
+                this.auraRadius = 120;
+                this.shieldHp = 100;
+                this.maxShieldHp = 100;
+                this.isAnchored = false;
+                this.tetherSpeed = 2.5;
+            }
+
+            update() {
+                if (!this.isAnchored) {
+                    // Smoothly follow Norea at a comfortable distance
+                    const distToNorea = Math.hypot(norea.x - this.x, norea.y - this.y);
+                    if (distToNorea > 90) {
+                        const angle = Math.atan2(norea.y - this.y, norea.x - this.x);
+                        this.x += Math.cos(angle) * this.tetherSpeed;
+                        this.y += Math.sin(angle) * this.tetherSpeed;
+                    }
+                }
+
+                // Regenerate shield slowly over time
+                if (this.shieldHp < this.maxShieldHp) {
+                    this.shieldHp = Math.min(this.maxShieldHp, this.shieldHp + 0.08);
+                }
+            }
+
+            draw() {
+                ctx.save();
+
+                // Draw Sacred Light Aura
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.auraRadius, 0, Math.PI * 2);
+                const grad = ctx.createRadialGradient(this.x, this.y, this.auraRadius * 0.2, this.x, this.y, this.auraRadius);
+                grad.addColorStop(0, 'rgba(255, 215, 0, 0.25)');
+                grad.addColorStop(0.8, 'rgba(255, 180, 0, 0.1)');
+                grad.addColorStop(1, 'rgba(255, 215, 0, 0)');
+                ctx.fillStyle = grad;
+                ctx.fill();
+
+                ctx.strokeStyle = this.isAnchored ? 'rgba(255, 225, 100, 0.8)' : 'rgba(255, 215, 0, 0.4)';
+                ctx.lineWidth = this.isAnchored ? 3 : 1.5;
+                ctx.stroke();
+
+                // Noah Character Body
+                ctx.shadowColor = '#ffd700';
+                ctx.shadowBlur = 18;
+
+                ctx.fillStyle = '#d4af37';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Staff Emblem
+                ctx.fillStyle = '#ffffff';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius * 0.4, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.restore();
+            }
+        }
+
+        class FlameBolt {
+            constructor(x, y, angle, speed, damage, isSupercharged) {
+                this.x = x;
+                this.y = y;
+                this.vx = Math.cos(angle) * speed;
+                this.vy = Math.sin(angle) * speed;
+                this.damage = damage;
+                this.isSupercharged = isSupercharged;
+                this.radius = isSupercharged ? 8 : 5;
+                this.life = 90;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life--;
+
+                // Spawn flame particles
+                particles.push(new Particle(
+                    this.x, this.y, 
+                    this.isSupercharged ? '#fff566' : '#ff5500', 
+                    Math.random() * 3 + 1, 
+                    (Math.random() - 0.5) * 1, 
+                    (Math.random() - 0.5) * 1, 
+                    20
+                ));
+            }
+
+            draw() {
+                ctx.save();
+                ctx.shadowColor = this.isSupercharged ? '#ffd700' : '#ff4500';
+                ctx.shadowBlur = 12;
+                ctx.fillStyle = this.isSupercharged ? '#ffffff' : '#ffaa00';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        class Particle {
+            constructor(x, y, color, radius, vx, vy, life) {
+                this.x = x;
+                this.y = y;
+                this.color = color;
+                this.radius = radius;
+                this.vx = vx;
+                this.vy = vy;
+                this.life = life;
+                this.maxLife = life;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life--;
+            }
+
+            draw() {
+                ctx.save();
+                ctx.globalAlpha = Math.max(0, this.life / this.maxLife);
+                ctx.fillStyle = this.color;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+
+        class GloomShade {
+            constructor(x, y, type = 'WALKER') {
+                this.x = x;
+                this.y = y;
+                this.type = type;
+                this.radius = type === 'LARGE' ? 26 : 14;
+                this.speed = type === 'LARGE' ? 1.2 : 2.2;
+                this.hp = type === 'LARGE' ? 120 : 35;
+                this.maxHp = this.hp;
+                this.color = '#8a2be2';
+            }
+
+            update() {
+                // Target Noah or Norea, whichever is closer
+                const distNorea = Math.hypot(norea.x - this.x, norea.y - this.y);
+                const distNoah = Math.hypot(noah.x - this.x, noah.y - this.y);
+
+                let target = distNorea < distNoah ? norea : noah;
+
+                // Repelled by Noah's Ward Aura
+                const dNoah = Math.hypot(noah.x - this.x, noah.y - this.y);
+                if (dNoah < noah.auraRadius) {
+                    // Repulsion force
+                    const pushAngle = Math.atan2(this.y - noah.y, this.x - noah.x);
+                    this.x += Math.cos(pushAngle) * 1.5;
+                    this.y += Math.sin(pushAngle) * 1.5;
+                }
+
+                const angle = Math.atan2(target.y - this.y, target.x - this.x);
+                this.x += Math.cos(angle) * this.speed;
+                this.y += Math.sin(angle) * this.speed;
+
+                // Gloom trail particle
+                if (Math.random() < 0.3) {
+                    particles.push(new Particle(
+                        this.x, this.y, '#3b0764', 
+                        Math.random() * 4 + 2, 
+                        (Math.random() - 0.5) * 0.5, 
+                        (Math.random() - 0.5) * 0.5, 
+                        25
+                    ));
+                }
+            }
+
+            draw() {
+                ctx.save();
+                ctx.shadowColor = '#a855f7';
+                ctx.shadowBlur = 10;
+
+                ctx.fillStyle = '#1e1b4b';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Eyes
+                ctx.fillStyle = '#e879f9';
+                ctx.beginPath();
+                ctx.arc(this.x - 4, this.y - 3, 2.5, 0, Math.PI * 2);
+                ctx.arc(this.x + 4, this.y - 3, 2.5, 0, Math.PI * 2);
+                ctx.fill();
+
+                ctx.restore();
+            }
+        }
+
+        class GloomAltar {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 35;
+                this.cleansedProgress = 0; // 0 to 100
+                this.isCleansed = false;
+            }
+
+            update() {
+                if (this.isCleansed) return;
+
+                // If Noah is anchored or standing inside the Altar circle with Norea
+                const dNoah = Math.hypot(noah.x - this.x, noah.y - this.y);
+                const dNorea = Math.hypot(norea.x - this.x, norea.y - this.y);
+
+                if (dNoah < noah.auraRadius && dNorea < 120) {
+                    this.cleansedProgress += 0.25;
+                    
+                    // Sparkles
+                    if (Math.random() < 0.4) {
+                        particles.push(new Particle(
+                            this.x + (Math.random() - 0.5) * 40,
+                            this.y + (Math.random() - 0.5) * 40,
+                            '#fef08a', 2, 0, -1, 30
+                        ));
+                    }
+
+                    if (this.cleansedProgress >= 100) {
+                        this.isCleansed = true;
+                        this.cleansedProgress = 100;
+                        onAltarCleansed();
+                    }
+                }
+            }
+
+            draw() {
+                ctx.save();
+                
+                if (this.isCleansed) {
+                    ctx.shadowColor = '#fef08a';
+                    ctx.shadowBlur = 20;
+                    ctx.strokeStyle = '#eab308';
+                    ctx.fillStyle = 'rgba(234, 179, 8, 0.2)';
+                } else {
+                    ctx.shadowColor = '#7e22ce';
+                    ctx.shadowBlur = 15;
+                    ctx.strokeStyle = '#a855f7';
+                    ctx.fillStyle = 'rgba(88, 28, 135, 0.3)';
+                }
+
+                ctx.lineWidth = 4;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.stroke();
+
+                // Progress ring fill
+                if (!this.isCleansed && this.cleansedProgress > 0) {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, -Math.PI / 2, (-Math.PI / 2) + (Math.PI * 2 * (this.cleansedProgress / 100)));
+                    ctx.strokeStyle = '#facc15';
+                    ctx.lineWidth = 6;
+                    ctx.stroke();
+                }
+
+                // Inner Pillar Symbol
+                ctx.fillStyle = this.isCleansed ? '#fef08a' : '#c084fc';
+                ctx.fillRect(this.x - 6, this.y - 12, 12, 24);
+
+                ctx.restore();
+            }
+        }
+
+        let norea;
+        let noah;
+        let projectiles = [];
+        let enemies = [];
+        let altars = [];
+        let particles = [];
+
+        function initGame() {
+            essenceScore = 0;
+            killedShades = 0;
+            altarsCleansedCount = 0;
+            gameTime = 0;
+
+            norea = new Norea(width / 2, height / 2);
+            noah = new Noah(width / 2 - 60, height / 2);
+
+            projectiles = [];
+            enemies = [];
+            particles = [];
+            altars = [
+                new GloomAltar(width * 0.2, height * 0.25),
+                new GloomAltar(width * 0.8, height * 0.25),
+                new GloomAltar(width * 0.2, height * 0.75),
+                new GloomAltar(width * 0.8, height * 0.75)
+            ];
+
+            updateUI();
+        }
+
+        let cdAbility1 = 0;
+        let cdAbility2 = 0;
+        let cdAbility3 = 0;
+
+        function triggerAbility1() {
+            if (cdAbility1 > 0 || gameState !== 'PLAYING') return;
+            cdAbility1 = 200; // Cooldown frames
+
+            // Flame Nova Burst
+            for (let i = 0; i < 16; i++) {
+                const angle = (Math.PI * 2 / 16) * i;
+                projectiles.push(new FlameBolt(norea.x, norea.y, angle, 9, 30 * norea.damageMultiplier, true));
+            }
+
+            audio.playExplosion();
+        }
+
+        function triggerAbility2() {
+            if (cdAbility2 > 0 || gameState !== 'PLAYING') return;
+            cdAbility2 = 120;
+
+            // Anchor Noah in place
+            noah.isAnchored = !noah.isAnchored;
+            audio.playShield();
+        }
+
+        function triggerAbility3() {
+            if (cdAbility3 > 0 || gameState !== 'PLAYING') return;
+            cdAbility3 = 300;
+
+            // Aegis Purge Shockwave around Noah
+            audio.playCleanse();
+
+            for (let i = enemies.length - 1; i >= 0; i--) {
+                const e = enemies[i];
+                const d = Math.hypot(e.x - noah.x, e.y - noah.y);
+                if (d < noah.auraRadius * 2) {
+                    e.hp -= 80;
+                    const pushAngle = Math.atan2(e.y - noah.y, e.x - noah.x);
+                    e.x += Math.cos(pushAngle) * 120;
+                    e.y += Math.sin(pushAngle) * 120;
+                }
+            }
+
+            // Create holy shockwave particles
+            for (let i = 0; i < 36; i++) {
+                const angle = (Math.PI * 2 / 36) * i;
+                particles.push(new Particle(
+                    noah.x, noah.y, '#fef08a', 4, 
+                    Math.cos(angle) * 8, Math.sin(angle) * 8, 30
+                ));
+            }
+        }
+
+        function onAltarCleansed() {
+            altarsCleansedCount++;
+            essenceScore += 250;
+            audio.playCleanse();
+
+            if (altarsCleansedCount >= totalAltars) {
+                // Victory Condition!
+                triggerEndGame(true);
+                return;
+            }
+
+            // Trigger Upgrade Choice
+            gameState = 'UPGRADE';
+            showUpgradeModal();
+        }
+
+        function showUpgradeModal() {
+            const container = document.getElementById('upgradeOptionsContainer');
+            container.innerHTML = '';
+
+            const options = [
+                {
+                    title: 'Sunfire Intensity',
+                    desc: 'Increases Norea\'s flame damage by +40%.',
+                    icon: 'fa-fire text-orange-400',
+                    action: () => { norea.damageMultiplier += 0.4; }
+                },
+                {
+                    title: 'Aegis Expansion',
+                    desc: 'Expands Noah\'s Sanctuary Ward aura radius by +30%.',
+                    icon: 'fa-shield-halved text-yellow-300',
+                    action: () => { noah.auraRadius += 35; }
+                },
+                {
+                    title: 'Rapid Incandescence',
+                    desc: 'Increases Norea\'s fire attack rate and movement speed.',
+                    icon: 'fa-bolt text-amber-300',
+                    action: () => { norea.fireRate = Math.max(8, norea.fireRate - 4); norea.speed += 0.6; }
+                }
+            ];
+
+            options.forEach(opt => {
+                const card = document.createElement('div');
+                card.className = "bg-gray-950/70 border border-amber-500/20 hover:border-amber-400 rounded-2xl p-4 flex items-center gap-4 cursor-pointer hover:bg-amber-500/10 transition";
+                card.innerHTML = `
+                    <div class="w-12 h-12 rounded-xl bg-amber-950/50 flex items-center justify-center text-2xl">
+                        <i class="fa-solid ${opt.icon}"></i>
+                    </div>
+                    <div class="text-left flex-1">
+                        <div class="font-bold text-amber-200 text-sm">${opt.title}</div>
+                        <div class="text-xs text-gray-400">${opt.desc}</div>
+                    </div>
+                `;
+                card.onclick = () => {
+                    opt.action();
+                    document.getElementById('upgradeModal').classList.add('hidden');
+                    gameState = 'PLAYING';
+                };
+                container.appendChild(card);
+            });
+
+            document.getElementById('upgradeModal').classList.remove('hidden');
+        }
+
+        function updateUI() {
+            document.getElementById('noreaHpText').textContent = `${Math.ceil(norea.hp)}/100`;
+            document.getElementById('noreaHpBar').style.width = `${Math.max(0, (norea.hp / norea.maxHp) * 100)}%`;
+
+            document.getElementById('noahShieldText').textContent = `${Math.ceil(noah.shieldHp)}%`;
+            document.getElementById('noahShieldBar').style.width = `${Math.max(0, (noah.shieldHp / noah.maxShieldHp) * 100)}%`;
+
+            document.getElementById('altarCounter').textContent = `${altarsCleansedCount} / ${totalAltars}`;
+            document.getElementById('altarProgressBar').style.width = `${(altarsCleansedCount / totalAltars) * 100}%`;
+            document.getElementById('essenceVal').textContent = essenceScore;
+
+            // Synergy Banner Toggle
+            const distToNoah = Math.hypot(norea.x - noah.x, norea.y - noah.y);
+            const banner = document.getElementById('synergyBanner');
+            if (distToNoah < noah.auraRadius) {
+                banner.classList.remove('opacity-0', 'translate-y-4');
+            } else {
+                banner.classList.add('opacity-0', 'translate-y-4');
+            }
+
+            // Cooldown overlay heights
+            document.getElementById('ability1CdOverlay').style.height = cdAbility1 > 0 ? `${(cdAbility1 / 200) * 100}%` : '0%';
+            document.getElementById('ability2CdOverlay').style.height = cdAbility2 > 0 ? `${(cdAbility2 / 120) * 100}%` : '0%';
+            document.getElementById('ability3CdOverlay').style.height = cdAbility3 > 0 ? `${(cdAbility3 / 300) * 100}%` : '0%';
+        }
+
+        function gameLoop() {
+            if (gameState === 'PLAYING') {
+                gameTime++;
+
+                // Reduce Ability Cooldowns
+                if (cdAbility1 > 0) cdAbility1--;
+                if (cdAbility2 > 0) cdAbility2--;
+                if (cdAbility3 > 0) cdAbility3--;
+
+                // Spawn Gloom Shades
+                if (gameTime % 70 === 0) {
+                    const spawnEdge = Math.floor(Math.random() * 4);
+                    let sx, sy;
+                    if (spawnEdge === 0) { sx = Math.random() * width; sy = -20; }
+                    else if (spawnEdge === 1) { sx = width + 20; sy = Math.random() * height; }
+                    else if (spawnEdge === 2) { sx = Math.random() * width; sy = height + 20; }
+                    else { sx = -20; sy = Math.random() * height; }
+
+                    const type = Math.random() < 0.2 ? 'LARGE' : 'WALKER';
+                    enemies.push(new GloomShade(sx, sy, type));
+                }
+
+                // Update Entities
+                norea.update();
+                noah.update();
+
+                altars.forEach(a => a.update());
+
+                // Update Projectiles & Collisions
+                for (let i = projectiles.length - 1; i >= 0; i--) {
+                    const p = projectiles[i];
+                    p.update();
+
+                    if (p.life <= 0 || p.x < 0 || p.x > width || p.y < 0 || p.y > height) {
+                        projectiles.splice(i, 1);
+                        continue;
+                    }
+
+                    // Collision with Gloom Shades
+                    for (let j = enemies.length - 1; j >= 0; j--) {
+                        const e = enemies[j];
+                        const dist = Math.hypot(p.x - e.x, p.y - e.y);
+                        if (dist < p.radius + e.radius) {
+                            e.hp -= p.damage;
+
+                            // Spark effects
+                            for (let k = 0; k < 4; k++) {
+                                particles.push(new Particle(
+                                    e.x, e.y, '#ff5500', 3, 
+                                    (Math.random() - 0.5) * 4, (Math.random() - 0.5) * 4, 15
+                                ));
+                            }
+
+                            projectiles.splice(i, 1);
+
+                            if (e.hp <= 0) {
+                                essenceScore += e.type === 'LARGE' ? 40 : 15;
+                                killedShades++;
+                                enemies.splice(j, 1);
+                            }
+                            break;
+                        }
+                    }
+                }
+
+                // Enemy collisions with Norea / Noah
+                for (let e of enemies) {
+                    e.update();
+
+                    // Hit Norea
+                    const dNorea = Math.hypot(e.x - norea.x, e.y - norea.y);
+                    if (dNorea < e.radius + norea.radius) {
+                        norea.hp -= 0.35;
+                        if (norea.hp <= 0) {
+                            triggerEndGame(false);
+                        }
+                    }
+                }
+
+                // Update Particles
+                for (let i = particles.length - 1; i >= 0; i--) {
+                    particles[i].update();
+                    if (particles[i].life <= 0) particles.splice(i, 1);
+                }
+
+                updateUI();
+            }
+
+            // Draw Everything
+            ctx.clearRect(0, 0, width, height);
+
+            // Draw Background Grid/Gloom aura
+            ctx.fillStyle = '#07060f';
+            ctx.fillRect(0, 0, width, height);
+
+            // Render Altars
+            altars.forEach(a => a.draw());
+
+            // Render Noah & Norea
+            noah.draw();
+            norea.draw();
+
+            // Render Enemies, Projectiles, Particles
+            enemies.forEach(e => e.draw());
+            projectiles.forEach(p => p.draw());
+            particles.forEach(pt => pt.draw());
+
+            requestAnimationFrame(gameLoop);
+        }
+
+        function triggerEndGame(isVictory) {
+            gameState = 'GAMEOVER';
+            const modal = document.getElementById('gameOverModal');
+            const icon = document.getElementById('endTitleIcon');
+            const title = document.getElementById('endTitle');
+            const subtitle = document.getElementById('endSubtitle');
+
+            if (isVictory) {
+                icon.className = 'w-20 h-20 rounded-full bg-amber-500/20 border border-yellow-400 flex items-center justify-center text-4xl mb-4 text-yellow-300';
+                icon.innerHTML = '<i class="fa-solid fa-sun animate-spin"></i>';
+                title.textContent = 'REALM SANCTIFIED!';
+                title.className = 'font-cinzel text-3xl font-black mb-2 text-yellow-300 gold-glow';
+                subtitle.textContent = 'Noah and Norea successfully drove back the Gloom together!';
+            } else {
+                icon.className = 'w-20 h-20 rounded-full bg-red-950/40 border border-red-500 flex items-center justify-center text-4xl mb-4 text-red-500';
+                icon.innerHTML = '<i class="fa-solid fa-skull"></i>';
+                title.textContent = 'THE REALM FELL';
+                title.className = 'font-cinzel text-3xl font-black mb-2 text-red-400 fire-glow';
+                subtitle.textContent = 'The creeping darkness overwhelmed the sacred union.';
+            }
+
+            document.getElementById('endAltars').textContent = `${altarsCleansedCount} / ${totalAltars}`;
+            document.getElementById('endKills').textContent = killedShades;
+            document.getElementById('endScore').textContent = essenceScore;
+
+            modal.classList.remove('hidden');
+        }
+
+        const joystickInput = { active: false, x: 0, y: 0 };
+        const touchJoystick = document.getElementById('touchJoystick');
+        const joystickThumb = document.getElementById('joystickThumb');
+
+        if ('ontouchstart' in window) {
+            touchJoystick.classList.remove('hidden');
+
+            let touchId = null;
+            let startX = 0, startY = 0;
+
+            touchJoystick.addEventListener('touchstart', (e) => {
+                const touch = e.changedTouches[0];
+                touchId = touch.identifier;
+                startX = touch.clientX;
+                startY = touch.clientY;
+                joystickInput.active = true;
+            });
+
+            window.addEventListener('touchmove', (e) => {
+                if (!joystickInput.active) return;
+                for (let touch of e.changedTouches) {
+                    if (touch.identifier === touchId) {
+                        const dx = touch.clientX - startX;
+                        const dy = touch.clientY - startY;
+                        const dist = Math.hypot(dx, dy);
+                        const maxDist = 45;
+
+                        const angle = Math.atan2(dy, dx);
+                        const moveDist = Math.min(dist, maxDist);
+
+                        joystickThumb.style.transform = `translate(${Math.cos(angle) * moveDist}px, ${Math.sin(angle) * moveDist}px)`;
+
+                        joystickInput.x = (Math.cos(angle) * moveDist) / maxDist;
+                        joystickInput.y = (Math.sin(angle) * moveDist) / maxDist;
+                    }
+                }
+            });
+
+            const endTouch = (e) => {
+                for (let touch of e.changedTouches) {
+                    if (touch.identifier === touchId) {
+                        joystickInput.active = false;
+                        joystickInput.x = 0;
+                        joystickInput.y = 0;
+                        joystickThumb.style.transform = 'translate(0px, 0px)';
+                    }
+                }
+            };
+
+            window.addEventListener('touchend', endTouch);
+            window.addEventListener('touchcancel', endTouch);
+        }
+
+        document.getElementById('startGameBtn').addEventListener('click', () => {
+            audio.init();
+            document.getElementById('startMenu').classList.add('hidden');
+            document.getElementById('hudOverlay').classList.remove('hidden');
+            initGame();
+            gameState = 'PLAYING';
+        });
+
+        document.getElementById('restartBtn').addEventListener('click', () => {
+            document.getElementById('gameOverModal').classList.add('hidden');
+            initGame();
+            gameState = 'PLAYING';
+        });
+
+        document.getElementById('ability1Btn').addEventListener('click', triggerAbility1);
+        document.getElementById('ability2Btn').addEventListener('click', triggerAbility2);
+        document.getElementById('ability3Btn').addEventListener('click', triggerAbility3);
+
+        document.getElementById('soundToggleBtn').addEventListener('click', () => {
+            audio.enabled = !audio.enabled;
+            const btn = document.getElementById('soundToggleBtn');
+            btn.innerHTML = audio.enabled ? '<i class="fa-solid fa-volume-high text-lg"></i>' : '<i class="fa-solid fa-volume-xmark text-lg text-red-400"></i>';
+        });
+
+        // Run game loop
+        requestAnimationFrame(gameLoop);
+    </script>
+</body>
+</html>

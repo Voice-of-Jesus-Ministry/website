@@ -1,0 +1,36 @@
+name: Export Logs to Sheets
+
+on:
+  workflow_dispatch: # Allows you to run this manually from the Actions tab
+  # schedule:
+  #   - cron: '0 0 * * *' # Optional: Run daily at midnight UTC
+
+jobs:
+  export-logs:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Dependencies
+        run: |
+          pip install gspread google-auth python-dotenv
+
+      - name: Create Service Account JSON
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+        run: |
+          mkdir -p backend
+          echo "$FIREBASE_SERVICE_ACCOUNT_JSON" > backend/service_account.json
+
+      - name: Run Export Script
+        env:
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+        run: |
+          python backend/export_logs_to_sheets.py

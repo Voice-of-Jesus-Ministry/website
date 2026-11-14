@@ -1,6 +1,6 @@
 # Voice of Jesus Ministry
 
-A free ministry and learning hub: Scripture practice, small games, and a local study workspace. Selected features are adapted from [AmazingGrace](https://github.com/NicholaiMadias/AmazingGrace); housing listings and the original deployment remain in that repository.
+A free ministry and learning hub: Scripture practice, small games, and a local study workspace.
 
 ## Available in this branch
 
@@ -15,7 +15,7 @@ A free ministry and learning hub: Scripture practice, small games, and a local s
 | Blog navigation | Links directly to https://voiceofjesusnet.blogspot.com/ |
 | `/privacy` | Storage, privacy, and external-link disclosure |
 
-The best result in each game contributes up to 100 practice XP (200 total). These are browser-local practice benchmarks, not verified competitive scores, spendable points, purchased credits, or paid-service entitlements. Guest results are not synchronized across devices. Keyboard Quick Click offers a longer target lifetime.
+The best result in each game contributes up to 100 practice XP (200 total). 
 
 ## Run and verify
 
@@ -54,6 +54,6 @@ Next: a canonical, corrected Star Match engine; real accounts and verified rewar
 - Intended ministry domain: https://voiceofjesusministry.net
 - Recordings: https://youtube.com/@voiceofjesusnetwork
 - Bible study: Thursdays at 8 pm Eastern
-- Community: https://m.me/j/AbbK3MZd144YgdvI/
+- Community: https://m.me/cm/AbYwya7_jv6a4Y_v/?send_source=cm%3Acopy_invite_link
 
 Application source is GPL-3.0; see `LICENSE` and `THIRD_PARTY_NOTICES.md`. Ministry branding and separately authored content retain their existing ownership.

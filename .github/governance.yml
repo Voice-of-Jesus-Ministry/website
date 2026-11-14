@@ -1,0 +1,37 @@
+# Multi-Agent & Owner Governance Specification
+# Voice of Jesus Ministry / Website & LMS Autonomous Operations
+
+version: "1.0"
+
+governance:
+  voting:
+    duration_seconds: 120
+    # A single approval (from User or an AI Agent) is sufficient to pass if there are NO rejections.
+    # If any rejections occur, the weighted score determines the outcome.
+    threshold:
+      minimum_approvals_with_zero_rejects: 1
+      contested_approval_score_required: 2
+
+    weights:
+      user: 4        # Owner decision: absolute override
+      Guardian: 1    # Core maintainer / proposal agent
+      Electra: 1     # Performance & logic agent
+      Ella: 1        # Content, accessibility & UX agent
+
+  rules:
+    # 1. Zero-Rejection Fast-Path:
+    #    If rejects == 0 and approvals >= 1 (User or any 1 Agent), status = PASSED.
+    # 2. Contested Voting:
+    #    If rejects > 0, calculate:
+    #      approve_score = sum(weight[voter] for voter in approvers)
+    #      reject_score  = sum(weight[voter] for voter in rejectors)
+    #    Passed when: approve_score > reject_score AND approve_score >= contested_approval_score_required.
+    # 3. Owner Absolute Override:
+    #    - User Approve (4) beats all 3 agents rejecting (1+1+1 = 3).
+    #    - User Reject (4) vetoes all 3 agents approving (1+1+1 = 3).
+
+  production_safeguards:
+    user_can_override: true
+    auto_pass_allowed: true
+    require_successful_ci: true
+    require_security_scan: true
