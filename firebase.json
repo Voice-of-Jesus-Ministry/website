@@ -1,0 +1,2 @@
+{\n  "hosting": {
+    "site": "voiceofjesusministry",\n    "public": "out",\n    "ignore": [\n      "firebase.json",\n      "**/.*",\n      "**/node_modules/**"\n    ],\n    "rewrites": [\n      {\n        "source": "**",\n        "destination": "/index.html"\n      }\n    ]\n  }\n}

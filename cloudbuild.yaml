@@ -1,0 +1,13 @@
+steps:
+- name: "node:22"
+  entrypoint: "bash"
+  args:
+  - "-c"
+  - |
+    npm ci
+    npm run build
+    npm prune --production   # keep only runtime dependencies
+
+# Build the Docker image using Cloud Buildpacks (no Dockerfile needed)
+images:
+- "gcr.io/$PROJECT_ID/website"
