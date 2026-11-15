@@ -1,0 +1,39 @@
+{
+  "name": "ci-agent",
+  "version": "1.0.0",
+  "description": "Autonomous CI/CD agent for dependency auditing, PR validation, and scoped token/secret management across Firebase, GCP, and GitHub.",
+  "toolsEnabled": true,
+  "permissions": {
+    "github": {
+      "scopes": ["repo", "pull_requests:write", "checks:read", "secrets:read"],
+      "allowedOrgs": ["Voice-of-Jesus-Ministry", "GulfNexus"],
+      "protectedBranches": ["main", "production"]
+    },
+    "firebase": {
+      "roles": ["roles/firebasehosting.admin", "roles/firebase.developAdmin"],
+      "allowTokenGeneration": true
+    },
+    "gcp": {
+      "services": ["secretmanager.googleapis.com", "cloudbuild.googleapis.com"],
+      "secretAccess": "edit"
+    },
+    "gemini": {
+      "models": ["gemini-2.5-pro", "gemini-2.5-flash"],
+      "allowCodeExecution": true
+    },
+    "antigravity": {
+      "mcpServers": ["github", "firebase"],
+      "autoApproveRead": true,
+      "requireApprovalForMerge": true
+    },
+    "android": {
+      "enabled": true,
+      "tasks": ["assembleRelease", "lint", "signingReport"]
+    }
+  },
+  "guardrails": {
+    "maskSecretsInLogs": true,
+    "blockDirectPushToMain": true,
+    "requirePassingChecksBeforeMerge": true
+  }
+}
