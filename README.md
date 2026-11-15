@@ -2,7 +2,7 @@
 
 A free ministry and learning hub: Scripture practice, small games, and a local study workspace.
 
-## Available in this branch
+## Site and arcade
 
 | Route | Function |
 | --- | --- |
@@ -10,12 +10,15 @@ A free ministry and learning hub: Scripture practice, small games, and a local s
 | `/arcade` | Shared guest practice dashboard |
 | `/arcade/bible-quiz` | Ten questions with answer explanations and Scripture references |
 | `/arcade/quick-click` | Twenty-second star-catching challenge with pointer and keyboard modes |
+| `/arcade/star-match` | Untimed 12-move match-three puzzle with hints and cascades |
+| `/arcade/matrix-of-conscience` | Seven-chapter guest campaign with Scripture quizzes and mission upgrades |
+| `/assistant` | Role Quest with guided Bible study missions |
 | `/tools` | Browser-saved study notes and text download |
 | `/account` | Guest progress summary and reset |
 | Blog navigation | Links directly to https://voiceofjesusnet.blogspot.com/ |
 | `/privacy` | Storage, privacy, and external-link disclosure |
 
-The best result in each game contributes up to 100 practice XP (200 total). 
+Bible Quiz and Quick Click contribute up to 100 practice XP each (200 total). Matrix saves campaign progress separately in the browser. Star Match scores apply to the current round.
 
 ## Run and verify
 
@@ -47,7 +50,7 @@ No environment variables, paid API services, auth backend, or payment provider a
 - [Source file and exact-duplicate inventory](docs/source-inventory.json)
 - [License and source attribution](THIRD_PARTY_NOTICES.md)
 
-Next: a canonical, corrected Star Match engine; real accounts and verified rewards; one secure cloud-storage connection; one server-backed AI provider. Payments remain deferred.
+The [Matrix campaign guide](docs/matrix-campaign.md) describes missions, quiz points, and local saves.
 
 ## Ministry links
 
