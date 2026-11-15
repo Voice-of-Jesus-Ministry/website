@@ -22,6 +22,14 @@ The original project README identifies Vercel as its intended host. Verify the c
 4. Check the homepage, both games, progress after reload, workspace download, and mobile navigation.
 5. Promote the reviewed version using the project's normal production flow. Preserve any existing domain configuration. Verify the production URL and status before announcing it live.
 
+## Deployment and GitHub Actions
+
+The ministry runs on Vercel. Its Next.js routes for sign-in and sign-up require a server runtime. Firebase Hosting needs a separate deployment design for those routes before it can serve as a fallback.
+
+Store deployment secrets through the authorized vault or GitHub organization settings, scoped to the repositories that need them. GitHub's Actions API exposes secret metadata but cannot retrieve secret values for replication.
+
+Use Agent Governance Review for pull requests. It tallies submitted GitHub reviews. The retired Guardian Vote prototype counted hard-coded approvals and never deployed the site.
+
 ## Later integrations
 
 OAuth callback URLs, encrypted server storage, session protections, request limits, and server-owned rewards are required before enabling accounts, BYO AI credentials, or storage connections. Do not use `NEXT_PUBLIC_*` variables for provider secrets. Do not add payment setup until the product has demonstrated value.
