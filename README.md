@@ -19,7 +19,7 @@ The best result in each game contributes up to 100 practice XP (200 total).
 
 ## Run and verify
 
-Requires Node 22.18 or newer. CI uses Node 22.
+Requires Node 24.x. CI and Vercel use Node 24.
 
 ```sh
 npm ci
@@ -33,11 +33,11 @@ npm run check
 npm start
 ```
 
-`check` runs TypeScript, gameplay/progress regression tests, and the production build. The GitHub quality workflow also runs `npm audit --omit=dev --audit-level=high`. Dependabot proposes weekly package and GitHub Actions updates.
+`check` runs TypeScript, gameplay/progress regression tests, and the production build. The CI workflow runs build, lint and tests; the Website quality workflow runs typecheck and `npm audit --omit=dev --audit-level=high`. Dependabot proposes weekly package and GitHub Actions updates.
 
 ## Deployment
 
-See [deployment instructions](docs/deployment.md). This branch is ready for a Next.js hosting preview after the hosting account/project is connected. This README does not assert that the branch has been deployed or that a domain is configured.
+See [deployment instructions](docs/deployment.md). The repository is linked to the Vercel `website` project in the `amazinggrace` team. Pull requests produce preview deployments. Preview failures do not by themselves establish production downtime. Check production status and the domain separately before announcing a release.
 
 No environment variables, paid API services, auth backend, or payment provider are needed for this guest release. Before enabling real integrations, add authenticated server endpoints, encrypted token storage, revocable authorization, provider allowlists, usage controls, and server-owned scores/rewards. Never collect provider keys in browser storage.
 
