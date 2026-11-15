@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.18.0"
+    "node": "24.x"
   },
   "scripts": {
     "export-logs": "C:\\Python314\\python.exe backend\\export_logs_to_sheets.py",
