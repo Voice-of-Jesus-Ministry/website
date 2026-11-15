@@ -45,6 +45,7 @@ No environment variables, paid API services, auth backend, or payment provider a
 
 ## Audit and next steps
 
+- [Current repository audit](docs/repository-audit.md)
 - [Migration decision and source findings](docs/migration-audit.md)
 - [Source file and exact-duplicate inventory](docs/source-inventory.json)
 - [License and source attribution](THIRD_PARTY_NOTICES.md)
