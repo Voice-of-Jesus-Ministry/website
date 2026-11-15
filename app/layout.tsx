@@ -46,6 +46,7 @@ export default function RootLayout({
                 <Link href="/team"><span className="nav-wide">Our Team</span><span className="nav-short">Team</span></Link>
                 <Link href="/bible-study"><span className="nav-wide">Bible Study</span><span className="nav-short">Study</span></Link>
                 <Link href="/arcade">Arcade</Link>
+                <Link href="/assistant">Bible Assistant</Link>
                 <Link href="/blog">Blog</Link>
               </nav>
               <Link href="/account" className="guest-badge">
