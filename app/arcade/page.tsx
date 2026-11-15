@@ -17,7 +17,6 @@ export default function Arcade() {
       </p>
       <PracticeSummary />
       <div className="card-grid two section">
-        <Link className="feature-card" href="/assistant" aria-label="Play Nexus Bible learning missions"><span className="card-icon gold" aria-hidden="true">✦</span><h2>Role Quest: Bible Study Assistant</h2><p>Choose Scripture Detective, Mission Navigator, or Restoration Guide. Study Scripture and complete a themed mission.</p><span className="card-link">Choose your role →</span></Link>
         <Link className="feature-card" href="/arcade/bible-quiz" aria-label="Play Bible Study Quiz">
           <span className="card-icon" aria-hidden="true">Aa</span>
           <h2>Bible Study Quiz</h2>

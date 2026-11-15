@@ -29,7 +29,7 @@ export function PracticeSummary() {
       </div>
       <p>
         {persistent
-          ? "Saved on this browser. No account needed."
+          ? "Saved on this browser."
           : "Storage is unavailable. Progress lasts for this session."}{" "}
         Practice XP has no cash value.
       </p>

@@ -7,11 +7,7 @@ export function GuestAccount() {
     <>
       <PracticeSummary />
       <section className="game-panel">
-        <h2>You’re exploring as a guest.</h2>
-        <p>
-          Practice results stay in this browser. You can play and save notes
-          without creating an account.
-        </p>
+        <h2>Manage practice results</h2>
         <p>
           Resetting removes only your game progress. Your workspace notes are
           managed separately.

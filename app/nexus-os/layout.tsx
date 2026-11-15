@@ -9,7 +9,6 @@ export default function NexusLayout({ children }: { children: ReactNode }) {
         <div style={{ fontWeight: 'bold' }}>NEXUS OS</div>
         <div>ZONE: ZENITH CITY</div>
         <div>TIME: 04:12:18</div>
-        <div>USER: GUEST</div>
       </header>
       <div className={styles.mainArea}>
         <nav className={styles.leftNav}>

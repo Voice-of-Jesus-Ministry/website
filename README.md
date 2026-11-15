@@ -11,8 +11,7 @@ A free ministry and learning hub: Scripture practice, small games, and a local s
 | `/arcade/bible-quiz` | Ten questions with answer explanations and Scripture references |
 | `/arcade/quick-click` | Twenty-second star-catching challenge with pointer and keyboard modes |
 | `/arcade/star-match` | Untimed 12-move match-three puzzle with hints and cascades |
-| `/arcade/matrix-of-conscience` | Seven-chapter guest campaign with Scripture quizzes and mission upgrades |
-| `/assistant` | Role Quest with guided Bible study missions |
+| `/arcade/matrix-of-conscience` | Seven-chapter campaign with Scripture quizzes and mission upgrades |
 | `/tools` | Browser-saved study notes and text download |
 | `/account` | Guest progress summary and reset |
 | Blog navigation | Links directly to https://voiceofjesusnet.blogspot.com/ |

@@ -4,8 +4,6 @@ import "./globals.css";
 
 import Link from "next/link";
 import { ProgressProvider } from "../components/ProgressProvider";
-import { ClerkProvider } from "@clerk/nextjs";
-import { accountsConfigured } from "../lib/account-config";
 
 export const metadata: Metadata = {
   title: "Voice of Jesus Ministry",
@@ -26,7 +24,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const content = (
+  return (
     <html lang="en">
       <body>
         <a className="skip-link" href="#main">
@@ -46,11 +44,10 @@ export default function RootLayout({
                 <Link href="/team"><span className="nav-wide">Our Team</span><span className="nav-short">Team</span></Link>
                 <Link href="/bible-study"><span className="nav-wide">Bible Study</span><span className="nav-short">Study</span></Link>
                 <Link href="/arcade">Arcade</Link>
-                <Link href="/assistant">Bible Assistant</Link>
                 <Link href="/blog">Blog</Link>
               </nav>
               <Link href="/account" className="guest-badge">
-                Account
+                Progress
               </Link>
             </div>
           </header>
@@ -72,5 +69,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-  return accountsConfigured() ? <ClerkProvider>{content}</ClerkProvider> : content;
 }
