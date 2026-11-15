@@ -888,3 +888,37 @@ a.button:hover { background: transparent; text-decoration: underline; }
  .site-header .header-inner nav{order:0;width:auto;flex:1;min-width:0;flex-wrap:nowrap;justify-content:space-evenly;gap:clamp(8px,3vw,24px);font-size:clamp(.8rem,3.4vw,.95rem)}
  .site-header nav a{white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}
 }
+
+/* Dedicated ministry team page. Preserve original artwork and readable portraits. */
+.team-page { max-width: 1180px; }
+.team-intro { max-width: 850px; padding-bottom: 44px; margin-bottom: 48px; border-bottom: 1px solid #365145; }
+.team-intro h1 { max-width: 800px; }
+.team-intro .lede { max-width: 780px; }
+.team-scripture { font-family: Georgia, "Times New Roman", serif; font-style: italic; color: #dfc478; }
+.team-section-heading { display: flex; justify-content: space-between; align-items: end; gap: 34px; margin-bottom: 24px; }
+.team-section-heading h2 { margin: 0; }
+.team-section-heading > p { max-width: 370px; margin: 0; }
+.team-page .board-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin: 0; }
+.team-page .board-member { background: #101b16; transition: border-color .18s ease; }
+.team-page .board-member:hover { border-color: #aa945b; }
+.team-member-copy { padding: 0 24px 24px; }
+.team-member-copy h3 { margin: 22px 0 7px; }
+.team-member-role { color: #dfc478 !important; font-size: .87rem; font-weight: 600; margin: 0 0 10px !important; }
+.team-member-detail { font-size: .9rem; line-height: 1.7; margin: 0 !important; }
+.team-more { margin-top: 22px; }
+.team-service { margin-top: 68px; border-top: 1px solid #365145; padding-top: 40px; }
+.team-focus-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; margin-top: 26px; }
+.team-focus-grid > div { background: #10231d; border: 1px solid #365145; border-radius: 14px; padding: 26px; }
+.team-focus-grid h3 { color: #e6d08e; }
+.team-focus-grid p { min-height: 80px; }
+.team-page-footer { padding: 28px 0; border-top: 1px solid #365145; margin-top: 50px; }
+@media (max-width: 900px) {
+  .team-page .board-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .team-focus-grid { grid-template-columns: 1fr; }
+  .team-focus-grid p { min-height: 0; }
+}
+@media (max-width: 620px) {
+  .team-intro { padding-bottom: 28px; margin-bottom: 30px; }
+  .team-section-heading { display: block; }
+  .team-page .board-grid { grid-template-columns: 1fr; }
+}
