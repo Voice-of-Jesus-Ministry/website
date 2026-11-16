@@ -1,9 +1,29 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="One seven-chapter Matrix of Conscience campaign, with Bible quizzes and upgrades between levels."><title>Matrix of Conscience | Voice of Jesus Ministry</title><link rel="icon" href="/favicon.png"><link rel="stylesheet" href="/matrix/style.css"></head><body>
 <header><a class="brand" href="/"><img src="/favicon.png" alt="" width="48" height="48">Voice of Jesus Ministry</a><nav><a href="/arcade">Arcade</a><a href="/bible-study">Bible studies</a><a href="/account">Progress</a></nav></header>
-<main><section class="play" aria-label="Campaign game"><div class="hud"><span id="mode"></span><span id="integrity"></span><span id="energy"></span><span id="wallet"></span></div><p id="goal"></p><p id="save-note" class="note">Progress stays in this browser.</p>
-<div id="stage"><canvas id="canvas" width="840" height="480" tabindex="0" aria-label="Game field. Use the controls below or arrow keys. Defense wards can also be placed using the numbered pad buttons."></canvas><div id="match" class="match" aria-label="Match three symbols"></div><div id="choices" class="choices"></div></div>
-<div id="controls"><div id="ward-controls" class="control-row"><button data-tower="aegis" aria-pressed="true">Aegis · 50 energy</button><button data-tower="precision" aria-pressed="false">Precision · 90</button><button data-tower="archer" aria-pressed="false" title="Rapid fire at short range">Archer · 70</button><span id="pads"></span></div><div id="move-controls" class="control-row"><button data-move="left" aria-label="Move left">←</button><button data-move="up" aria-label="Move up">↑</button><button data-move="down" aria-label="Move down">↓</button><button data-move="right" aria-label="Move right">→</button><button id="fire">Fire</button></div><div class="control-row"><button id="start">Begin chapter</button><button id="pause" hidden>Pause</button><button id="speed" hidden>Speed: 1×</button></div></div>
-<button id="hint" hidden>Use guidance hint</button><p id="status" role="status" aria-live="polite"></p><section id="between" class="between" hidden></section></section>
+<main><section class="play" aria-label="Campaign game"><div class="arena">
+<div id="stage"><canvas id="canvas" width="840" height="480" tabindex="0" aria-label="Game field. Use the controls below or arrow keys. In defense, choose a tower, pick a spot beside the route, and confirm Build. Numbered position buttons are available below the field."></canvas><div id="match" class="match" aria-label="Match three symbols"></div><div id="choices" class="choices"></div></div>
+<div class="arena-controls">
+<div class="hud"><span id="integrity"></span><span id="energy"></span><span id="mode"></span><span id="wallet"></span></div>
+<div id="controls">
+  <div id="ward-controls" class="ward-controls" hidden>
+    <div id="tower-options" class="tower-options" role="group" aria-label="Tower types"></div>
+    <details class="build-spots">
+      <summary>Numbered build spots</summary>
+      <div id="pads" class="control-row" role="group" aria-label="Numbered positions"></div>
+    </details>
+    <div class="control-row">
+      <button type="button" id="build" disabled>Build tower</button>
+      <button type="button" id="sell" hidden>Sell tower</button>
+      <button type="button" id="cancel-placement" hidden>Clear selection</button>
+    </div>
+  </div><div id="move-controls" class="control-row"><button data-move="left" aria-label="Move left">←</button><button data-move="up" aria-label="Move up">↑</button><button data-move="down" aria-label="Move down">↓</button><button data-move="right" aria-label="Move right">→</button><button id="fire">Fire</button></div><div class="control-row"><button id="start">Begin chapter</button><button id="pause" hidden>Pause</button><button id="speed" hidden>Speed: 1×</button></div></div>
+<button id="hint" hidden>Use guidance hint</button><p id="status" role="status" aria-live="polite"></p></div></div><section id="between" class="between" hidden></section></section>
 <div class="heading"><div><p class="eyebrow">ONE CAMPAIGN · SEVEN CHAPTERS</p><h1>Matrix of Conscience</h1><p>A story of protection, discernment, and grace.</p></div><button id="reset" class="quiet">Restart campaign</button></div>
+<p id="goal"></p>
+<details class="chapter-story">
+  <summary id="story-title">Chapter story</summary>
+  <p id="story-text"></p>
+</details>
+<p id="save-note" class="note">Progress stays in this browser.</p>
 <ol id="chapters" class="chapters" aria-label="Campaign progress"></ol>
 <footer><a href="/bible-study/seven-stars">Explore The Mystery of the Seven Stars →</a></footer></main><script type="module" src="/matrix/app.mjs"></script></body></html>

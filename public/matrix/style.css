@@ -8,3 +8,28 @@
 .scripture-reflection cite{display:block;font-size:.85rem;color:#9eddd8;margin-bottom:20px;font-style:normal}
 
 @media(max-width:900px){header{flex-wrap:nowrap;padding:10px 12px;gap:12px;min-height:64px}.brand{flex:0 0 44px;gap:0}.brand>span{display:none}.brand img{width:44px;height:44px}header nav{flex:1;min-width:0;justify-content:space-evenly;gap:clamp(8px,3vw,24px);font-size:clamp(.8rem,3.4vw,.95rem)}header nav a{white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}}
+
+main { padding-top: 12px; }
+.play { margin-top: 0; }
+.arena { display: grid; gap: 16px; }
+.arena:has(#ward-controls:not([hidden])) { grid-template-columns: minmax(0, 1fr) minmax(210px, 250px); }
+#stage { min-width: 0; margin: 0; }
+#canvas.defense-map { cursor: crosshair; touch-action: pan-y; }
+.arena-controls { min-width: 0; }
+.hud { gap: 4px 14px; margin-bottom: 8px; }
+.tower-options { display: grid; gap: 6px; margin-top: 8px; }
+.tower-options button { display: grid; gap: 1px; text-align: left; padding: 6px 10px; min-height: 44px; }
+.tower-name { color: var(--tower-color); font-weight: 700; }
+.tower-role { color: #cedcd5; font-size: .78rem; }
+.build-spots, .chapter-story { margin-top: 12px; }
+.build-spots summary, .chapter-story summary { cursor: pointer; color: #9eddd8; }
+.chapter-story p { max-width: 65ch; }
+#status { margin: 8px 0 0; font-size: .88rem; }
+.heading { margin-top: 20px; }
+@media (max-width: 760px) {
+  main { padding: 8px 10px 20px; }
+  .play { padding: 8px; }
+  .arena:has(#ward-controls:not([hidden])) { grid-template-columns: minmax(0, 1fr); }
+  .tower-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tower-options button { padding: 6px; }
+}
