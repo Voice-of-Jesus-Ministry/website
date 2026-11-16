@@ -40,3 +40,26 @@ test('connection chapter requires all three choices; incorrect answers do not wi
 test('maze walls block movement and all lights can be collected via legal paths',()=>{const m=new Mission('maze');m.start();m.move('left');assert.deepEqual(m.mazePlayer,{x:1,y:1});for(const light of m.mazeLights){const queue=[{...m.mazePlayer,path:[] as string[]}],seen=new Set<string>();let route:string[]|null=null;while(queue.length){const p=queue.shift()!;if(p.x===light.x&&p.y===light.y){route=p.path;break;}for(const [dir,dx,dy] of [['right',1,0],['left',-1,0],['up',0,-1],['down',0,1]] as const){const x=p.x+dx,y=p.y+dy,k=`${x},${y}`;if(MAZE[y]?.[x]==='.'&&!seen.has(k)){seen.add(k);queue.push({x,y,path:[...p.path,dir]});}}}assert.ok(route);for(const dir of route!)m.move(dir);}assert.equal(m.result,'victory');});
 test('final guardian never auto-wins; real shots can defeat it',()=>{const m=new Mission('boss');m.start();for(let i=0;i<100;i++)m.update(.05);assert.equal(m.boss.hp,600);for(let i=0;i<5000&&!m.result;i++){m.player.x=m.boss.x;m.invulnerability=1;m.fire();m.update(.05);}assert.equal(m.result,'victory');assert.ok(m.score>0);});
 test('shooter can be completed using movement and firing; bullets hit only one target',()=>{const m=new Mission('shooter');m.start();for(let i=0;i<20000&&!m.result;i++){const e=m.invaders.find((e:any)=>e.hp>0);if(e)m.player.x=e.x;m.invulnerability=1;m.fire();m.update(.05);}assert.equal(m.result,'victory');assert.equal(m.score,1800);});
+
+test('defense previews are free, and players can build and sell any tower from chapter one', () => {
+  const mission = new Mission('defense');
+  const { x, y } = PADS[0];
+  assert.equal(mission.placementIssue('precision', x, y), '');
+  assert.equal(mission.energy, 180);
+  assert.equal(mission.towers.length, 0);
+
+  assert.equal(mission.build(x, y, 'precision'), true);
+  assert.equal(mission.towers[0].type, 'precision');
+  assert.equal(mission.towers[0].range, 210);
+  assert.equal(mission.build(x, y, 'aegis'), false);
+  assert.equal(mission.build(NaN, y, 'slow'), false);
+  assert.equal(mission.energy, 90);
+
+  const tower = mission.towers[0];
+  assert.equal(mission.sell(tower), true);
+  assert.equal(mission.sell(tower), false);
+  assert.equal(mission.energy, 135);
+  assert.equal(mission.build(x, y, 'slow'), true);
+  assert.equal(mission.build(PADS[1].x, PADS[1].y, 'aegis'), true);
+  assert.equal(mission.energy, 15);
+});
