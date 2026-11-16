@@ -3,7 +3,7 @@
 export const WIDTH = 840, HEIGHT = 480;
 export const PATH = [{x:0,y:130},{x:250,y:130},{x:250,y:335},{x:590,y:335},{x:590,y:180},{x:840,y:180}];
 export const PADS = [{x:125,y:65},{x:180,y:225},{x:350,y:270},{x:530,y:250},{x:700,y:110},{x:420,y:410}];
-export const TOWERS = { aegis: {cost:50,range:150,damage:22,rate:.5}, precision: {cost:90,range:210,damage:60,rate:1}, slow: {cost:70,range:150,damage:10,rate:.6} };
+export const TOWERS = { aegis: {cost:50,range:150,damage:22,rate:.5}, precision: {cost:90,range:210,damage:60,rate:1}, archer: {cost:70,range:120,damage:13,rate:.25} };
 export const MAZE = ['###############','#...#.........#','#.#.#.###.###.#','#.#...#...#...#','#.###.#.#.#.#.#','#.....#.#...#.#','###.#.#.#####.#','#...#.........#','###############'];
 export const DILEMMAS = [
   {question:'Someone on the bridge has been excluded. What reflects the Samaritan’s example?',options:['Stop and offer practical help','Walk past to protect your reputation','Wait for someone more important'],answer:0,feedback:'Mercy takes practical action. Read Luke 10:33–37.'},
@@ -58,9 +58,9 @@ export class Mission {
     if(this.mode==='maze')this.maze(dt);
   }
   defense(dt){
-    this.spawnClock+=dt;if(this.spawned<this.total&&this.spawnClock>=1.05){this.spawnClock=0;this.spawned++;const tank=this.advanced&&this.spawned%4===0;this.enemies.push({x:0,y:130,path:0,hp:tank?150:(this.advanced?85:50),maxHp:tank?150:(this.advanced?85:50),speed:tank?40:58,slow:0});}
-    for(const e of [...this.enemies]){e.slow=Math.max(0,e.slow-dt);const dest=PATH[e.path+1];if(!dest){this.hp=Math.max(0,this.hp-12);this.enemies.splice(this.enemies.indexOf(e),1);if(this.hp===0){this.result='defeat';this.running=false;return;}continue;}const d=distance(e,dest),step=e.speed*(e.slow>0?.45:1)*dt;if(d<=step){e.x=dest.x;e.y=dest.y;e.path++;}else{e.x+=(dest.x-e.x)/d*step;e.y+=(dest.y-e.y)/d*step;}}
-    for(const t of this.towers){t.cooldown-=dt;if(t.cooldown>0)continue;const target=this.enemies.find(e=>distance(t,e)<=t.range);if(target){t.cooldown=t.rate;target.hp-=t.damage*this.damage;if(t.type==='slow')target.slow=2;this.shots.push({x:t.x,y:t.y,tx:target.x,ty:target.y,life:.1});}}
+    this.spawnClock+=dt;if(this.spawned<this.total&&this.spawnClock>=1.05){this.spawnClock=0;this.spawned++;const tank=this.advanced&&this.spawned%4===0;this.enemies.push({x:0,y:130,path:0,hp:tank?150:(this.advanced?85:50),maxHp:tank?150:(this.advanced?85:50),speed:tank?40:58});}
+    for(const e of [...this.enemies]){const dest=PATH[e.path+1];if(!dest){this.hp=Math.max(0,this.hp-12);this.enemies.splice(this.enemies.indexOf(e),1);if(this.hp===0){this.result='defeat';this.running=false;return;}continue;}const d=distance(e,dest),step=e.speed*dt;if(d<=step){e.x=dest.x;e.y=dest.y;e.path++;}else{e.x+=(dest.x-e.x)/d*step;e.y+=(dest.y-e.y)/d*step;}}
+    for(const t of this.towers){t.cooldown-=dt;if(t.cooldown>0)continue;const target=this.enemies.find(e=>distance(t,e)<=t.range);if(target){t.cooldown=t.rate;target.hp-=t.damage*this.damage;this.shots.push({x:t.x,y:t.y,tx:target.x,ty:target.y,life:.1});}}
     this.shots=this.shots.filter(s=>(s.life-=dt)>0);for(const e of [...this.enemies])if(e.hp<=0){this.enemies.splice(this.enemies.indexOf(e),1);this.energy+=15;this.score+=50;}
     if(this.spawned===this.total&&this.enemies.length===0)this.win();
   }
