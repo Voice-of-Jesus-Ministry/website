@@ -12,8 +12,7 @@ export default function BibleStudy() {
       <p className="eyebrow">READ. REFLECT. GROW.</p>
       <h1>Bible Study</h1>
       <p className="lede">Make room for Scripture. Explore the lives, questions, and encounters that draw us closer to Jesus.</p>
-      <Link className="feature-card" href="/assistant"><h2>Interactive Bible Study Assistant</h2><p>Learn with Scripture Detective, Mission Navigator, and Restoration Guide missions, then review the supporting passages.</p><span className="card-link">Play guided Bible quizzes →</span></Link>
-      
+
       <Link className="feature-card" href="/bible-study/strength-for-the-weary">
         <span className="tag">HOPE &amp; RENEWAL · ISAIAH 40:28–31</span>
         <h2>Strength for the Weary</h2>

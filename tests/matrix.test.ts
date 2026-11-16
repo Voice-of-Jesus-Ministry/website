@@ -24,7 +24,16 @@ test('defense waits for Start, rejects route placement, can be won with three af
 });
 test('advanced defense implements slow effect and damage upgrades',()=>{const m=new Mission('defense',{hp:130,energy:300,damage:1.5},true);m.selected='slow';m.build(125,65);m.start();for(let i=0;i<60;i++)m.update(.05);assert.ok(m.enemies.some((e:any)=>e.slow>0));assert.equal(m.hp,130);});
 test('match board begins without accidental free wins, has a move, and invalid swaps revert',()=>{
- const m=new Mission('match');assert.equal(matches(m.board).size,0);assert.equal(hasMove(m.board),true);m.start();let invalid=false;for(let r=0;r<7&&!invalid;r++)for(let c=0;c<6&&!invalid;c++){const before=JSON.stringify(m.board);m.selectCell(r,c);m.selectCell(r,c+1);if(m.moves===0){assert.equal(JSON.stringify(m.board),before);invalid=true;}}assert.equal(invalid,true);
+ const m = new Mission('match', undefined, false, () => 0);
+ assert.equal(matches(m.board).size, 0);
+ assert.equal(hasMove(m.board), true);
+ m.start();
+ const before = m.board.map(row => [...row]);
+ m.selectCell(0, 0);
+ m.selectCell(-1, 0);
+ m.selectCell(0, 1);
+ assert.equal(m.moves, 0);
+ assert.deepEqual(m.board, before);
 });
 test('match mode can finish through ordinary adjacent swaps with exact non-cumulative scoring',()=>{const m=new Mission('match');m.start();for(let turn=0;turn<100&&!m.result;turn++){let found=false;for(let r=0;r<7&&!found;r++)for(let c=0;c<7&&!found;c++)for(const [dr,dc] of [[1,0],[0,1]]){const y=r+dr,x=c+dc;if(y>=7||x>=7)continue;[m.board[r][c],m.board[y][x]]=[m.board[y][x],m.board[r][c]];const ok=matches(m.board).size>0;[m.board[r][c],m.board[y][x]]=[m.board[y][x],m.board[r][c]];if(ok){m.selectCell(r,c);m.selectCell(y,x);found=true;break;}}}assert.equal(m.result,'victory');assert.equal(m.score,m.cleared*10);});
 test('connection chapter requires all three choices; incorrect answers do not win',()=>{const m=new Mission('choice');m.start();assert.equal(m.choose(2),false);assert.equal(m.choiceIndex,0);for(const d of DILEMMAS)m.choose(d.answer);assert.equal(m.result,'victory');});

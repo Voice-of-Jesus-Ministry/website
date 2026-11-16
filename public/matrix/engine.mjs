@@ -32,7 +32,15 @@ export class Mission {
     if(mode==='shooter')for(let r=0;r<3;r++)for(let c=0;c<6;c++)this.invaders.push({x:130+c*95,y:55+r*45,hp:1});
     if(mode==='maze'){const points=[[3,1],[7,1],[11,1],[1,3],[5,3],[9,3],[13,3],[3,5],[9,5],[1,7],[7,7],[11,7]];this.mazeLights=points.map(([x,y])=>({x,y,collected:false}));}
   }
-  newBoard(){for(let n=0;n<100;n++){this.board=Array.from({length:7},()=>Array.from({length:7},()=>Math.floor(this.rng()*5)));for(let r=0;r<7;r++)for(let c=0;c<7;c++){while((c>1&&this.board[r][c]===this.board[r][c-1]&&this.board[r][c]===this.board[r][c-2])||(r>1&&this.board[r][c]===this.board[r-1][c]&&this.board[r][c]===this.board[r-2][c]))this.board[r][c]=(this.board[r][c]+1)%5;}if(hasMove(this.board))break;}this.revision++;}
+  newBoard(){for(let n=0;n<100;n++){this.board=Array.from({length:7},()=>Array.from({length:7},()=>Math.floor(this.rng()*5)));for(let r=0;r<7;r++)for(let c=0;c<7;c++){while((c>1&&this.board[r][c]===this.board[r][c-1]&&this.board[r][c]===this.board[r][c-2])||(r>1&&this.board[r][c]===this.board[r-1][c]&&this.board[r][c]===this.board[r-2][c]))this.board[r][c]=(this.board[r][c]+1)%5;}if(hasMove(this.board))break;}
+    if (!hasMove(this.board)) {
+      this.board = Array.from({length: 7}, (_, r) =>
+        Array.from({length: 7}, (_, c) => (r + c) % 5));
+      this.board[0][2] = 0;
+      this.board[1][1] = 0;
+    }
+    this.revision++;
+  }
   build(x,y){
     if(this.mode!=='defense'||this.result)return false;
     const spec=TOWERS[this.selected];if(!spec)return false;
@@ -58,6 +66,7 @@ export class Mission {
   }
   selectCell(r,c){
     if(this.mode!=='match'||!this.running||this.result)return;
+    if (!Number.isInteger(r) || !Number.isInteger(c) || this.board[r]?.[c] === undefined) return;
     if(!this.matchSelection){this.matchSelection={r,c};this.revision++;return;}
     const a=this.matchSelection;this.matchSelection=null;this.revision++;
     if(Math.abs(a.r-r)+Math.abs(a.c-c)!==1){this.message='Choose two adjacent symbols.';return;}
