@@ -18,9 +18,8 @@ function setup(){
  $('between').hidden=true;$('controls').hidden=false;$('stage').hidden=false;$('start').hidden=false;$('start').disabled=false;$('start').textContent=mission.mode==='defense'?'Start wave':'Begin chapter';$('pause').hidden=true;$('pause').textContent='Pause';$('speed').hidden=mission.mode!=='defense';
  $('ward-controls').hidden=mission.mode!=='defense';$('move-controls').hidden=!['shooter','boss','maze'].includes(mission.mode);$('fire').hidden=mission.mode==='maze';document.querySelectorAll('[data-move=up],[data-move=down]').forEach(b=>b.hidden=mission.mode!=='maze');
  canvas.hidden=['match','choice'].includes(mission.mode);$('match').hidden=mission.mode!=='match';$('choices').hidden=mission.mode!=='choice';
- document.querySelector('[data-tower=precision]').hidden=state.level===0;document.querySelector('[data-tower=slow]').hidden=state.level===0;
  document.querySelectorAll('[data-tower]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tower==='aegis')));
- info(state.phase==='briefing'?'Read the mission, then begin. Your next-level upgrades are ready.':'');hud();draw();renderInteractive();
+ info(state.phase==='briefing'&&mission.mode==='defense'?'Choose a ward, then click an open spot beside the route or use a numbered pad. Start the wave when ready.':'');hud();draw();renderInteractive();
  if(state.phase!=='briefing')showBetween();save();
 }
 function begin(){if(state.phase!=='briefing'||mission.result)return;mission.start();active=true;paused=false;lastRevision=-1;$('start').hidden=true;$('pause').hidden=false;info(CHAPTERS[state.level].goal);renderInteractive();if(!canvas.hidden)canvas.focus();}
