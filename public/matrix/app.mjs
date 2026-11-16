@@ -4,22 +4,28 @@ const $=id=>document.getElementById(id);let state=freshCampaign(),persistent=tru
 try{state=restoreCampaign(localStorage.getItem(SAVE_KEY));}catch{persistent=false;}
 let mission,active=false,paused=false,speed=1,last=performance.now(),lastRevision=-1,frame=0,quizFeedback=null,hints=0;
 const canvas=$('canvas'),ctx=canvas.getContext('2d');
+let towerType = null;
+let buildSpot = null;
+let selectedTower = null;
 function save(){try{localStorage.setItem(SAVE_KEY,JSON.stringify(state));}catch{persistent=false;}if(!persistent)$('save-note').textContent='Browser storage is unavailable. This session will not survive closing the page.';}
 function button(text,action){const b=document.createElement('button');b.textContent=text;b.addEventListener('click',action);return b;}
 function clear(node){node.replaceChildren();}
 function info(text){$('status').textContent=text;}
 function header(){
  const c=CHAPTERS[state.level];$('goal').textContent=c.goal;
+ $('story-title').textContent='Chapter '+(state.level+1)+' story · '+c.title;
+ $('story-text').textContent=c.text;
  clear($('chapters'));CHAPTERS.forEach((c,i)=>{const li=document.createElement('li');li.textContent=`${i+1}. ${c.title}`;li.className=i===state.level?'current':i<state.level?'done':'';$('chapters').append(li);});
 }
-function hud(){const c=CHAPTERS[state.level];$('mode').textContent=`${c.mode.toUpperCase()} · ${mission?.score??0} mission score`;$('integrity').textContent=`Integrity: ${Math.ceil(mission?.hp??100)}`;$('energy').textContent=c.mode==='defense'?`Energy: ${mission?.energy??180}`:c.mode==='match'?`Symbols: ${mission?.cleared??0} / 24`:'';$('wallet').textContent=`Quiz points: ${state.bank}`;}
+function hud(){const c=CHAPTERS[state.level];$('mode').textContent=`${c.mode.toUpperCase()} · ${mission?.score??0} mission score`;$('integrity').textContent=`Integrity: ${Math.ceil(mission?.hp??100)}`;$('energy').textContent=c.mode==='defense'?`Energy: ${mission?.energy??180}`:c.mode==='match'?`Symbols: ${mission?.cleared??0} / 24`:'';$('wallet').textContent=`Quiz points: ${state.bank}`;if(mission?.mode==='defense')updatePlacement();}
 function setup(){
  header();mission=new Mission(CHAPTERS[state.level].mode,missionBonuses(state),state.level===2);hints=state.upgrades.focus;active=false;paused=false;lastRevision=-1;$('hint').hidden=!hints;
  $('between').hidden=true;$('controls').hidden=false;$('stage').hidden=false;$('start').hidden=false;$('start').disabled=false;$('start').textContent=mission.mode==='defense'?'Start wave':'Begin chapter';$('pause').hidden=true;$('pause').textContent='Pause';$('speed').hidden=mission.mode!=='defense';
  $('ward-controls').hidden=mission.mode!=='defense';$('move-controls').hidden=!['shooter','boss','maze'].includes(mission.mode);$('fire').hidden=mission.mode==='maze';document.querySelectorAll('[data-move=up],[data-move=down]').forEach(b=>b.hidden=mission.mode!=='maze');
  canvas.hidden=['match','choice'].includes(mission.mode);$('match').hidden=mission.mode!=='match';$('choices').hidden=mission.mode!=='choice';
- document.querySelectorAll('[data-tower]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.tower==='aegis')));
- info(state.phase==='briefing'&&mission.mode==='defense'?'Archer (R) fires quickly at short range. Choose a ward, then click an open spot beside the route or use a numbered pad. Start the wave when ready.':'');hud();draw();renderInteractive();
+ clearPlacement();
+ canvas.classList.toggle('defense-map', mission.mode === 'defense');
+ info(state.phase==='briefing' && mission.mode==='defense'?'Choose a tower, pick a spot beside the route, then build.':'');hud();draw();renderInteractive();
  if(state.phase!=='briefing')showBetween();save();
 }
 function begin(){if(state.phase!=='briefing'||mission.result)return;mission.start();active=true;paused=false;lastRevision=-1;$('start').hidden=true;$('pause').hidden=false;info(CHAPTERS[state.level].goal);renderInteractive();if(!canvas.hidden)canvas.focus();}
@@ -27,10 +33,88 @@ $('start').addEventListener('click',begin);
 $('pause').addEventListener('click',()=>{paused=!paused;mission.held.clear();$('pause').textContent=paused?'Resume':'Pause';info(paused?'Paused.':'Mission active.');});
 $('speed').addEventListener('click',()=>{speed=speed===1?2:1;$('speed').textContent=`Speed: ${speed}×`;});
 $('reset').addEventListener('click',()=>{if(confirm('Restart this campaign and clear its local quiz points?')){state=freshCampaign();quizFeedback=null;setup();}});
-document.querySelectorAll('[data-tower]').forEach(b=>b.addEventListener('click',()=>{mission.selected=b.dataset.tower;document.querySelectorAll('[data-tower]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));}));
-PADS.forEach((p,i)=>$('pads').append(button(`Pad ${i+1}`,()=>{if(state.phase!=='briefing'||mission.result)return;mission.build(p.x,p.y);info(mission.message);hud();draw();})));
+function clearPlacement() {
+  towerType = null;
+  buildSpot = null;
+  selectedTower = null;
+}
+
+function updatePlacement() {
+  const spec = TOWERS[towerType];
+  const canBuild = state.phase === 'briefing' && !!spec && !!buildSpot
+    && !mission.placementIssue(towerType, buildSpot.x, buildSpot.y);
+
+  $('build').disabled = !canBuild;
+  $('build').textContent = spec ? `Build ${spec.name} · ${spec.cost}` : 'Build tower';
+  $('sell').hidden = !selectedTower || !!mission.result;
+  if (selectedTower) $('sell').textContent = `Sell ${selectedTower.name} · +${Math.floor(selectedTower.cost / 2)}`;
+  $('cancel-placement').hidden = !towerType && !buildSpot && !selectedTower;
+  for (const option of $('tower-options').children) {
+    option.setAttribute('aria-pressed', String(option.dataset.tower === towerType));
+  }
+}
+
+function placementMessage() {
+  if (selectedTower) return `${selectedTower.name} selected. Its attack range is highlighted.`;
+  if (!towerType) return 'Choose a tower to see its cost and attack range.';
+  if (!buildSpot) return `${TOWERS[towerType].name} selected. Choose a spot beside the route.`;
+  return mission.placementIssue(towerType, buildSpot.x, buildSpot.y)
+    || 'Attack range previewed. Press Build to place the tower.';
+}
+
+function selectBuildSpot(x, y) {
+  if (state.phase !== 'briefing' || mission.result || mission.mode !== 'defense') return;
+  selectedTower = mission.towers.find(tower => Math.hypot(tower.x - x, tower.y - y) <= 18) ?? null;
+  buildSpot = selectedTower ? null : { x, y };
+  if (selectedTower) towerType = null;
+  info(placementMessage());
+  updatePlacement();
+  draw();
+}
+
+for (const [type, spec] of Object.entries(TOWERS)) {
+  const option = button('', () => {
+    if (mission.result) return;
+    selectedTower = null;
+    towerType = type;
+    info(placementMessage());
+    updatePlacement();
+    draw();
+  });
+  option.dataset.tower = type;
+  option.style.setProperty('--tower-color', spec.color);
+  const name = document.createElement('span');
+  name.className = 'tower-name';
+  name.textContent = `${spec.name} · ${spec.cost}`;
+  const role = document.createElement('span');
+  role.className = 'tower-role';
+  role.textContent = spec.role;
+  option.append(name, role);
+  $('tower-options').append(option);
+}
+PADS.forEach((spot, index) => $('pads').append(button(`Spot ${index + 1}`, () => selectBuildSpot(spot.x, spot.y))));
+$('build').addEventListener('click', () => {
+  if (!buildSpot || !towerType || state.phase !== 'briefing') return;
+  if (mission.build(buildSpot.x, buildSpot.y, towerType)) buildSpot = null;
+  info(mission.message);
+  hud();
+  draw();
+});
+$('sell').addEventListener('click', () => {
+  if (!selectedTower || state.phase !== 'briefing' || !mission.sell(selectedTower)) return;
+  selectedTower = null;
+  info(mission.message);
+  hud();
+  draw();
+});
+$('cancel-placement').addEventListener('click', () => {
+  clearPlacement();
+  info('Selection cleared.');
+  updatePlacement();
+  draw();
+});
 document.querySelectorAll('[data-move]').forEach(b=>b.addEventListener('click',()=>{if(paused)return;mission.move(b.dataset.move);info(mission.message);draw();}));$('fire').addEventListener('click',()=>{if(!paused)mission.fire();});
-canvas.addEventListener('pointerdown',e=>{if(state.phase!=='briefing'||mission.result)return;const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)*WIDTH/r.width,y=(e.clientY-r.top)*HEIGHT/r.height;canvas.focus();if(mission.mode==='defense')mission.build(x,y);else if(['shooter','boss'].includes(mission.mode)){mission.player.x=Math.max(25,Math.min(815,x));mission.fire();}info(mission.message);hud();draw();});
+canvas.addEventListener('pointerdown',e=>{if(state.phase!=='briefing'||mission.result)return;const r=canvas.getBoundingClientRect(),x=(e.clientX-r.left)*WIDTH/r.width,y=(e.clientY-r.top)*HEIGHT/r.height;canvas.focus();if(mission.mode==='defense'){selectBuildSpot(x,y);return;}else if(['shooter','boss'].includes(mission.mode)){mission.player.x=Math.max(25,Math.min(815,x));mission.fire();}info(mission.message);hud();draw();});
 const keyActions={ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right',ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',' ':'fire'};
 window.addEventListener('keydown',e=>{if(!active||paused||e.target.matches('input,textarea,button,a'))return;const k=keyActions[e.key];if(!k)return;e.preventDefault();if(['left','right','fire'].includes(k))mission.held.add(k);if(mission.mode==='maze'&&k!=='fire')mission.move(k);else if(k==='fire')mission.fire();});
 window.addEventListener('keyup',e=>{const k=keyActions[e.key];if(k)mission.held.delete(k);});window.addEventListener('blur',()=>mission.held.clear());
@@ -56,9 +140,31 @@ function showBetween(){
  node.querySelector('h2')?.setAttribute('tabindex','-1');node.querySelector('h2')?.focus();
 }
 function ship(x,y,color){ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(x,y-20);ctx.lineTo(x+17,y+13);ctx.lineTo(x,y+6);ctx.lineTo(x-17,y+13);ctx.closePath();ctx.fill();ctx.fillStyle='#f3d875';ctx.fillRect(x-5,y+12,10,8);}
+function drawPlacement() {
+  const spot = selectedTower ?? buildSpot;
+  if (!spot) return;
+  const spec = selectedTower ?? TOWERS[towerType];
+  const invalid = !selectedTower && spec && mission.placementIssue(towerType, spot.x, spot.y);
+  ctx.save();
+  ctx.strokeStyle = invalid ? '#f58f88' : (spec?.color ?? '#e8d99f');
+  ctx.lineWidth = 2;
+  if (spec) {
+    ctx.globalAlpha = .72;
+    ctx.setLineDash([7, 5]);
+    ctx.beginPath();
+    ctx.arc(spot.x, spot.y, spec.range, 0, Math.PI * 2);
+    ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+  ctx.setLineDash([]);
+  ctx.beginPath();
+  ctx.arc(spot.x, spot.y, 19, 0, Math.PI * 2);
+  ctx.stroke();
+  ctx.restore();
+}
 function draw(){
  if(!ctx)return;ctx.fillStyle='#061117';ctx.fillRect(0,0,WIDTH,HEIGHT);ctx.strokeStyle='#142a31';ctx.lineWidth=1;for(let x=0;x<840;x+=40){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,480);ctx.stroke();}for(let y=0;y<480;y+=40){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(840,y);ctx.stroke();}
- if(mission.mode==='defense'){ctx.strokeStyle='#254956';ctx.lineWidth=25;ctx.lineJoin='round';ctx.beginPath();PATH.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();ctx.fillStyle='#91c4c4';ctx.font='13px Arial';ctx.fillText('ENTRY →',12,105);ctx.fillText('PROTECT EXIT',720,150);PADS.forEach((p,i)=>{ctx.strokeStyle='#45665d';ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y,20,0,Math.PI*2);ctx.stroke();ctx.fillStyle='#b3c8be';ctx.fillText(String(i+1),p.x-4,p.y+5);});for(const t of mission.towers){ctx.strokeStyle='#527c6955';ctx.lineWidth=1;ctx.beginPath();ctx.arc(t.x,t.y,t.range,0,Math.PI*2);ctx.stroke();ctx.fillStyle=t.type==='aegis'?'#8cdbad':t.type==='precision'?'#ebd17f':'#83ddeb';ctx.beginPath();ctx.arc(t.x,t.y,15,0,Math.PI*2);ctx.fill();ctx.fillStyle='#082021';ctx.fillText(t.type==='archer'?'R':t.type[0].toUpperCase(),t.x-4,t.y+5);}for(const e of mission.enemies){ctx.fillStyle='#c98ebd';ctx.fillRect(e.x-10,e.y-10,20,20);ctx.fillStyle='#3c282e';ctx.fillRect(e.x-14,e.y-19,28,4);ctx.fillStyle='#94deb3';ctx.fillRect(e.x-14,e.y-19,28*e.hp/e.maxHp,4);}for(const s of mission.shots){ctx.strokeStyle='#f0d279';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.tx,s.ty);ctx.stroke();}ctx.fillStyle='#b6d4c6';ctx.fillText(`Packets: ${mission.spawned} / ${mission.total}`,15,460);}
+ if(mission.mode==='defense'){ctx.strokeStyle='#254956';ctx.lineWidth=25;ctx.lineJoin='round';ctx.beginPath();PATH.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();ctx.fillStyle='#91c4c4';ctx.font='13px Arial';ctx.fillText('ENTRY →',12,105);ctx.fillText('PROTECT EXIT',720,150);PADS.forEach((p,i)=>{ctx.strokeStyle='#45665d';ctx.lineWidth=1;ctx.beginPath();ctx.arc(p.x,p.y,20,0,Math.PI*2);ctx.stroke();ctx.fillStyle='#b3c8be';ctx.fillText(String(i+1),p.x-4,p.y+5);});drawPlacement();for(const t of mission.towers){ctx.fillStyle=t.color;ctx.beginPath();ctx.arc(t.x,t.y,15,0,Math.PI*2);ctx.fill();ctx.fillStyle='#082021';ctx.fillText(t.type==='archer'?'R':t.type[0].toUpperCase(),t.x-4,t.y+5);}for(const e of mission.enemies){ctx.fillStyle='#c98ebd';ctx.fillRect(e.x-10,e.y-10,20,20);ctx.fillStyle='#3c282e';ctx.fillRect(e.x-14,e.y-19,28,4);ctx.fillStyle='#94deb3';ctx.fillRect(e.x-14,e.y-19,28*e.hp/e.maxHp,4);}for(const s of mission.shots){ctx.strokeStyle='#f0d279';ctx.lineWidth=2;ctx.beginPath();ctx.moveTo(s.x,s.y);ctx.lineTo(s.tx,s.ty);ctx.stroke();}ctx.fillStyle='#b6d4c6';ctx.fillText(`Packets: ${mission.spawned} / ${mission.total}`,15,460);}
  if(['shooter','boss'].includes(mission.mode)){ship(mission.player.x,mission.player.y,mission.invulnerability>0?'#edd18e':'#8ddbc4');for(const e of mission.invaders.filter(e=>e.hp>0)){ctx.fillStyle='#b694d1';ctx.fillRect(e.x-18,e.y-8,36,15);ctx.fillRect(e.x-24,e.y,8,15);ctx.fillRect(e.x+16,e.y,8,15);ctx.fillStyle='#07151b';ctx.fillRect(e.x-10,e.y-4,5,5);ctx.fillRect(e.x+5,e.y-4,5,5);}if(mission.mode==='boss'){const b=mission.boss;ctx.fillStyle='#d3a2b8';ctx.beginPath();ctx.moveTo(b.x,b.y+35);ctx.lineTo(b.x-65,b.y-25);ctx.lineTo(b.x+65,b.y-25);ctx.closePath();ctx.fill();ctx.fillStyle='#82def0';ctx.fillRect(b.x-14,b.y-12,28,28);ctx.fillStyle='#442e3a';ctx.fillRect(220,15,400,12);ctx.fillStyle='#ebce7a';ctx.fillRect(220,15,400*b.hp/b.maxHp,12);}ctx.fillStyle='#92e3e5';mission.bullets.forEach(b=>ctx.fillRect(b.x-2,b.y-10,4,15));ctx.fillStyle='#e5a08c';mission.hostile.forEach(b=>{ctx.beginPath();ctx.arc(b.x,b.y,6,0,Math.PI*2);ctx.fill();});}
  if(mission.mode==='maze'){const tile=48,ox=60,oy=24;for(let y=0;y<MAZE.length;y++)for(let x=0;x<15;x++)if(MAZE[y][x]==='#'){ctx.fillStyle='#25444d';ctx.fillRect(ox+x*tile,oy+y*tile,tile-2,tile-2);}for(const l of mission.mazeLights)if(!l.collected){ctx.fillStyle='#efd178';ctx.beginPath();ctx.arc(ox+l.x*tile+24,oy+l.y*tile+24,7,0,Math.PI*2);ctx.fill();}for(const s of mission.sentinels){ctx.fillStyle='#d7a0c1';ctx.fillRect(ox+s.x*tile+11,oy+s.y*tile+11,26,26);}const p=mission.mazePlayer;ctx.fillStyle='#8bdcb4';ctx.beginPath();ctx.arc(ox+p.x*tile+24,oy+p.y*tile+24,15,0,Math.PI*2);ctx.fill();ctx.fillStyle='#c6dfd5';ctx.font='14px Arial';ctx.fillText(`Lights: ${mission.mazeLights.filter(l=>l.collected).length} / 12`,60,472);}
 }

@@ -3,7 +3,11 @@
 export const WIDTH = 840, HEIGHT = 480;
 export const PATH = [{x:0,y:130},{x:250,y:130},{x:250,y:335},{x:590,y:335},{x:590,y:180},{x:840,y:180}];
 export const PADS = [{x:125,y:65},{x:180,y:225},{x:350,y:270},{x:530,y:250},{x:700,y:110},{x:420,y:410}];
-export const TOWERS = { aegis: {cost:50,range:150,damage:22,rate:.5}, precision: {cost:90,range:210,damage:60,rate:1}, archer: {cost:70,range:120,damage:13,rate:.25} };
+export const TOWERS = {
+  aegis: { name: 'Aegis', role: 'Low cost, medium range', color: '#8cdbad', cost: 50, range: 150, damage: 22, rate: .5 },
+  precision: { name: 'Precision', role: 'Long-range heavy hits', color: '#ebd17f', cost: 90, range: 210, damage: 60, rate: 1 },
+  archer: { name: 'Archer', role: 'Fast fire, short range', color: '#83ddeb', cost: 70, range: 120, damage: 13, rate: .25 },
+};
 export const MAZE = ['###############','#...#.........#','#.#.#.###.###.#','#.#...#...#...#','#.###.#.#.#.#.#','#.....#.#...#.#','###.#.#.#####.#','#...#.........#','###############'];
 export const DILEMMAS = [
   {question:'Someone on the bridge has been excluded. What reflects the Samaritan’s example?',options:['Stop and offer practical help','Walk past to protect your reputation','Wait for someone more important'],answer:0,feedback:'Mercy takes practical action. Read Luke 10:33–37.'},
@@ -41,13 +45,45 @@ export class Mission {
     }
     this.revision++;
   }
-  build(x,y){
-    if(this.mode!=='defense'||this.result)return false;
-    const spec=TOWERS[this.selected];if(!spec)return false;
-    if(this.energy<spec.cost){this.message='Not enough energy for that ward.';return false;}
-    if(x<20||y<20||x>820||y>460||PATH.slice(1).some((p,i)=>segmentDistance({x,y},PATH[i],p)<32)||this.towers.some(t=>Math.hypot(t.x-x,t.y-y)<34)){this.message='Build beside the route, with space between wards.';return false;}
-    this.energy-=spec.cost;this.towers.push({x,y,type:this.selected,...spec,cooldown:0});this.message='Ward placed. Start the wave when ready.';return true;
+  placementIssue(type, x, y) {
+    if (this.mode !== 'defense' || this.result) return 'Tower placement is unavailable.';
+    if (!Object.hasOwn(TOWERS, type)) return 'Choose a tower first.';
+    if (!Number.isFinite(x) || !Number.isFinite(y) || x < 20 || y < 20 || x > WIDTH - 20 || y > HEIGHT - 20) {
+      return 'Choose a spot inside the map border.';
+    }
+    if (PATH.slice(1).some((p, i) => segmentDistance({ x, y }, PATH[i], p) < 32)) {
+      return 'Build beside the enemy route.';
+    }
+    if (this.towers.some(tower => distance(tower, { x, y }) < 34)) {
+      return 'Leave space between towers.';
+    }
+    if (this.energy < TOWERS[type].cost) return 'Not enough energy for this tower.';
+    return '';
   }
+
+  build(x, y, type = this.selected) {
+    const issue = this.placementIssue(type, x, y);
+    if (issue) {
+      this.message = issue;
+      return false;
+    }
+    const spec = TOWERS[type];
+    this.energy -= spec.cost;
+    this.towers.push({ x, y, type, ...spec, cooldown: 0 });
+    this.message = spec.name + ' built. Energy remaining: ' + this.energy + '.';
+    return true;
+  }
+
+  sell(tower) {
+    const index = this.towers.indexOf(tower);
+    if (this.mode !== 'defense' || this.result || index < 0) return false;
+    this.towers.splice(index, 1);
+    const refund = Math.floor(tower.cost / 2);
+    this.energy += refund;
+    this.message = tower.name + ' sold. Recovered ' + refund + ' energy.';
+    return true;
+  }
+
   start(){if(!this.result){this.running=true;this.message='Mission active.';}}
   hurt(amount){if(this.invulnerability>0)return;this.hp=Math.max(0,this.hp-amount);this.invulnerability=.65;if(this.hp===0){this.result='defeat';this.running=false;}}
   win(){if(!this.result){this.result='victory';this.running=false;}}
