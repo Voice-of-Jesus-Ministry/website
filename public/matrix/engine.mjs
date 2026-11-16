@@ -108,11 +108,18 @@ export class Mission {
     if(Math.abs(a.r-r)+Math.abs(a.c-c)!==1){this.message='Choose two adjacent symbols.';return;}
     [this.board[r][c],this.board[a.r][a.c]]=[this.board[a.r][a.c],this.board[r][c]];
     let set=matches(this.board);if(set.size===0){[this.board[r][c],this.board[a.r][a.c]]=[this.board[a.r][a.c],this.board[r][c]];this.message='No line of three: swap returned.';return;}
-    this.moves++;let count=0;
+    this.moves++;let count=0,bonus=0;
+    const rounds=[];
     for(let cascade=0;set.size&&cascade<30;cascade++){
-      count+=set.size;for(let col=0;col<7;col++){const kept=[];for(let row=6;row>=0;row--)if(!set.has(row*7+col))kept.push(this.board[row][col]);for(let row=6;row>=0;row--)this.board[row][col]=kept[6-row]??Math.floor(this.rng()*5);}set=matches(this.board);
+      rounds.push([...set]);
+      count+=set.size;
+      bonus+=set.size*10*Math.min(cascade,3);
+      for(let col=0;col<7;col++){const kept=[];for(let row=6;row>=0;row--)if(!set.has(row*7+col))kept.push(this.board[row][col]);for(let row=6;row>=0;row--)this.board[row][col]=kept[6-row]??Math.floor(this.rng()*5);}set=matches(this.board);
     }
-    this.cleared+=count;this.score+=count*10;this.message=`Cleared ${count} symbols. ${this.cleared} / 24.`;if(this.cleared>=24)this.win();else if(!hasMove(this.board)){this.newBoard();this.message+=' No moves remained, so the board was refreshed.';}
+    this.cleared+=count;this.score+=count*10+bonus;
+    const combo=bonus?`${rounds.length}× chain · +${bonus} bonus points. `:'';
+    this.message=`${combo}Cleared ${count} symbols. ${this.cleared} / 24.`;if(this.cleared>=24)this.win();else if(!hasMove(this.board)){this.newBoard();this.message+=' No moves remained, so the board was refreshed.';}
+    return rounds;
   }
   choose(index){if(this.mode!=='choice'||!this.running||this.result)return false;const d=DILEMMAS[this.choiceIndex];if(index!==d.answer){this.message=d.feedback+' Try again.';return false;}this.message=d.feedback;this.choiceIndex++;this.score+=100;this.revision++;if(this.choiceIndex===DILEMMAS.length)this.win();return true;}
   move(dir){
