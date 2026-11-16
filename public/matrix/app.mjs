@@ -25,12 +25,15 @@ function setup(){
  canvas.hidden=['match','choice'].includes(mission.mode);$('match').hidden=mission.mode!=='match';$('choices').hidden=mission.mode!=='choice';
  clearPlacement();
  canvas.classList.toggle('defense-map', mission.mode === 'defense');
- info(state.phase==='briefing' && mission.mode==='defense'?'Choose a tower, pick a spot beside the route, then build.':'');hud();draw();renderInteractive();
- if(state.phase!=='briefing')showBetween();save();
+ info(state.phase==='briefing' && mission.mode==='defense'?'Choose a tower, pick a spot beside the route, then build.':'');hud();draw();
+ if(state.phase!=='briefing')showBetween();
+ else if(mission.mode==='match')begin();
+ else renderInteractive();
+ save();
 }
 function begin(){if(state.phase!=='briefing'||mission.result)return;mission.start();active=true;paused=false;lastRevision=-1;$('start').hidden=true;$('pause').hidden=false;info(CHAPTERS[state.level].goal);renderInteractive();if(!canvas.hidden)canvas.focus();}
 $('start').addEventListener('click',begin);
-$('pause').addEventListener('click',()=>{paused=!paused;mission.held.clear();$('pause').textContent=paused?'Resume':'Pause';info(paused?'Paused.':'Mission active.');});
+$('pause').addEventListener('click',()=>{paused=!paused;mission.held.clear();$('pause').textContent=paused?'Resume':'Pause';info(paused?'Paused.':CHAPTERS[state.level].goal);lastRevision=-1;renderInteractive();});
 $('speed').addEventListener('click',()=>{speed=speed===1?2:1;$('speed').textContent=`Speed: ${speed}×`;});
 $('reset').addEventListener('click',()=>{if(confirm('Restart this campaign and clear its local quiz points?')){state=freshCampaign();quizFeedback=null;setup();}});
 function clearPlacement() {
@@ -118,7 +121,7 @@ canvas.addEventListener('pointerdown',e=>{if(state.phase!=='briefing'||mission.r
 const keyActions={ArrowLeft:'left',a:'left',A:'left',ArrowRight:'right',d:'right',D:'right',ArrowUp:'up',w:'up',W:'up',ArrowDown:'down',s:'down',S:'down',' ':'fire'};
 window.addEventListener('keydown',e=>{if(!active||paused||e.target.matches('input,textarea,button,a'))return;const k=keyActions[e.key];if(!k)return;e.preventDefault();if(['left','right','fire'].includes(k))mission.held.add(k);if(mission.mode==='maze'&&k!=='fire')mission.move(k);else if(k==='fire')mission.fire();});
 window.addEventListener('keyup',e=>{const k=keyActions[e.key];if(k)mission.held.delete(k);});window.addEventListener('blur',()=>mission.held.clear());
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&active&&!paused){paused=true;mission.held.clear();$('pause').textContent='Resume';info('Paused while this page was hidden.');}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&active&&!paused){paused=true;mission.held.clear();$('pause').textContent='Resume';info('Paused while this page was hidden.');lastRevision=-1;renderInteractive();}});
 const glyphs=['✦','●','▲','◆','♥'],colors=['#80d3a8','#8ed9ee','#edd07e','#d999d0','#e9a69f'];
 $('hint').addEventListener('click',()=>{
  if(!active||paused||!hints)return;
@@ -128,7 +131,7 @@ $('hint').addEventListener('click',()=>{
  hints--;$('hint').hidden=hints===0;
 });
 function renderInteractive(){
- if(mission.mode==='match'&&lastRevision!==mission.revision){const focused=document.activeElement?.dataset.cell;clear($('match'));for(let r=0;r<7;r++)for(let c=0;c<7;c++){const v=mission.board[r][c],b=button(glyphs[v],()=>{mission.selectCell(r,c);info(mission.message);renderInteractive();hud();});b.dataset.cell=`${r}-${c}`;b.style.color=colors[v];b.setAttribute('aria-label',`Row ${r+1}, column ${c+1}: ${['star','circle','triangle','diamond','heart'][v]}`);b.disabled=!mission.running||!!mission.result;b.className=mission.matchSelection?.r===r&&mission.matchSelection?.c===c?'selected':'';$('match').append(b);}lastRevision=mission.revision;if(focused)$('match').querySelector(`[data-cell="${focused}"]`)?.focus();}
+ if(mission.mode==='match'&&lastRevision!==mission.revision){const focused=document.activeElement?.dataset.cell;clear($('match'));for(let r=0;r<7;r++)for(let c=0;c<7;c++){const v=mission.board[r][c],b=button(glyphs[v],()=>{if(paused)return;mission.selectCell(r,c);info(mission.message);renderInteractive();hud();});b.dataset.cell=`${r}-${c}`;b.style.color=colors[v];b.setAttribute('aria-label',`Row ${r+1}, column ${c+1}: ${['star','circle','triangle','diamond','heart'][v]}`);b.disabled=paused||!mission.running||!!mission.result;b.className=mission.matchSelection?.r===r&&mission.matchSelection?.c===c?'selected':'';$('match').append(b);}lastRevision=mission.revision;if(focused)$('match').querySelector(`[data-cell="${focused}"]`)?.focus();}
  if(mission.mode==='choice'&&lastRevision!==mission.revision){clear($('choices'));const d=DILEMMAS[mission.choiceIndex];if(d){const h=document.createElement('h3');h.textContent=d.question;$('choices').append(h);d.options.forEach((o,i)=>{const b=button(o,()=>{mission.choose(i);info(mission.message);renderInteractive();});b.disabled=!mission.running;$('choices').append(b);});}lastRevision=mission.revision;}
 }
 function showBetween(){
