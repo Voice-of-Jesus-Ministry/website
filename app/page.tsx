@@ -15,7 +15,7 @@ export default function Home() {
             Learn at your own pace, then share the journey with our community.
           </p>
           <div className="actions">
-            <Link className="text-link" href="/prayer/god-is-my-refuge">
+            <Link className="text-link" href="/prayer">
               Today’s prayer <span aria-hidden="true">→</span>
             </Link>
             <Link className="text-link" href="/bible-study">
