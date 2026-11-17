@@ -1,0 +1,22 @@
+.page{position:relative;overflow:hidden;isolation:isolate;background:radial-gradient(ellipse at 50% -10%,#35545b 0%,#172b35 28%,#0a1720 65%,#071116 100%);color:#f7f1e3;min-height:85vh;padding:68px 22px 100px;text-align:center}
+.glow{pointer-events:none;position:absolute;z-index:-1;inset:-20% 0 auto;height:500px;background:radial-gradient(ellipse,#d8b76a20,transparent 65%)}
+.content{max-width:800px;margin:0 auto}
+.back{display:inline-block;color:#e6d49f;font-size:.8rem;text-decoration:underline;text-underline-offset:5px;margin-bottom:58px}
+.kicker,.label{font:700 .7rem/1.6 Arial,sans-serif;letter-spacing:.21em;color:#d7bd78}
+.introduction{font:italic clamp(1.15rem,2.4vw,1.45rem)/1.6 Georgia,serif;color:#d7e3df;margin:10px 0 22px}
+.page h1{font:400 clamp(3.1rem,8vw,6.4rem)/1.07 Georgia,serif;letter-spacing:-.04em;margin:0}
+.page h1 em{display:block;color:#e6cd8c;font-weight:400}
+.rule{display:flex;align-items:center;gap:20px;width:min(310px,80%);margin:36px auto;color:#d9bc71}
+.rule:before,.rule:after{content:"";height:1px;flex:1;background:#bca36975}
+.prayer{max-width:670px;margin:auto;text-align:center}
+.prayer p{font:400 clamp(1.2rem,2.6vw,1.55rem)/1.95 Georgia,serif;color:#f5f1e6}
+.scripture{margin:58px auto 35px;padding:34px clamp(20px,5vw,52px);border-top:1px solid #bfa46e70;border-bottom:1px solid #bfa46e70;background:#0b212680}
+.scripture .label{margin:0 0 22px}
+.scripture blockquote{margin:0;color:#f1e4bd;font:italic clamp(1.28rem,3vw,1.8rem)/1.65 Georgia,serif}
+.scripture cite{display:block;margin-top:18px;font:700 .69rem Arial,sans-serif;letter-spacing:.16em;color:#cab87d}
+.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin:34px 0}
+.actions a{border:1px solid #bda36b;border-radius:99px;padding:12px 20px;color:#f2dfaa;font-size:.86rem}
+.actions a:hover{background:#c9af7330}
+.closing{font:italic 1.15rem Georgia,serif;color:#dfd2ac;margin:36px 0 20px}
+.home{color:#aedbd0;text-decoration:underline;text-underline-offset:5px;font-size:.86rem}
+@media(max-width:620px){.page{padding:40px 18px 75px}.back{margin-bottom:42px}.prayer p{line-height:1.85}.scripture{margin-top:42px}.actions{flex-direction:column;align-items:stretch}.actions a{display:block}}
