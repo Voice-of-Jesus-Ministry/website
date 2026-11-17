@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 const prayer = "God, all my hope is in You. Your Word tells me that You’ll never leave me, You’ll fight for me, and You’ll protect me. Even when I can't see it, You are at work in the details of my life. So when I’m afraid or overwhelmed, I will not lose heart. I will remember Your promises and run to You. You are my refuge and strength—the One in whom I trust. In Jesus’ name, Amen.";
 
 export default function PrayerHome() {
-  return <main className={styles.page}>
+  return <div className={styles.page}>
     <div className={styles.container}>
       <div className={styles.hero}>
         <p className={styles.eyebrow}>VOICE OF JESUS MINISTRY · PRAYER & FELLOWSHIP</p>
@@ -61,5 +61,5 @@ export default function PrayerHome() {
         <div><Link href="/bible-study">Explore Bible studies →</Link></div>
       </aside>
     </div>
-  </main>;
+  </div>;
 }
