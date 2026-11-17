@@ -56,6 +56,7 @@ export default function RootLayout({
             <span>Voice of Jesus Ministry</span>
             <div>
               <Link href="/about">About</Link>
+              <Link href="/prayer/god-is-my-refuge">Prayer</Link>
               <Link href="/donate">Support</Link>
               <Link href="/privacy">Privacy</Link>
               <a href="https://github.com/Voice-of-Jesus-Ministry/website">
