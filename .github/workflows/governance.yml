@@ -30,7 +30,7 @@ jobs:
           node-version: "22"
 
       - name: Evaluate Governance Tally
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             const prNumber = context.payload.pull_request
