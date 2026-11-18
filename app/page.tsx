@@ -1,4 +1,16 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Free Bible Studies, Prayer & Christian Learning | Voice of Jesus Ministry",
+  description: "Explore free Bible studies, prayer, and Scripture-based learning with Voice of Jesus Ministry. Join our Thursday 8 pm Eastern Bible study or learn at your own pace.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Voice of Jesus Ministry | Bible Study, Prayer & Discipleship",
+    description: "Read, reflect, and grow in faith with free Bible studies and Christian resources.",
+    type: "website",
+  },
+};
 
 export default function Home() {
   return (
@@ -19,7 +31,7 @@ export default function Home() {
               Today’s prayer <span aria-hidden="true">→</span>
             </Link>
             <Link className="text-link" href="/bible-study">
-              Explore Bible studies <span aria-hidden="true">→</span>
+              Explore free Bible studies <span aria-hidden="true">→</span>
             </Link>
             <Link className="text-link" href="/arcade/bible-quiz">
               Try a Bible quiz <span aria-hidden="true">→</span>
@@ -55,10 +67,15 @@ export default function Home() {
           <Link className="text-link" href="/bible-study">Explore the studies →</Link>
         </div>
         <article className="home-editorial">
-          <span className="tag">GRACE & DISCIPLESHIP</span>
+          <span className="tag">NEW · GALATIANS 3 BIBLE STUDY</span>
+          <h3><Link href="/bible-study/galatians-3">Saved by Faith, Living as God's Family</Link></h3>
+          <p>Explore God's promise to Abraham, why the law matters, and how we belong in Christ. Includes discussion questions, a five-day reading plan, and a closing prayer.</p>
+          <Link className="text-link" href="/bible-study/galatians-3">Read the new study →</Link>
+        </article>
+        <article className="home-editorial">
+          <span className="tag">GRACE &amp; DISCIPLESHIP</span>
           <h3><Link href="/bible-study/peters-failure-and-restoration">From the Courtyard to the Shore: Peter's Failure and Restoration</Link></h3>
           <p>Between two fires, Peter discovers the limits of his own strength and the restoring mercy of Jesus.</p>
-
         </article>
       </section>
       <section className="section">
