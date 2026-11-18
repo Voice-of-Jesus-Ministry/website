@@ -21,7 +21,7 @@
     "@types/express": "^5.0.6",
     "@vercel/analytics": "^2.0.1",
     "firebase": "^13.3.0",
-    "firebase-admin": "^14.5.0",
+    "firebase-admin": "^14.5.1",
     "firebase-functions": "^7.4.0",
     "framer-motion": "^14.9.1",
     "next": "16.4.6",
