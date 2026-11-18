@@ -60,3 +60,4 @@ The [Matrix campaign guide](docs/matrix-campaign.md) describes missions, quiz po
 - Community: https://m.me/cm/AbYwya7_jv6a4Y_v/?send_source=cm%3Acopy_invite_link
 
 Application source is GPL-3.0; see `LICENSE` and `THIRD_PARTY_NOTICES.md`. Ministry branding and separately authored content retain their existing ownership.
+# test change
