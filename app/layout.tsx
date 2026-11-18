@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ProgressProvider } from "../components/ProgressProvider";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.voiceofjesusministry.net"),
   title: "Voice of Jesus Ministry",
   description:
     "Join Voice of Jesus Ministry for weekly Bible studies, biblical teaching, prayer, discipleship, and Christian resources.",
