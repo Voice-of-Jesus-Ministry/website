@@ -42,7 +42,42 @@ test('match board begins without accidental free wins, has a move, and invalid s
  assert.equal(m.moves, 0);
  assert.deepEqual(m.board, before);
 });
-test('match mode can finish through ordinary adjacent swaps with exact non-cumulative scoring',()=>{const m=new Mission('match');m.start();for(let turn=0;turn<100&&!m.result;turn++){let found=false;for(let r=0;r<7&&!found;r++)for(let c=0;c<7&&!found;c++)for(const [dr,dc] of [[1,0],[0,1]]){const y=r+dr,x=c+dc;if(y>=7||x>=7)continue;[m.board[r][c],m.board[y][x]]=[m.board[y][x],m.board[r][c]];const ok=matches(m.board).size>0;[m.board[r][c],m.board[y][x]]=[m.board[y][x],m.board[r][c]];if(ok){m.selectCell(r,c);m.selectCell(y,x);found=true;break;}}}assert.equal(m.result,'victory');assert.equal(m.score,m.cleared*10);});
+test('match mode finishes through adjacent swaps and scores cascade bonuses once', () => {
+  let seed = 42;
+  const rng = () => ((seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0) / 4294967296);
+  const mission = new Mission('match', undefined, false, rng);
+  const progress: { rounds: number[]; cleared: number; score: number }[] = [];
+  mission.start();
+  for (let turn = 0; turn < 100 && !mission.result; turn++) {
+    let found = false;
+    for (let r = 0; r < 7 && !found; r++) for (let c = 0; c < 7 && !found; c++) {
+      for (const [dr, dc] of [[1, 0], [0, 1]]) {
+        const y = r + dr, x = c + dc;
+        if (y >= 7 || x >= 7) continue;
+        [mission.board[r][c], mission.board[y][x]] = [mission.board[y][x], mission.board[r][c]];
+        const valid = matches(mission.board).size > 0;
+        [mission.board[r][c], mission.board[y][x]] = [mission.board[y][x], mission.board[r][c]];
+        if (valid) {
+          mission.selectCell(r, c);
+          const rounds = mission.selectCell(y, x);
+          assert.ok(rounds, 'a legal swap must return its cascade rounds');
+          progress.push({ rounds: rounds.map((round: number[]) => round.length), cleared: mission.cleared, score: mission.score });
+          found = true;
+          break;
+        }
+      }
+    }
+    assert.equal(found, true, 'a running match must have a legal move');
+  }
+  assert.equal(mission.result, 'victory');
+  // Fixed boards exercise two- and four-stage chains, then an ordinary match.
+  assert.deepEqual(progress, [
+    { rounds: [3, 5], cleared: 8, score: 130 },
+    { rounds: [3, 4, 3, 3], cleared: 21, score: 450 },
+    { rounds: [3], cleared: 24, score: 480 },
+  ]);
+  assert.equal(mission.moves, 3);
+});
 test('connection chapter requires all three choices; incorrect answers do not win',()=>{const m=new Mission('choice');m.start();assert.equal(m.choose(2),false);assert.equal(m.choiceIndex,0);for(const d of DILEMMAS)m.choose(d.answer);assert.equal(m.result,'victory');});
 test('maze walls block movement and all lights can be collected via legal paths',()=>{const m=new Mission('maze');m.start();m.move('left');assert.deepEqual(m.mazePlayer,{x:1,y:1});for(const light of m.mazeLights){const queue=[{...m.mazePlayer,path:[] as string[]}],seen=new Set<string>();let route:string[]|null=null;while(queue.length){const p=queue.shift()!;if(p.x===light.x&&p.y===light.y){route=p.path;break;}for(const [dir,dx,dy] of [['right',1,0],['left',-1,0],['up',0,-1],['down',0,1]] as const){const x=p.x+dx,y=p.y+dy,k=`${x},${y}`;if(MAZE[y]?.[x]==='.'&&!seen.has(k)){seen.add(k);queue.push({x,y,path:[...p.path,dir]});}}}assert.ok(route);for(const dir of route!)m.move(dir);}assert.equal(m.result,'victory');});
 test('final guardian never auto-wins; real shots can defeat it',()=>{const m=new Mission('boss');m.start();for(let i=0;i<100;i++)m.update(.05);assert.equal(m.boss.hp,600);for(let i=0;i<5000&&!m.result;i++){m.player.x=m.boss.x;m.invulnerability=1;m.fire();m.update(.05);}assert.equal(m.result,'victory');assert.ok(m.score>0);});
