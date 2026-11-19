@@ -1,0 +1,21 @@
+name: Lighthouse CI
+
+on:
+  schedule:
+    - cron: '0 2 * * *'  # nightly at 02:00 UTC
+  workflow_dispatch:
+
+jobs:
+  lhci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+      - name: Install LHCI
+        run: npm install -g @lhci/cli@0.13
+      - name: Run Lighthouse CI
+        run: lhci autorun

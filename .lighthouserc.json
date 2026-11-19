@@ -1,0 +1,14 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "https://www.voiceofjesusministry.net",
+        "https://www.voiceofjesusministry.net/bible-study/galatians-3",
+        "https://www.voiceofjesusministry.net/bible-study"
+      ]
+    },
+    "assert": {
+      "preset": "lighthouse:recommended"
+    }
+  }
+}

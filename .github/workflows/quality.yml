@@ -23,9 +23,13 @@ jobs:
           submodules: false
       - uses: actions/setup-node@v7
         with:
-          node-version: "24"
+          node-version: "20"
           cache: npm
       - run: npm ci
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+      - name: Build
+        run: npm run build
       - name: Typecheck
         run: npm run typecheck
       - name: Audit production dependencies
