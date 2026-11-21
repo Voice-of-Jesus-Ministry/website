@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 // The same buildless modules run in browsers and Node.
 import {freshCampaign,finishMission,answerQuestion,buyUpgrade,nextMission,missionBonuses,restoreCampaign,QUIZZES,availableUpgrade,UPGRADES} from '../public/matrix/campaign.mjs';
 // Browser game engine has no build dependency.
-import {Mission,PADS,PATH,MAZE,matches,hasMove,DILEMMAS} from '../public/matrix/engine.mjs';
+import {Mission,PADS,PATH,MAZE,matches,hasMove,DILEMMAS,scoreMatchRounds} from '../public/matrix/engine.mjs';
 test('seven chapters complete, quiz rewards cannot be collected twice, and spending carries to the next mission',()=>{
  let s=freshCampaign();for(let chapter=0;chapter<7;chapter++){
   s=finishMission(s);for(let i=0;i<3;i++)s=answerQuestion(s,QUIZZES[chapter][i].answer);
@@ -78,6 +78,47 @@ test('match mode finishes through adjacent swaps and scores cascade bonuses once
   ]);
   assert.equal(mission.moves, 3);
 });
+test('match cascade points are calculated once per swap and accumulate across swaps', () => {
+  const first = scoreMatchRounds([[0, 1, 2], [3, 4, 5, 6, 7]]);
+  const second = scoreMatchRounds([[0, 1, 2], [0, 1, 2, 3], [0, 1, 2], [0, 1, 2]]);
+  const third = scoreMatchRounds([[0, 1, 2]]);
+  assert.deepEqual(first, { cleared: 8, base: 80, bonus: 50, total: 130 });
+  assert.deepEqual(second, { cleared: 13, base: 130, bonus: 190, total: 320 });
+  assert.deepEqual(third, { cleared: 3, base: 30, bonus: 0, total: 30 });
+  assert.equal(first.total + second.total + third.total, 480);
+});
+
+test('a constant refill RNG cannot leave an unstable match board after cascade safety limit', () => {
+  const mission = new Mission('match', undefined, false, () => 0);
+  assert.equal(matches(mission.board).size, 0);
+  assert.ok(hasMove(mission.board));
+  mission.start();
+  let played = false;
+  for (let r = 0; r < 7 && !played; r++) for (let c = 0; c < 7 && !played; c++) {
+    for (const [dr, dc] of [[1, 0], [0, 1]]) {
+      const y = r + dr, x = c + dc;
+      if (y >= 7 || x >= 7) continue;
+      const [a, b] = [mission.board[r][c], mission.board[y][x]];
+      mission.board[r][c] = b;
+      mission.board[y][x] = a;
+      const valid = matches(mission.board).has(r * 7 + c) || matches(mission.board).has(y * 7 + x);
+      mission.board[r][c] = a;
+      mission.board[y][x] = b;
+      if (!valid) continue;
+      mission.selectCell(r, c);
+      const rounds = mission.selectCell(y, x);
+      assert.ok(rounds);
+      assert.ok(rounds.length <= 30);
+      assert.equal(matches(mission.board).size, 0, 'no unresolved match remains to be scored on a later turn');
+      assert.equal(mission.score, mission.lastMatch.total);
+      assert.equal(mission.cleared, mission.lastMatch.cleared);
+      played = true;
+      break;
+    }
+  }
+  assert.equal(played, true);
+});
+
 test('connection chapter requires all three choices; incorrect answers do not win',()=>{const m=new Mission('choice');m.start();assert.equal(m.choose(2),false);assert.equal(m.choiceIndex,0);for(const d of DILEMMAS)m.choose(d.answer);assert.equal(m.result,'victory');});
 test('maze walls block movement and all lights can be collected via legal paths',()=>{const m=new Mission('maze');m.start();m.move('left');assert.deepEqual(m.mazePlayer,{x:1,y:1});for(const light of m.mazeLights){const queue=[{...m.mazePlayer,path:[] as string[]}],seen=new Set<string>();let route:string[]|null=null;while(queue.length){const p=queue.shift()!;if(p.x===light.x&&p.y===light.y){route=p.path;break;}for(const [dir,dx,dy] of [['right',1,0],['left',-1,0],['up',0,-1],['down',0,1]] as const){const x=p.x+dx,y=p.y+dy,k=`${x},${y}`;if(MAZE[y]?.[x]==='.'&&!seen.has(k)){seen.add(k);queue.push({x,y,path:[...p.path,dir]});}}}assert.ok(route);for(const dir of route!)m.move(dir);}assert.equal(m.result,'victory');});
 test('final guardian never auto-wins; real shots can defeat it',()=>{const m=new Mission('boss');m.start();for(let i=0;i<100;i++)m.update(.05);assert.equal(m.boss.hp,600);for(let i=0;i<5000&&!m.result;i++){m.player.x=m.boss.x;m.invulnerability=1;m.fire();m.update(.05);}assert.equal(m.result,'victory');assert.ok(m.score>0);});
