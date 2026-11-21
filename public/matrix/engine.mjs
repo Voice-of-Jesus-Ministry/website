@@ -24,13 +24,22 @@ export function matches(board) {
     if(r<5&&board[r][c]===board[r+1][c]&&board[r][c]===board[r+2][c]) {let k=r;while(k<7&&board[k][c]===board[r][c])found.add(k++*7+c);}
   }return found;
 }
-export function hasMove(board){for(let r=0;r<7;r++)for(let c=0;c<7;c++)for(const [dr,dc] of [[0,1],[1,0]]){const y=r+dr,x=c+dc;if(y>=7||x>=7)continue;[board[r][c],board[y][x]]=[board[y][x],board[r][c]];const yes=matches(board).size>0;[board[r][c],board[y][x]]=[board[y][x],board[r][c]];if(yes)return true;}return false;}
+export function hasMove(board){for(let r=0;r<7;r++)for(let c=0;c<7;c++)for(const [dr,dc] of [[0,1],[1,0]]){const y=r+dr,x=c+dc;if(y>=7||x>=7)continue;[board[r][c],board[y][x]]=[board[y][x],board[r][c]];const found=matches(board),yes=found.has(r*7+c)||found.has(y*7+x);[board[r][c],board[y][x]]=[board[y][x],board[r][c]];if(yes)return true;}return false;}
+// Every swap earns a separate award; the mission score is the sum of those awards.
+// Clearing the same cell across separate cascades is legitimate, but a cell within
+// one cascade is counted only once because match rounds come from Sets.
+export function scoreMatchRounds(rounds) {
+  const cleared = rounds.reduce((sum, round) => sum + round.length, 0);
+  const base = cleared * 10;
+  const bonus = rounds.reduce((sum, round, i) => sum + round.length * 10 * Math.min(i, 3), 0);
+  return { cleared, base, bonus, total: base + bonus };
+}
 export class Mission {
   constructor(mode,bonuses={hp:100,energy:180,damage:1},advanced=false,rng=Math.random){
     this.mode=mode;this.hp=bonuses.hp;this.maxHp=bonuses.hp;this.energy=bonuses.energy;this.damage=bonuses.damage;this.advanced=advanced;this.rng=rng;this.result=null;this.running=false;this.score=0;this.time=0;this.message='';this.revision=0;
     this.towers=[];this.enemies=[];this.shots=[];this.spawned=0;this.spawnClock=0;this.total=advanced?20:12;this.selected='aegis';
     this.player={x:420,y:430};this.bullets=[];this.hostile=[];this.invaders=[];this.direction=1;this.fireClock=0;this.attackClock=0;this.invulnerability=0;this.held=new Set();this.boss={x:420,y:85,hp:600,maxHp:600};
-    this.cleared=0;this.board=[];this.matchSelection=null;this.moves=0;this.choiceIndex=0;
+    this.cleared=0;this.board=[];this.matchSelection=null;this.moves=0;this.choiceIndex=0;this.lastMatch=null;
     this.mazePlayer={x:1,y:1};this.mazeLights=[];this.sentinels=[{x:13,y:7},{x:11,y:1}];this.mazeClock=0;
     if(mode==='match')this.newBoard();
     if(mode==='shooter')for(let r=0;r<3;r++)for(let c=0;c<6;c++)this.invaders.push({x:130+c*95,y:55+r*45,hp:1});
@@ -107,18 +116,30 @@ export class Mission {
     const a=this.matchSelection;this.matchSelection=null;this.revision++;
     if(Math.abs(a.r-r)+Math.abs(a.c-c)!==1){this.message='Choose two adjacent symbols.';return;}
     [this.board[r][c],this.board[a.r][a.c]]=[this.board[a.r][a.c],this.board[r][c]];
-    let set=matches(this.board);if(set.size===0){[this.board[r][c],this.board[a.r][a.c]]=[this.board[a.r][a.c],this.board[r][c]];this.message='No line of three: swap returned.';return;}
-    this.moves++;let count=0,bonus=0;
+    let set=matches(this.board);if(!set.has(r*7+c)&&!set.has(a.r*7+a.c)){[this.board[r][c],this.board[a.r][a.c]]=[this.board[a.r][a.c],this.board[r][c]];this.message='No line of three: swap returned.';return;}
+    this.moves++;
     const rounds=[];
     for(let cascade=0;set.size&&cascade<30;cascade++){
       rounds.push([...set]);
-      count+=set.size;
-      bonus+=set.size*10*Math.min(cascade,3);
-      for(let col=0;col<7;col++){const kept=[];for(let row=6;row>=0;row--)if(!set.has(row*7+col))kept.push(this.board[row][col]);for(let row=6;row>=0;row--)this.board[row][col]=kept[6-row]??Math.floor(this.rng()*5);}set=matches(this.board);
+      for(let col=0;col<7;col++){
+        const kept=[];
+        for(let row=6;row>=0;row--)if(!set.has(row*7+col))kept.push(this.board[row][col]);
+        for(let row=6;row>=0;row--)this.board[row][col]=kept[6-row]??Math.floor(this.rng()*5);
+      }
+      set=matches(this.board);
     }
-    this.cleared+=count;this.score+=count*10+bonus;
-    const combo=bonus?`${rounds.length}× chain · +${bonus} bonus points. `:'';
-    this.message=`${combo}Cleared ${count} symbols. ${this.cleared} / 24.`;if(this.cleared>=24)this.win();else if(!hasMove(this.board)){this.newBoard();this.message+=' No moves remained, so the board was refreshed.';}
+    // A hostile/constant RNG can keep creating cascades indefinitely.
+    // Never leave unresolved matches that could be scored again next turn.
+    const hitCascadeLimit=set.size>0;
+    if(hitCascadeLimit)this.newBoard();
+    const award=scoreMatchRounds(rounds);
+    this.lastMatch={...award,chains:rounds.length};
+    this.cleared+=award.cleared;
+    this.score+=award.total;
+    this.message=`+${award.total} this swap (${award.base} base${award.bonus?` + ${award.bonus} cascade bonus`:''}). Cleared ${award.cleared} symbols. ${this.cleared} / 24.`;
+    if(hitCascadeLimit)this.message+=' Cascade safety limit reached; the board was refreshed.';
+    if(this.cleared>=24)this.win();
+    else if(!hitCascadeLimit&&!hasMove(this.board)){this.newBoard();this.message+=' No moves remained, so the board was refreshed.';}
     return rounds;
   }
   choose(index){if(this.mode!=='choice'||!this.running||this.result)return false;const d=DILEMMAS[this.choiceIndex];if(index!==d.answer){this.message=d.feedback+' Try again.';return false;}this.message=d.feedback;this.choiceIndex++;this.score+=100;this.revision++;if(this.choiceIndex===DILEMMAS.length)this.win();return true;}
