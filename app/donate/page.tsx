@@ -78,9 +78,9 @@ export default function Donate() {
         Secure checkout is hosted by Stripe. The amount and whether your gift
         repeats are shown before you confirm payment.
       </p>
-      <div className="card-grid" aria-label="Donation options">
+      <div className="card-grid two" aria-label="Donation options">
         {options.map((gift) => (
-          <section className="card" key={gift.variable} aria-label={gift.title}>
+          <section className="feature-card" key={gift.variable} aria-label={gift.title}>
             <h3>{gift.title}</h3>
             <p><strong>{gift.amount}</strong> {gift.cadence}</p>
             <p>{gift.description}</p>
