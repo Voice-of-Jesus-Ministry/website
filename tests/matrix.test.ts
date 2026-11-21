@@ -110,8 +110,10 @@ test('a constant refill RNG cannot leave an unstable match board after cascade s
       assert.ok(rounds);
       assert.ok(rounds.length <= 30);
       assert.equal(matches(mission.board).size, 0, 'no unresolved match remains to be scored on a later turn');
-      assert.equal(mission.score, mission.lastMatch.total);
-      assert.equal(mission.cleared, mission.lastMatch.cleared);
+      const last = mission.lastMatch;
+      assert.ok(last, 'successful swap records its independent award');
+      assert.equal(mission.score, last.total);
+      assert.equal(mission.cleared, last.cleared);
       played = true;
       break;
     }
