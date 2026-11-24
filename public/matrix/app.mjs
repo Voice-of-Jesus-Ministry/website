@@ -17,12 +17,12 @@ function header(){
  $('story-text').textContent=c.text;
  clear($('chapters'));CHAPTERS.forEach((c,i)=>{const li=document.createElement('li');li.textContent=`${i+1}. ${c.title}`;li.className=i===state.level?'current':i<state.level?'done':'';$('chapters').append(li);});
 }
-function hud(){const c=CHAPTERS[state.level];$('mode').textContent=`${c.mode.toUpperCase()} · ${mission?.score??0} mission score`;$('integrity').textContent=`Integrity: ${Math.ceil(mission?.hp??100)}`;$('energy').textContent=c.mode==='defense'?`Energy: ${mission?.energy??180}`:c.mode==='match'?`Symbols: ${mission?.cleared??0} / 24`:'';$('wallet').textContent=`Quiz points: ${state.bank}`;if(mission?.mode==='defense')updatePlacement();}
+function hud(){const c=CHAPTERS[state.level];$('mode').textContent=`${c.mode.toUpperCase()} · ${mission?.score??0} mission score`;$('integrity').textContent=`Integrity: ${Math.ceil(mission?.hp??100)}`;$('energy').textContent=c.mode==='defense'?`Energy: ${mission?.energy??180}`:c.mode==='match'?`Symbols: ${mission?.cleared??0} / 24`:'';$('wallet').textContent=`Quiz points: ${state.bank}`;const breakdown=$('match-score-detail');if(breakdown){breakdown.hidden=mission?.mode!=='match';if(mission?.mode==='match'){const last=mission.lastMatch;breakdown.textContent=last?`Last swap: +${last.total} points (${last.base} base + ${last.bonus} cascade). ${last.cleared} symbols, ${last.chains} stage${last.chains===1?'':'s'}. Mission total: ${mission.score}.`:'10 base points per symbol, with extra points for cascades. View the scoring guide below.';}}if(mission?.mode==='defense')updatePlacement();}
 function setup(){
  header();mission=new Mission(CHAPTERS[state.level].mode,missionBonuses(state),state.level===2);hints=state.upgrades.focus;active=false;paused=false;lastRevision=-1;$('hint').hidden=!hints;
  $('between').hidden=true;$('controls').hidden=false;$('stage').hidden=false;$('start').hidden=false;$('start').disabled=false;$('start').textContent=mission.mode==='defense'?'Start wave':'Begin chapter';$('pause').hidden=true;$('pause').textContent='Pause';$('speed').hidden=mission.mode!=='defense';
  $('ward-controls').hidden=mission.mode!=='defense';$('move-controls').hidden=!['shooter','boss','maze'].includes(mission.mode);$('fire').hidden=mission.mode==='maze';document.querySelectorAll('[data-move=up],[data-move=down]').forEach(b=>b.hidden=mission.mode!=='maze');
- canvas.hidden=['match','choice'].includes(mission.mode);$('match').hidden=mission.mode!=='match';$('choices').hidden=mission.mode!=='choice';
+ canvas.hidden=['match','choice'].includes(mission.mode);$('match').hidden=mission.mode!=='match';$('match-scoring-guide').hidden=mission.mode!=='match';$('choices').hidden=mission.mode!=='choice';
  clearPlacement();
  canvas.classList.toggle('defense-map', mission.mode === 'defense');
  info(state.phase==='briefing' && mission.mode==='defense'?'Choose a tower, pick a spot beside the route, then build.':'');hud();draw();

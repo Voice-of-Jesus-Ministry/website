@@ -33,3 +33,11 @@ main { padding-top: 12px; }
   .tower-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .tower-options button { padding: 6px; }
 }
+
+
+/* Optional match-3 learning guide, shown only during its chapter. */
+.match-score-detail{max-width:490px;margin:12px auto;padding:11px 14px;border-left:3px solid #e0c47b;background:#14231e;color:#e7eedf;font-size:.88rem}
+.match-scoring-guide{max-width:490px;margin:12px auto 18px;padding:12px 14px;border:1px solid #355547;border-radius:8px;background:#0d1817}
+.match-scoring-guide summary{cursor:pointer;color:#e8d99f;font-weight:700;min-height:36px}
+.match-scoring-guide p{margin:7px 0 0;font-size:.86rem;color:#d1ded6;line-height:1.6}
+@media(max-width:450px){.match-score-detail,.match-scoring-guide{font-size:.8rem}.match button{min-height:44px}}
