@@ -43,6 +43,8 @@
     "typescript": "^5.9.0"
   },
   "overrides": {
-    "@grpc/grpc-js": "^1.14.7"
+    "@grpc/grpc-js": "^1.14.7",
+    "glob": "^14.0.1",
+    "minimatch": "^11.0.5"
   }
 }
