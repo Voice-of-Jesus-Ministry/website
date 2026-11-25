@@ -34,13 +34,13 @@ export default function RootLayout({
         <ProgressProvider>
           <header className="site-header">
             <div className="header-inner">
-              <Link className="brand" href="/" aria-label="Voice of Jesus Ministry home">
+              <a className="brand" href="/" aria-label="Voice of Jesus Ministry home">
                 <img src="/favicon.png" width="72" height="72" alt="" />
                 <span>
                   Voice of Jesus Ministry
                   <small>Hear His voice. Follow His Word.</small>
                 </span>
-              </Link>
+              </a>
               <nav aria-label="Main navigation">
                 <Link href="/team"><span className="nav-wide">Our Team</span><span className="nav-short">Team</span></Link>
                 <Link href="/bible-study"><span className="nav-wide">Bible Study</span><span className="nav-short">Study</span></Link>

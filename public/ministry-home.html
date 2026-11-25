@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="/favicon.png" />
+<meta name="theme-color" content="#f7f3eb" />
+<link rel="canonical" href="https://www.voiceofjesusministry.net/" />
+<title>Voice of Jesus Ministry — Children's Feeding Program</title>
+<meta name="description" content="Voice of Jesus Ministry and its children's feeding program — dozens of kids sharing a hot meal together on the covered court." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fdfbf6;
+    --bg-soft:#f3eee3;
+    --card:#ffffff;
+    --ink:#22312a;
+    --ink-soft:#4a5a52;
+    --ink-faint:#6b7d74;
+    --line:#e3dccb;
+    --green:#20513d;
+    --green-deep:#173e2f;
+    --green-tint:#e6efe9;
+    --gold:#b9822e;
+    --gold-soft:#f7ecd4;
+    --terra:#b85a36;
+    --shadow:0 10px 30px rgba(34,49,42,.10);
+    --radius:18px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#121815;
+      --bg-soft:#18211d;
+      --card:#1b2521;
+      --ink:#ece8dc;
+      --ink-soft:#c4cbc2;
+      --ink-faint:#97a69d;
+      --line:#2c3a34;
+      --green:#8fc3a8;
+      --green-deep:#0f1f19;
+      --green-tint:#1e2f28;
+      --gold:#d9ab5e;
+      --gold-soft:#2e2a1e;
+      --terra:#e08a64;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:120px}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Source Sans 3",system-ui,-apple-system,Segoe UI,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%}
+  a{color:var(--green)}
+  button,[role="button"]{min-height:44px}
+  h1,h2,h3{font-family:"Lora",Georgia,serif;line-height:1.15;margin:0;font-weight:600}
+  p{margin:0}
+  .wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+  @media (max-width:560px){ .wrap{width:calc(100% - 32px)} }
+
+  /* ---------- in-page nav ---------- */
+  .topnav{position:sticky;top:0;z-index:30;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topnav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+  .brand{font-family:"Lora",Georgia,serif;font-weight:700;font-size:1.02rem;color:var(--ink);text-decoration:none;line-height:1.2}
+  .brand small{display:block;font-family:"Source Sans 3",sans-serif;font-weight:600;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+  .navlinks{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end}
+  .navlinks a{color:var(--ink-soft);text-decoration:none;font-weight:600;font-size:.92rem;padding:10px 12px;border-radius:999px;min-height:44px;display:inline-flex;align-items:center}
+  .navlinks a:hover{background:var(--green-tint);color:var(--ink)}
+  @media (max-width:640px){ .topnav-inner{flex-wrap:wrap;gap:2px 12px} .navlinks{justify-content:flex-start} .brand small{display:none} .navlinks a{padding:10px 8px;font-size:.88rem} }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;background:var(--green-deep);color:#fff}
+  .hero-media{position:absolute;inset:0}
+  .hero-media img{width:100%;height:100%;object-fit:cover;object-position:center 38%}
+  .hero-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(16,32,25,.18) 0%, rgba(16,32,25,.42) 52%, rgba(14,28,22,.88) 100%)}
+  .hero-content{position:relative;z-index:1;padding:clamp(72px,14vw,132px) 0 clamp(36px,6vw,56px)}
+  .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:700;font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;padding:8px 14px;border-radius:999px}
+  .hero h1{font-size:clamp(2.5rem,7.2vw,4.6rem);font-weight:700;max-width:12ch;margin-top:20px;text-wrap:balance}
+  .hero-sub{margin-top:18px;font-size:clamp(1.05rem,2.4vw,1.3rem);line-height:1.55;max-width:56ch;color:rgba(255,255,255,.92)}
+  .hero-verse{margin-top:28px;max-width:52ch;border-left:3px solid var(--gold);padding-left:16px}
+  .hero-verse blockquote{margin:0;font-family:"Lora",Georgia,serif;font-style:italic;font-size:1.08rem;line-height:1.55}
+  .hero-verse cite{display:block;margin-top:6px;font-style:normal;font-family:"Source Sans 3",sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:#e9cf9a}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+  .hero-meta span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);padding:9px 14px;border-radius:999px;font-size:.9rem;font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{padding:clamp(48px,8vw,84px) 0}
+  .section-head{max-width:680px;margin-bottom:28px}
+  .kicker{font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+  .section-head h2{font-size:clamp(1.75rem,4.4vw,2.5rem);text-wrap:balance}
+  .section-head p{margin-top:12px;color:var(--ink-soft);font-size:1.05rem}
+
+  .intro-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
+  @media (max-width:860px){ .intro-grid{grid-template-columns:1fr} }
+  .intro-copy p + p{margin-top:16px}
+  .intro-copy p{color:var(--ink-soft);font-size:1.06rem}
+  .intro-copy p strong{color:var(--ink)}
+  .intro-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+  .intro-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+  .intro-photo figcaption{padding:12px 16px;background:var(--card);color:var(--ink-faint);font-size:.9rem;border-top:1px solid var(--line)}
+
+  /* feeding program */
+  .feeding{background:var(--bg-soft);border-block:1px solid var(--line)}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:860px){ .steps{grid-template-columns:1fr} }
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:0 2px 10px rgba(34,49,42,.04)}
+  .step-num{font-family:"Lora",Georgia,serif;font-size:2rem;font-weight:700;color:var(--gold);line-height:1}
+  .step h3{font-size:1.22rem;margin-top:12px}
+  .step p{margin-top:8px;color:var(--ink-soft);font-size:.98rem}
+
+  .meal-band{margin-top:22px;background:var(--green-deep);color:#f2eee2;border-radius:var(--radius);padding:clamp(22px,4vw,36px);display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  @media (prefers-color-scheme: dark){ .meal-band{background:#0d1a15} }
+  @media (max-width:760px){ .meal-band{grid-template-columns:1fr} }
+  .meal-band h3{font-size:1.45rem;color:#fff}
+  .meal-band p{margin-top:10px;color:rgba(242,238,226,.85)}
+  .meal-list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+  .meal-list li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+  .meal-list li:last-child{border-bottom:0}
+  .meal-list b{color:#fff;font-weight:700}
+  .meal-list span{color:rgba(242,238,226,.75);text-align:right;font-size:.94rem}
+
+  /* gallery */
+  .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media (max-width:860px){ .gallery-grid{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:480px){ .gallery-grid{grid-template-columns:1fr 1fr;gap:10px} }
+  .g-item{position:relative;border:0;padding:0;background:none;cursor:pointer;border-radius:14px;overflow:hidden;text-align:left;width:100%}
+  .g-item img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .45s ease}
+  .g-item:hover img,.g-item:focus-visible img{transform:scale(1.04)}
+  .g-item:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  .g-cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;background:linear-gradient(transparent, rgba(12,22,17,.82));color:#fff;font-size:.88rem;font-weight:600;line-height:1.35}
+  @media (prefers-reduced-motion: reduce){ .g-item img{transition:none} }
+  .gallery-note{margin-top:16px;color:var(--ink-faint);font-size:.93rem}
+
+  /* wide moment */
+  .moment{padding-top:0}
+  .moment figure{margin:0;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);position:relative}
+  .moment img{width:100%;aspect-ratio:21/10;object-fit:cover;object-position:center 30%}
+  @media (max-width:640px){ .moment img{aspect-ratio:4/3} }
+  .moment figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 22px 18px;background:linear-gradient(transparent, rgba(12,22,17,.85));color:#fff;font-family:"Lora",Georgia,serif;font-style:italic;font-size:clamp(1rem,2.6vw,1.25rem)}
+
+  /* help */
+  .help-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:860px){ .help-grid{grid-template-columns:1fr} }
+  .help-card{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:var(--card)}
+  .help-card .icon{width:46px;height:46px;border-radius:12px;background:var(--gold-soft);display:grid;place-items:center;color:var(--gold)}
+  .help-card h3{font-size:1.18rem;margin-top:14px}
+  .help-card p{margin-top:8px;color:var(--ink-soft);font-size:.98rem}
+
+  .closing{background:var(--green-tint);border-block:1px solid var(--line);text-align:center}
+  .closing blockquote{margin:0 auto;max-width:720px;font-family:"Lora",Georgia,serif;font-size:clamp(1.35rem,3.6vw,1.9rem);line-height:1.45;font-weight:500;text-wrap:balance}
+  .closing cite{display:block;margin-top:14px;font-style:normal;font-family:"Source Sans 3",sans-serif;font-weight:700;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+  footer{padding:34px 0 44px;color:var(--ink-faint);font-size:.92rem}
+  .foot-row{display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
+  footer b{color:var(--ink);font-family:"Lora",Georgia,serif}
+
+  /* lightbox */
+  .lightbox{position:fixed;inset:0;z-index:60;background:rgba(8,14,11,.94);display:none;flex-direction:column}
+  .lightbox.open{display:flex}
+  .lb-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;color:#fff}
+  .lb-count{font-weight:700;font-size:.92rem;letter-spacing:.06em}
+  .lb-caption{color:rgba(255,255,255,.8);font-size:.94rem;flex:1;text-align:center;padding:0 8px}
+  .lb-btn{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:999px;min-width:44px;padding:0 16px;font:inherit;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
+  .lb-btn:hover{background:rgba(255,255,255,.22)}
+  .lb-stage{flex:1;position:relative;display:flex;align-items:center;justify-content:center;padding:0 12px 18px;min-height:0}
+  .lb-stage img{max-width:min(920px,100%);max-height:100%;object-fit:contain;border-radius:10px}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);z-index:2;background:rgba(20,30,25,.72)}
+  #lbPrev{left:12px}
+  #lbNext{right:12px}
+  @media (max-width:560px){ .lb-top{flex-wrap:wrap} .lb-caption{order:3;flex-basis:100%;text-align:left} .lb-stage{padding:0 6px 14px} }
+</style>
+<style>
+#ministry-media .ministry-media-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr)); gap:1.25rem; margin-bottom:1.75rem; }
+#ministry-media figure { min-width:0; margin:0; }
+#ministry-media figcaption { margin:0.4rem 0; }
+#ministry-media img, #ministry-media video { display:block; width:100%; aspect-ratio:4 / 3; object-fit:contain; background:#171717; border-radius:0.75rem; }
+</style>
+</head>
+<body>
+
+<nav class="topnav" aria-label="On this page">
+  <div class="wrap topnav-inner">
+    <a class="brand" href="#top">Voice of Jesus Ministry<small>Children's Feeding Program</small></a>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#feeding">Feeding</a>
+      <a href="#gallery">Photos</a><a href="#ministry-media">Media</a>
+      <a href="#help">Get Involved</a>
+      <a href="/resources">Bible Study &amp; Resources</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-media" aria-hidden="true"><img fetchpriority="high" decoding="async" src="/ministry-media/gallery-8cdd1a9547ce.jpg" alt="" /></div>
+  <div class="wrap hero-content">
+    <span class="hero-eyebrow">✦ &nbsp;Children's Feeding Program</span>
+    <h1>Voice of Jesus Ministry</h1>
+    <p class="hero-sub">A table with room for every child. On feeding days, the covered court fills with dozens of kids sitting shoulder to shoulder — each with a hot meal, a drink, and a place among friends.</p>
+    <div class="hero-verse">
+      <blockquote>“For I was hungry and you gave me something to eat, I was thirsty and you gave me something to drink.”</blockquote>
+      <cite>Matthew 25:35</cite>
+    </div>
+    <div class="hero-meta">
+      <span>Dozens of children at one sitting</span>
+      <span>One shared meal, eaten together</span>
+      <span>On the covered court</span>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap intro-grid">
+      <div class="intro-copy">
+        <div class="section-head" style="margin-bottom:18px">
+          <p class="kicker">Welcome</p>
+          <h2>Feeding children, gathering a community</h2>
+        </div>
+        <p><strong>Voice of Jesus Ministry</strong> serves children through its feeding program — a simple, joyful gathering where kids come as they are and leave fed. No one eats alone: everyone sits together on the court floor, trays open, talking and laughing through the meal.</p>
+        <p>In these photos from a recent feeding day, you can see the whole picture — toddlers beside older brothers and sisters, parents and volunteers watching from the edges, and a guitar resting nearby, ready for singing. It is church at a table: practical, warm, and open to every child who shows up hungry.</p>
+        <p>This page shares that day as it was. If you are a parent, a neighbour, or someone who would like to help feed the next group of kids, you are welcome here.</p>
+      </div>
+      <figure class="intro-photo" style="margin:0">
+        <img loading="lazy" decoding="async" src="/ministry-media/gallery-2119f6edd2a1.jpg" alt="A wide view of children eating together across the covered court, with adults and a guitar along the back wall" />
+        <figcaption>The full gathering — children across the court, grown-ups and a guitar along the back.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FEEDING PROGRAM -->
+  <section class="feeding" id="feeding">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">The Feeding Program</p>
+        <h2>How a feeding day unfolds</h2>
+        <p>Everything happens in one place, at one time, with everyone together. This is what the photos show, step by step.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step-num">1</div>
+          <h3>Everyone gathers</h3>
+          <p>Children settle onto the covered court in one big group — the youngest in front, older kids mixed in beside them, babies carried in by mums and carers.</p>
+        </article>
+        <article class="step">
+          <div class="step-num">2</div>
+          <h3>Meals are handed out</h3>
+          <p>Each child receives a filled tray and a juice pouch. Kids carry their own meals to their spot, and helpers move through the group making sure no one is missed.</p>
+        </article>
+        <article class="step">
+          <div class="step-num">3</div>
+          <h3>They eat — together</h3>
+          <p>Spoons up, trays open, friends on every side. Adults stay close by, and the meal is unhurried: time to eat well, chat, pose for a photo, and simply be kids.</p>
+        </article>
+      </div>
+
+      <div class="meal-band">
+        <div>
+          <h3>What's on the tray</h3>
+          <p>A proper, filling meal — the same for every child. Open any tray in the photos and you'll find the same generous serving, with a sweet drink to go with it.</p>
+        </div>
+        <ul class="meal-list">
+          <li><b>Steamed rice</b><span>The base of every tray</span></li>
+          <li><b>Pancit noodles</b><span>Served alongside the rice</span></li>
+          <li><b>Chicken &amp; meat</b><span>In a savoury sauce</span></li>
+          <li><b>Juice pouch</b><span>One for every child</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">From a Recent Feeding Day</p>
+        <h2>A day of feeding, in photos</h2>
+        <p>Ten moments from one gathering — the smiles, the peace signs, the littlest eaters, and a court full of children sharing lunch. Tap any photo to see it larger.</p>
+      </div>
+
+      <div class="gallery-grid" id="galleryGrid">
+        <button class="g-item" data-cap="Smiles for the camera — trays open, mid-meal">
+          <img src="/ministry-media/gallery-bd6876b90237.jpg" alt="Three girls smiling at the camera during the meal, one making a peace sign" loading="lazy" decoding="async" />
+          <span class="g-cap">Smiles for the camera, mid-meal</span>
+        </button>
+        <button class="g-item" data-cap="The youngest eaters, spoons in hand">
+          <img src="/ministry-media/gallery-8db776013a70.jpg" alt="Two young girls eating rice and noodles from their trays on the court floor" loading="lazy" decoding="async" />
+          <span class="g-cap">The youngest eaters</span>
+        </button>
+        <button class="g-item" data-cap="A big laugh over lunch">
+          <img src="/ministry-media/gallery-ca23027e2295.jpg" alt="A young girl laughing while holding her spoon, surrounded by other children eating" loading="lazy" decoding="async" />
+          <span class="g-cap">A big laugh over lunch</span>
+        </button>
+        <button class="g-item" data-cap="Side by side, every child with a tray">
+          <img src="/ministry-media/gallery-e3c1996b0752.jpg" alt="Children sitting in rows on the court, each eating from a filled tray" loading="lazy" decoding="async" />
+          <span class="g-cap">Side by side, every child with a tray</span>
+        </button>
+        <button class="g-item" data-cap="Eating together on the court floor">
+          <img src="/ministry-media/gallery-5563e93ad2c2.jpg" alt="A group of children eating together, with a hand passing a closed meal tray in the foreground" loading="lazy" decoding="async" />
+          <span class="g-cap">Eating together on the court floor</span>
+        </button>
+        <button class="g-item" data-cap="At the centre circle of the court">
+          <img src="/ministry-media/gallery-55a27032e45f.jpg" alt="Young boys eating at the painted centre circle of the court, juice pouches beside them" loading="lazy" decoding="async" />
+          <span class="g-cap">At the centre circle</span>
+        </button>
+        <button class="g-item" data-cap="Up close: rice, pancit, and chicken on every tray">
+          <img src="/ministry-media/gallery-28f3971eb296.jpg" alt="Close view of an open tray with rice, noodles and chicken, held by a child during the meal" loading="lazy" decoding="async" />
+          <span class="g-cap">Rice, pancit, and chicken</span>
+        </button>
+        <button class="g-item" data-cap="Carrying his meal to his spot">
+          <img src="/ministry-media/gallery-a004021a2156.jpg" alt="A boy carrying his meal tray and juice through the seated group of children" loading="lazy" decoding="async" />
+          <span class="g-cap">Carrying his meal to his spot</span>
+        </button>
+        <button class="g-item" data-cap="Under the yellow pillars of the covered court">
+          <img src="/ministry-media/gallery-8cdd1a9547ce.jpg" alt="Children seated in a large group under the yellow pillars of the covered court" loading="lazy" decoding="async" />
+          <span class="g-cap">Under the yellow pillars</span>
+        </button>
+        <button class="g-item" data-cap="The whole court — grown-ups and a guitar along the back">
+          <img src="/ministry-media/gallery-2119f6edd2a1.jpg" alt="A wide view of children eating together across the covered court, with adults and a guitar along the back wall" loading="lazy" decoding="async" />
+          <span class="g-cap">The whole court, front to back</span>
+        </button>
+      </div>
+      <p class="gallery-note">All photos are from the ministry's own feeding outreach, shared by the ministry for this page.</p>
+    </div>
+  </section>
+
+  <!-- WIDE MOMENT -->
+  <section id="ministry-media" aria-labelledby="ministry-media-title">
+  <div class="wrap">
+    <div class="section-head"><h2 id="ministry-media-title">Ministry photos and videos</h2></div>
+    <div class="ministry-media-grid">
+      <figure><figcaption>Mission 26</figcaption><video controls playsinline preload="none" aria-label="Mission 26" src="/ministry-media/mission-26.mp4"></video></figure>
+<figure><figcaption>Ministry video 2</figcaption><video controls playsinline preload="none" aria-label="Ministry video 2" src="/ministry-media/ministry-video-2.mp4"></video></figure>
+<figure><figcaption>Ministry video 3</figcaption><video controls playsinline preload="none" aria-label="Ministry video 3" src="/ministry-media/ministry-video-3.mp4"></video></figure>
+<figure><figcaption>Ministry video 4</figcaption><video controls playsinline preload="none" aria-label="Ministry video 4" src="/ministry-media/ministry-video-4.mp4"></video></figure>
+    </div>
+    <div class="ministry-media-grid">
+      <figure><a href="/ministry-media/students-and-founders.jpg"><img loading="lazy" decoding="async" src="/ministry-media/students-and-founders.jpg" alt="Students and founders posing together"></a><figcaption>Students and founders posing together</figcaption></figure>
+<figure><a href="/ministry-media/community-outreach.jpg"><img loading="lazy" decoding="async" src="/ministry-media/community-outreach.jpg" alt="Children gathering during community outreach"></a><figcaption>Children gathering during community outreach</figcaption></figure>
+<figure><a href="/ministry-media/bible-study.jpg"><img loading="lazy" decoding="async" src="/ministry-media/bible-study.jpg" alt="Children gathered for Bible study"></a><figcaption>Children gathered for Bible study</figcaption></figure>
+<figure><a href="/ministry-media/group-activity.jpg"><img loading="lazy" decoding="async" src="/ministry-media/group-activity.jpg" alt="Children joining a group activity on the covered court"></a><figcaption>Children joining a group activity on the covered court</figcaption></figure>
+<figure><a href="/ministry-media/feeding-1.jpg"><img loading="lazy" decoding="async" src="/ministry-media/feeding-1.jpg" alt="Young children eating from meal trays"></a><figcaption>Young children eating from meal trays</figcaption></figure>
+<figure><a href="/ministry-media/feeding-2.jpg"><img loading="lazy" decoding="async" src="/ministry-media/feeding-2.jpg" alt="Children seated together at lunchtime"></a><figcaption>Children seated together at lunchtime</figcaption></figure>
+<figure><a href="/ministry-media/feeding-3.jpg"><img loading="lazy" decoding="async" src="/ministry-media/feeding-3.jpg" alt="A child holding her meal tray while others eat nearby"></a><figcaption>A child holding her meal tray while others eat nearby</figcaption></figure>
+<figure><a href="/ministry-media/feeding-4.jpg"><img loading="lazy" decoding="async" src="/ministry-media/feeding-4.jpg" alt="Children eating together, with one flashing a peace sign"></a><figcaption>Children eating together, with one flashing a peace sign</figcaption></figure>
+<figure><a href="/ministry-media/feeding-5.jpg"><img loading="lazy" decoding="async" src="/ministry-media/feeding-5.jpg" alt="A wide view of the meal gathering"></a><figcaption>A wide view of the meal gathering</figcaption></figure>
+    </div>
+  </div>
+</section>
+<section class="moment">
+    <div class="wrap">
+      <figure>
+        <img src="/ministry-media/gallery-2119f6edd2a1.jpg" alt="The whole feeding gathering spread across the covered court" loading="lazy" decoding="async" />
+        <figcaption>“Let the little children come to me.” — Matthew 19:14</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- GET INVOLVED -->
+  <section id="help" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Get Involved</p>
+        <h2>Three ways to be part of it</h2>
+        <p>A feeding day runs on ordinary kindness — hands to serve, food to share, and people who pray. However you can help, there is a place for you.</p>
+      </div>
+      <div class="help-grid">
+        <article class="help-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Volunteer your time</h3>
+          <p>Help hand out trays, sit with the youngest children, or simply be a friendly face on the day. Feeding days need servers, helpers, and people willing to stay and tidy up after.</p>
+        </article>
+        <article class="help-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3>Share food &amp; supplies</h3>
+          <p>Rice, noodles, chicken, and juice for dozens of trays adds up quickly. Giving toward ingredients or supplies helps make sure every child who comes gets the same full meal.</p>
+        </article>
+        <article class="help-card">
+          <div class="icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h3>Pray with us</h3>
+          <p>Hold the children, their families, and the volunteers in prayer — for full stomachs, good health, and the joy that fills the court on feeding days to keep growing.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING VERSE -->
+  <section class="closing">
+    <div class="wrap">
+      <blockquote>“And if anyone gives even a cup of cold water to one of these little ones… truly I tell you, that person will certainly not lose their reward.”</blockquote>
+      <cite>Matthew 10:42</cite>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span><b>Voice of Jesus Ministry</b> — Children's Feeding Program</span>
+    <span>Photos from a recent feeding day, shared by the ministry.</span>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <div class="lb-top">
+    <span class="lb-count" id="lbCount" aria-live="polite"></span>
+    <span class="lb-caption" id="lbCaption" aria-live="polite"></span>
+    <button class="lb-btn" id="lbClose" aria-label="Close photo viewer">✕ Close</button>
+  </div>
+  <div class="lb-stage">
+    <button class="lb-btn lb-nav" id="lbPrev" aria-label="Previous photo">‹ Prev</button>
+    <img id="lbImg" alt="" />
+    <button class="lb-btn lb-nav" id="lbNext" aria-label="Next photo">Next ›</button>
+  </div>
+</div>
+
+<script>
+(function(){
+  var items = Array.prototype.slice.call(document.querySelectorAll('.g-item'));
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lbImg');
+  var lbCap = document.getElementById('lbCaption');
+  var lbCount = document.getElementById('lbCount');
+  var idx = 0, lastFocus = null;
+
+  function show(i){
+    idx = (i + items.length) % items.length;
+    var it = items[idx];
+    var img = it.querySelector('img');
+    lbImg.src = img.currentSrc || img.src;
+    lbImg.alt = img ? img.alt : '';
+    lbCap.textContent = it.getAttribute('data-cap') || '';
+    lbCount.textContent = (idx + 1) + ' / ' + items.length;
+  }
+  function open(i, el){
+    lastFocus = el || document.activeElement;
+    show(i);
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('lbClose').focus();
+  }
+  function close(){
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+    lbImg.removeAttribute('src');
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
+  }
+  items.forEach(function(it, i){ it.addEventListener('click', function(){ open(i, it); }); });
+  document.getElementById('lbClose').addEventListener('click', close);
+  document.getElementById('lbPrev').addEventListener('click', function(){ show(idx - 1); });
+  document.getElementById('lbNext').addEventListener('click', function(){ show(idx + 1); });
+  lb.addEventListener('click', function(e){ if (e.target === lb || e.target.classList.contains('lb-stage')) close(); });
+  document.addEventListener('keydown', function(e){
+    if (!lb.classList.contains('open')) return;
+    if (e.key === 'Tab') {
+      var controls = [document.getElementById('lbClose'), document.getElementById('lbPrev'), document.getElementById('lbNext')];
+      var first = controls[0], last = controls[controls.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowLeft') show(idx - 1);
+    if (e.key === 'ArrowRight') show(idx + 1);
+  });
+  // touch swipe
+  var startX = null;
+  lb.addEventListener('touchstart', function(e){ startX = e.changedTouches[0].clientX; }, {passive:true});
+  lb.addEventListener('touchend', function(e){
+    if (startX === null) return;
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 48) show(idx + (dx < 0 ? 1 : -1));
+    startX = null;
+  }, {passive:true});
+})();
+</script>
+</body>
+</html>
