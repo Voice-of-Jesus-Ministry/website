@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
     root: __dirname,
   },
   poweredByHeader: false,
+  async rewrites() {
+    return [{ source: "/", destination: "/ministry-home.html" }];
+  },
   async redirects() {
     return [{
       source: "/connections",

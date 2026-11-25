@@ -19,7 +19,7 @@ export default function RefugePrayerPage() {
     <article className={styles.page}>
       <div className={styles.glow} aria-hidden="true" />
       <div className={styles.content}>
-        <Link href="/" className={styles.back}>← Voice of Jesus Ministry</Link>
+        <a href="/" className={styles.back}>← Voice of Jesus Ministry</a>
         <p className={styles.kicker}>A MOMENT IN HIS PRESENCE · NOVEMBER 16, 2026</p>
         <p className={styles.introduction}>I’d love to share today’s prayer with you!</p>
         <h1>God Is <em>My Refuge</em></h1>

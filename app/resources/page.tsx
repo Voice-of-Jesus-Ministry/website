@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Free Bible Studies, Prayer & Christian Learning | Voice of Jesus Ministry",
   description: "Explore free Bible studies, prayer, and Scripture-based learning with Voice of Jesus Ministry. Join our Thursday 8 pm Eastern Bible study or learn at your own pace.",
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/resources" },
   openGraph: {
     title: "Voice of Jesus Ministry | Bible Study, Prayer & Discipleship",
     description: "Read, reflect, and grow in faith with free Bible studies and Christian resources.",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default function Resources() {
   return (
     <div className="container">
       <section className="hero">

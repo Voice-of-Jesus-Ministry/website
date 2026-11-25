@@ -4,6 +4,7 @@ const siteUrl = "https://www.voiceofjesusministry.net";
 
 const pages = [
   "/",
+  "/resources",
   "/about",
   "/team",
   "/prayer",
