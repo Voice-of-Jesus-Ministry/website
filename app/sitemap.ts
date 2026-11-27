@@ -14,6 +14,7 @@ const pages = [
   "/bible-study",
   "/bible-study/responsibility",
   "/comics",
+  "/comics/faith-compassion-love",
   "/comics/responsibility-faithfulness-in-action",
   "/bible-study/galatians-1-2",
   "/bible-study/galatians-3",
