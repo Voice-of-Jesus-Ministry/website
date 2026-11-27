@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+export const metadata: Metadata = {title:"Ministry Comics",description:"Illustrated stories of faith, family and service.",alternates:{canonical:"/comics"}};
+export default function Comics(){return <div className="container page narrow"><p className="eyebrow">FAITH · FAMILY · SERVICE</p><h1>Ministry Comics</h1><p className="lede">Explore Christian living through illustrated stories for families and ministry groups.</p><Link className="feature-card" href="/comics/responsibility-faithfulness-in-action"><h2>Responsibility: Faithfulness in Action</h2><p>Discover how small acts of love and compassion can bring hope to the world.</p><span className="card-link">Read the comic →</span></Link><Link href="/bible-study">Explore Bible studies →</Link></div>}

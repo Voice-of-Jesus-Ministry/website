@@ -22,6 +22,7 @@ export default function BibleStudy() {
         <span className="card-link">Start the study →</span>
       </Link>
 
+      <p><Link href="/comics">Explore our ministry comics →</Link></p>
       <h2>Study Galatians: Grace, Faith &amp; Life in Christ</h2>
       <p>Follow Paul's letter in order, beginning with the gospel of grace in chapters 1–2 and continuing with God's promise and our shared belonging in chapter 3.</p>
 
