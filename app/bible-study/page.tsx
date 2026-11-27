@@ -15,6 +15,13 @@ export default function BibleStudy() {
       <p className="lede">Free, Scripture-centered lessons for personal devotion or group discussion. Read the Bible passage, explore the context, reflect on practical questions, and close in prayer.</p>
       <p>Join our online Bible study on Thursdays at 8 pm Eastern. You can also study at your own pace; no account or payment is required.</p>
 
+      <Link className="feature-card" href="/bible-study/responsibility">
+        <span className="tag">NEW STUDY · CHRISTIAN LIVING · 15–20 MINUTES</span>
+        <h2>Responsibility: Faithfulness in Action</h2>
+        <p>Study stewardship, accountability, service and integrity with Pastor Lincoln. Includes a sermon, discussion, prayer and interactive quiz.</p>
+        <span className="card-link">Start the study →</span>
+      </Link>
+
       <h2>Study Galatians: Grace, Faith &amp; Life in Christ</h2>
       <p>Follow Paul's letter in order, beginning with the gospel of grace in chapters 1–2 and continuing with God's promise and our shared belonging in chapter 3.</p>
 
