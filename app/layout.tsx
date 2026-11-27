@@ -56,6 +56,7 @@ export default function RootLayout({
           <footer className="site-footer">
             <span>Voice of Jesus Ministry</span>
             <div>
+              <Link href="/comics">Comics</Link>
               <Link href="/about">About</Link>
               <Link href="/prayer">Prayer</Link>
               <Link href="/donate">Support</Link>
